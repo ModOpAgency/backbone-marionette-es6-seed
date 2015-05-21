@@ -1,0 +1,26 @@
+/**
+    ----------------------------------------------------------------------------------------
+    Sass mixins
+    ----------------------------------------------------------------------------------------
+    @description - Mix it up!
+*/
+@import "variable";
+
+
+
+/**
+    ----------------------------------------------------------------------------------------
+    Linear gradient mixin
+    ----------------------------------------------------------------------------------------
+    @description - This function will return the base pixel size divided by the base
+    font size declared in our variable.scss file as an em value. The gradients "axis"
+    can go from left-to-right, top-to-bottom, or at any angle you chose. You can also declare
+    where you want any particular color to "start". Those are called "color-stops".
+    Say you wanted yellow to take up the majority of the space, but red only a little bit
+    in the beginning, you could make the yellow color-stop pretty early:
+    @usage -  @include linear-gradient($fromColor, $toColor, axis)
+*/
+@mixin linear-gradient($fromColor, $toColor, $axis: null, $start: null, $end: null) {
+    background-color: $toColor; /* Fallback Color */
+    background-image: linear-gradient($axis, $fromColor $start, $toColor $end);
+}

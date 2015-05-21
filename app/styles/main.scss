@@ -1,0 +1,43 @@
+/**
+----------------------------------------------------------------------------------------
+Main scss
+----------------------------------------------------------------------------------------
+@description - this file is where all custom or project specific styling will live.
+Ensure that you're using the overall style guide from http://www.sitepoint.com/architecture-sass-project/
+*/
+@import "scss/helper/variable";
+@import "scss/helper/settings";
+@import "bower_components/foundation/scss/foundation/components/global";
+@import "scss/helper/class";
+@import "scss/helper/function";
+@import "scss/helper/mixin";
+/**
+----------------------------------------------------------------------------------------
+Base level styling
+----------------------------------------------------------------------------------------
+*/
+// @import "scss/base/fonts";
+/**
+----------------------------------------------------------------------------------------
+Component level styling
+----------------------------------------------------------------------------------------
+*/
+// @import "../bower_components/slick.js/slick/slick";
+@import "scss/helper/slick-theme";
+/**
+----------------------------------------------------------------------------------------
+layout styling
+----------------------------------------------------------------------------------------
+*/
+//@import "scss/layout/header";
+//@import "scss/layout/footer";
+/**
+----------------------------------------------------------------------------------------
+Page level styling
+----------------------------------------------------------------------------------------
+*/
+@import "scss/views/index";
+@import "scss/helper/settings";
+// bower:scss
+@import "bower_components/foundation/scss/foundation.scss";
+// endbower
