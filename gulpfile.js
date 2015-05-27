@@ -42,7 +42,7 @@ gulp.task('browserify:build', ['clean:js'], function() {
 });
 
 gulp.task('styles', function() {
-  gulp.src('app/styles/main.scss')
+  gulp.src(['app/styles/main.scss', 'app/styles/vendor.scss'])
       .pipe($.sourcemaps.init())
         .pipe($.sass({
           outputStyle: 'nested', // libsass doesn't support expanded yet
