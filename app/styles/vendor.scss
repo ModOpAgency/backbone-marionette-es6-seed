@@ -1,3 +1,9 @@
-body {
-background: pink;
-}
+////
+/// ----------------------------------------------------------------------------------------
+/// Vendor scss
+/// ----------------------------------------------------------------------------------------
+////
+@import "scss/helper/variable";
+@import "scss/helper/settings";
+@import "bower_components/foundation/scss/foundation";
+@import "bower_components/foundation/scss/foundation/components/global";
