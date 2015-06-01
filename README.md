@@ -1,3 +1,4 @@
+
 ##Requirements
 requirements: node.js, bower, gulp
 
@@ -90,6 +91,7 @@ run
 -------------------------------
 ##IMPORTANT
 
+
 When adding dependencies to a project whether it is through bower or npm
 
     --save [ save as a runtime dependency | jquery, d3]
@@ -97,5 +99,10 @@ When adding dependencies to a project whether it is through bower or npm
     --save-dev [ save as development dependency | mocha, gulp[tasks] ]
 
 Lock dependencies:
-[npm skrinkwrap](https://docs.npmjs.com/cli/shrinkwrap)
-[bower lock](http://benlimmer.com/2014/09/13/lock-down-bower-components/)
+
+  *  [npm skrinkwrap](https://docs.npmjs.com/cli/shrinkwrap)
+  *  [bower lock](http://benlimmer.com/2014/09/13/lock-down-bower-components/)
+
+Please take a moment to read the above link regarding npm-shrinkwrap.json as it can have surprising consequences if you are unaware of how it works:
+  
+> Add or update dependencies. npm install each new or >updated package individually and then update package.json. Note that they must be explicitly named in order to be installed: running npm install with no arguments will merely reproduce the existing shrinkwrap.
