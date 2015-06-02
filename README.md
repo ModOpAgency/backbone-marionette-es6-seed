@@ -46,16 +46,29 @@ nvm install should follow:
 
 Notes from @ramoncorrales regarding windows 7 node-gyp error:
 
-  1. node-gyp has a Python 2.7 dependency, so you'll have to downgrade it (or install it if you don't have it). I specifically used 2.7.6, because that's the one configured on Bamboo server: https://www.python.org/download/releases/2.7.6/
 
-  2. Make sure your PATH variable is pointing to Python 2.7 binaries folder.
+* Python (v2.7.3 recommended, v3.x.x is not supported)
+* Make sure that you have a PYTHON environment variable, and it is set to drive:\path\to\python.exe not to a folder.
+* Windows XP/Vista/7:
+* Microsoft Visual Studio C++ 2013 (Express version works well)
+  If the install fails, try uninstalling any C++ 2010 x64&x86 Redistributable that you have installed first.
+  If you get errors that the 64-bit compilers are not installed you may also need the compiler update for the Windows SDK 7.1
 
-  3. Download Express version of Microsoft Studio C++ 2012. It will need about 3.5GB of disk space: http://go.microsoft.com/?linkid=9816758
+Windows 7/8:
 
-  4. The above steps should be fine for css-sprite, but for grunt-grunticon I still had compilation problems (both my local instance and the server), so I fixed it to "1.2.13" version on package.json
+* Microsoft Visual Studio C++ 2013 for Windows Desktop (Express version works well)
 
-Now you should have a clean output when running "npm install". If not, try "npm cache clean" before.
+All Windows Versions
 
+* For 64-bit builds of node and native modules you will also need the Windows 7 64-bit SDK
+  You may need to run one of the following commands if your build complains about
+* WindowsSDKDir not being set, and you are sure you have already installed the SDK:<br/>
+  call "C:\Program Files\Microsoft SDKs\Windows\v7.1\bin\Setenv.cmd" /Release /x86 <br/>
+  call "C:\Program Files\Microsoft SDKs\Windows\v7.1\bin\Setenv.cmd" /Release /x64
+
+Additional Notes:
+ * this is from https://github.com/TooTallNate/node-gyp/#installation
+ * [Express 2013 with Update 4 for Windows Desktop](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs#DownloadFamilies_2)
 
 Step 2:
 
@@ -104,5 +117,5 @@ Lock dependencies:
   *  [bower lock](http://benlimmer.com/2014/09/13/lock-down-bower-components/)
 
 Please take a moment to read the above link regarding npm-shrinkwrap.json as it can have surprising consequences if you are unaware of how it works:
-  
+
 > Add or update dependencies. npm install each new or >updated package individually and then update package.json. Note that they must be explicitly named in order to be installed: running npm install with no arguments will merely reproduce the existing shrinkwrap.
