@@ -1,4 +1,3 @@
-
 ##Requirements
 requirements: node.js, bower, gulp
 
@@ -62,11 +61,12 @@ All Windows Versions
 
 * For 64-bit builds of node and native modules you will also need the Windows 7 64-bit SDK
   You may need to run one of the following commands if your build complains about
-* WindowsSDKDir not being set, and you are sure you have already installed the SDK:<br/>
-  call "C:\Program Files\Microsoft SDKs\Windows\v7.1\bin\Setenv.cmd" /Release /x86 <br/>
+* WindowsSDKDir not being set, and you are sure you have already installed the SDK: <br />
+  call "C:\Program Files\Microsoft SDKs\Windows\v7.1\bin\Setenv.cmd" /Release /x86<br />
   call "C:\Program Files\Microsoft SDKs\Windows\v7.1\bin\Setenv.cmd" /Release /x64
 
 Additional Notes:
+
  * this is from https://github.com/TooTallNate/node-gyp/#installation
  * [Express 2013 with Update 4 for Windows Desktop](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs#DownloadFamilies_2)
 
