@@ -1,5 +1,5 @@
 ##Overview
-Backbone Marionette prject seed application with ES6 modules powered by Gulp.
+Backbone Marionette project seed application with ES6 modules powered by Gulp.
 
 ##Requirements
 * [Vagrant](https://www.vagrantup.com/) | development environment
