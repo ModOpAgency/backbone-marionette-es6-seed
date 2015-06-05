@@ -30,7 +30,20 @@ Due to a bug with Windows long path names the Node Modules and Bower Components 
     cd /vagrant
     gulp serve
 
--------------------------------------
+##Shutting Down the VM
+
+VirtualBox will continue to run your project in the background until you stop the execution. To stop the VM, simply run the following command on your host:
+
+    vagrant suspend
+
+##Switching Between Multiple Projects
+
+To run multiple projects you will need to suspend your vagrant instance before starting up a new project. To do this, perform the following steps.
+
+    cd /project_a
+    vagrant suspend
+    cd ../project_b
+    vagrant up
 
 ##Building
 
