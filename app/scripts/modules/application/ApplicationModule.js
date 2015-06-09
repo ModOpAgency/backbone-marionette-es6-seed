@@ -6,6 +6,7 @@ import Marionette from 'backbone.marionette';
 import $ from 'jquery';
 import foundation from 'foundation';
 import ApplicationLayoutView from './views/ApplicationLayoutView';
+import HandlebarsHelpers from '../../common/utility/utilityHandlebarsHelpers';
 
 // app bootstrap
 export default Marionette.Application.extend({
