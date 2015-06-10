@@ -64,6 +64,24 @@ gulp.task('styles', function() {
         }));
 });
 
+gulp.task('styles:build', ['styles'], function() {
+    return gulp.src(['app/styles/vendor.scss', 'app/styles/main.scss'])
+        .pipe($.sass({
+            outputStyle: 'nested', // libsass doesn't support expanded yet
+            precision: 10,
+            includePaths: ['.'],
+        }).on('error', function(err) {
+            return notify().write(err);
+            this.emit('end');
+        }))
+        .pipe($.postcss([
+            require('autoprefixer-core')({
+                browsers: ['last 1 version']
+            })
+        ]))
+        .pipe(gulp.dest('dist/styles'))
+});
+
 gulp.task('sprites', function() {
   return gulp.src('app/images/*.png')
     .pipe(sprite({
@@ -77,7 +95,7 @@ gulp.task('sprites', function() {
 
 gulp.task('html', ['styles'], function() {
   var assets = $.useref.assets({
-    searchPath: ['.tmp', 'app', '.']
+    searchPath: ['app', '.']
   });
 
   return gulp.src('app/*.html')
@@ -92,7 +110,7 @@ gulp.task('html', ['styles'], function() {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('images', function() {
+gulp.task('images',function() {
   return gulp.src('app/images/**/*')
         .pipe($.cache($.imagemin({
           progressive: true,
@@ -104,6 +122,11 @@ gulp.task('images', function() {
           }]
         })))
         .pipe(gulp.dest('dist/images'));
+});
+
+gulp.task('images:sprite',function() {
+  return gulp.src('app/images/sprite/*')
+        .pipe(gulp.dest('dist/images/sprite'));
 });
 
 gulp.task('extras', function() {
@@ -141,7 +164,20 @@ gulp.task('serve', ['styles', 'browserify', 'sprites'], function() {
   gulp.watch(['app/scripts/**/*.js', 'app/scripts/**/**/*.hbs'], ['browserify']);
 });
 
-gulp.task('build', ['html', 'images', 'extras', 'browserify:build'], function() {
+gulp.task('serve:dist', ['build'], function() {
+  browserSync({
+    notify: false,
+    port: 9000,
+    server: {
+      baseDir: 'dist',
+      routes: {
+        '/bower_components': 'bower_components'
+      }
+    }
+  });
+});
+
+gulp.task('build', ['sprites', 'html', 'styles:build', 'images', 'extras','images:sprite', 'browserify:build'], function() {
   return gulp.src('dist/**/*').pipe($.size({
     title: 'build',
     gzip: true
