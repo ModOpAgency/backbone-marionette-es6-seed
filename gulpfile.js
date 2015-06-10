@@ -32,15 +32,6 @@ gulp.task('browserify', function() {
         }));
 });
 
-gulp.task('browserify:build', ['clean:js'], function() {
-  return browserify('./app/scripts/main.js')
-      .bundle()
-      //Pass desired output filename to vinyl-source-stream
-      .pipe(source('main.js'))
-      // Start piping stream to tasks!
-      .pipe(gulp.dest('dist/scripts'));
-});
-
 gulp.task('styles', function() {
   gulp.src(['app/styles/main.scss', 'app/styles/vendor.scss'])
       .pipe($.sourcemaps.init())
@@ -64,23 +55,6 @@ gulp.task('styles', function() {
         }));
 });
 
-gulp.task('styles:build', ['styles'], function() {
-    return gulp.src(['app/styles/vendor.scss', 'app/styles/main.scss'])
-        .pipe($.sass({
-            outputStyle: 'nested', // libsass doesn't support expanded yet
-            precision: 10,
-            includePaths: ['.'],
-        }).on('error', function(err) {
-            return notify().write(err);
-            this.emit('end');
-        }))
-        .pipe($.postcss([
-            require('autoprefixer-core')({
-                browsers: ['last 1 version']
-            })
-        ]))
-        .pipe(gulp.dest('dist/styles'))
-});
 
 gulp.task('sprites', function() {
   return gulp.src('app/images/*.png')
@@ -122,11 +96,6 @@ gulp.task('images',function() {
           }]
         })))
         .pipe(gulp.dest('dist/images'));
-});
-
-gulp.task('images:sprite',function() {
-  return gulp.src('app/images/sprite/*')
-        .pipe(gulp.dest('dist/images/sprite'));
 });
 
 gulp.task('extras', function() {
@@ -177,11 +146,44 @@ gulp.task('serve:dist', ['build'], function() {
   });
 });
 
-gulp.task('build', ['sprites', 'html', 'styles:build', 'images', 'extras','images:sprite', 'browserify:build'], function() {
+gulp.task('build', ['sprites', 'html', 'styles:build', 'images', 'extras','sprite:build', 'browserify:build'], function() {
   return gulp.src('dist/**/*').pipe($.size({
     title: 'build',
     gzip: true
   }));
+});
+
+gulp.task('browserify:build', ['clean:js'], function() {
+  return browserify('./app/scripts/main.js')
+      .bundle()
+      //Pass desired output filename to vinyl-source-stream
+      .pipe(source('main.js'))
+      // Start piping stream to tasks!
+      .pipe(gulp.dest('dist/scripts'));
+});
+
+gulp.task('styles:build', ['styles'], function() {
+    return gulp.src(['app/styles/vendor.scss', 'app/styles/main.scss'])
+        .pipe($.sass({
+            outputStyle: 'nested', // libsass doesn't support expanded yet
+            precision: 10,
+            includePaths: ['.'],
+        }).on('error', function(err) {
+            return notify().write(err);
+            this.emit('end');
+        }))
+        .pipe($.postcss([
+            require('autoprefixer-core')({
+                browsers: ['last 1 version']
+            })
+        ]))
+        .pipe(gulp.dest('dist/styles'))
+});
+
+
+gulp.task('sprite:build',function() {
+  return gulp.src('app/images/sprite/*')
+        .pipe(gulp.dest('dist/images/sprite'));
 });
 
 gulp.task('styles:vendor', function() {
