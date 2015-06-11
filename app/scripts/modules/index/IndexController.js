@@ -10,7 +10,5 @@ export default Marionette.Controller.extend({
     index() {
         var indexView = new IndexView();
         this.options.container.show(indexView);
-
-        console.log('yo dawg')
     }
 });
