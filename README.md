@@ -5,7 +5,6 @@ Backbone Marionette project seed application with ES6 modules powered by Gulp.
 * [Vagrant](https://www.vagrantup.com/) | development environment
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads) | development vm
 * [node.js](https://nodejs.org/) | server | npm dep | use node rather then iojs due to [sprity](https://www.npmjs.com/package/sprity)
-* [bower](http://bower.io) | package | dep manager
 * [gulp.js](http://gulpjs.com/) | build tool
 * [foundation 5.5.1](http://foundation.zurb.com/) | front-end framework
 
@@ -25,7 +24,7 @@ Run vagrant ssh and start the server. You will use this to run your build comman
 
 If you run into errors with the gulp serve, please run npm install again within the vagrant folder. This can happen if the install process runs out of memory or times out during the provision process.
 
-Due to a bug with Windows long path names the Node Modules and Bower Components will be a symbolic link. To remove the files within this directory navigate to /home/vagrant/node_modules and /home/vagrant/bower_components respectively.
+Due to a bug with Windows long path names the Node Modules will be a symbolic link. To remove the files within this directory navigate to /home/vagrant/node_modules.
 
     vagrant ssh
     cd /vagrant
@@ -67,7 +66,7 @@ run
 ##IMPORTANT
 
 
-When adding dependencies to a project whether it is through bower or npm
+When adding dependencies to a project with npm
 
     --save [ save as a runtime dependency | jquery, d3]
 

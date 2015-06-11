@@ -5,32 +5,43 @@ var gulp = require('gulp'),
     $ = require('gulp-load-plugins')(),
     notify = require('gulp-notify'),
     sprite = require('css-sprite').stream,
+    watchify = require('watchify'),
     browserify = require('browserify'),
     source = require('vinyl-source-stream'),
     browserSync = require('browser-sync'),
     buffer = require('vinyl-buffer'),
+    _ = require('lodash'),
     reload = browserSync.reload;
 
 gulp.task('browserify', function() {
-    return browserify('./app/scripts/main.js')
-        .bundle()
-        .on('error', function(err) {
-            return notify().write(err);
+    var b = browserify('./app/scripts/main.js');
+    var w = watchify(b, {
+        poll: true
+    });
 
-        })
-        //Pass desired output filename to vinyl-source-stream
-        .pipe(source('main.js'))
-        .pipe(buffer())
-        .pipe($.sourcemaps.init({
-            loadMaps: true
-        }))
-        .pipe($.sourcemaps.write('./'))
-        // Start piping stream to tasks!
-        .pipe(gulp.dest('.tmp/scripts'))
-        .pipe(reload({
-            stream: true
-        }));
+    function rebundle() {
+        return w.bundle()
+            .pipe(source('main.js'))
+            .pipe(buffer())
+            .pipe($.sourcemaps.init({
+                loadMaps: true
+            }))
+            .on('error', function(err) {
+                return notify().write(err);
+
+            })
+            .pipe($.sourcemaps.write('./'))
+            .pipe(gulp.dest('.tmp/scripts'))
+            .pipe(reload({
+                stream: true
+            }));
+    }
+    w.on('update', function() {
+        rebundle();
+    });
+    return rebundle();
 });
+
 
 gulp.task('styles', function() {
     gulp.src(['app/styles/main.scss', 'app/styles/vendor.scss'])
@@ -116,21 +127,17 @@ gulp.task('serve', ['styles', 'browserify', 'sprites'], function() {
         port: 9000,
         server: {
             baseDir: ['.tmp', 'app'],
-            routes: {
-                '/bower_components': 'bower_components'
-            }
+            routes: {}
         }
     });
 
     // watch for changes
     gulp.watch([
         'app/*.html',
-        'app/images/**/*',
-        'app/scripts/**/*.js'
+        'app/images/**/*'
     ]).on('change', reload);
 
     gulp.watch('app/styles/**/*.scss', ['styles']);
-    gulp.watch(['app/scripts/**/*.js', 'app/scripts/**/**/*.hbs'], ['browserify']);
 });
 
 gulp.task('serve:dist', ['build'], function() {
@@ -139,9 +146,7 @@ gulp.task('serve:dist', ['build'], function() {
         port: 9000,
         server: {
             baseDir: 'dist',
-            routes: {
-                '/bower_components': 'bower_components'
-            }
+            routes: {}
         }
     });
 });
