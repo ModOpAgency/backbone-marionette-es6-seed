@@ -13,3 +13,4 @@ app.example = new ExampleModule({
     container: app.layout.mainContent
 });
 app.start();
+console.log('test2');

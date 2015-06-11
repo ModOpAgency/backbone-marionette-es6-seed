@@ -19,7 +19,10 @@
     "browserify-shim": {
         "jquery": "$",
         "modernizr": "Modernizr",
-        "foundation": {"exports": "foundation", "depends": ["modernizr"]}
+        "foundation": {
+            "exports": "foundation",
+            "depends": ["modernizr"]
+        }
     },
     "dependencies": {
         "backbone": "1.1.2",

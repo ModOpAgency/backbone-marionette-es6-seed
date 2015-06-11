@@ -5,32 +5,65 @@ var gulp = require('gulp'),
     $ = require('gulp-load-plugins')(),
     notify = require('gulp-notify'),
     sprite = require('css-sprite').stream,
+    watchify = require('watchify'),
     browserify = require('browserify'),
     source = require('vinyl-source-stream'),
     browserSync = require('browser-sync'),
     buffer = require('vinyl-buffer'),
+    _ = require('lodash'),
     reload = browserSync.reload;
 
-gulp.task('browserify', function() {
-    return browserify('./app/scripts/main.js')
-        .bundle()
-        .on('error', function(err) {
-            return notify().write(err);
+// gulp.task('browserify', function() {
+//     return browserify('./app/scripts/main.js')
+//         .bundle()
+//         .on('error', function(err) {
+//             return notify().write(err);
+//
+//         })
+//         //Pass desired output filename to vinyl-source-stream
+//         .pipe(source('main.js'))
+//         .pipe(buffer())
+//         .pipe($.sourcemaps.init({
+//             loadMaps: true
+//         }))
+//         .pipe($.sourcemaps.write('./'))
+//         // Start piping stream to tasks!
+//         .pipe(gulp.dest('.tmp/scripts'))
+//         .pipe(reload({
+//             stream: true
+//         }));
+// });
 
-        })
-        //Pass desired output filename to vinyl-source-stream
+// add custom browserify options here
+var b = browserify('./app/scripts/main.js');
+var w = watchify(b);
+
+w.on('update', function() {
+    browserifyBundle();
+});
+
+gulp.task('browserify', function() {
+    return browserifyBundle();
+});
+
+function browserifyBundle() {
+    return w.bundle()
         .pipe(source('main.js'))
         .pipe(buffer())
         .pipe($.sourcemaps.init({
             loadMaps: true
         }))
+        .on('error', function(err) {
+            return notify().write(err);
+
+        })
         .pipe($.sourcemaps.write('./'))
-        // Start piping stream to tasks!
         .pipe(gulp.dest('.tmp/scripts'))
         .pipe(reload({
             stream: true
         }));
-});
+}
+
 
 gulp.task('styles', function() {
     gulp.src(['app/styles/main.scss', 'app/styles/vendor.scss'])
@@ -126,11 +159,11 @@ gulp.task('serve', ['styles', 'browserify', 'sprites'], function() {
     gulp.watch([
         'app/*.html',
         'app/images/**/*',
-        'app/scripts/**/*.js'
+        // 'app/scripts/**/*.js'
     ]).on('change', reload);
 
     gulp.watch('app/styles/**/*.scss', ['styles']);
-    gulp.watch(['app/scripts/**/*.js', 'app/scripts/**/**/*.hbs'], ['browserify']);
+    // gulp.watch(['app/scripts/**/*.js', 'app/scripts/**/**/*.hbs'], ['browserify']);
 });
 
 gulp.task('serve:dist', ['build'], function() {
