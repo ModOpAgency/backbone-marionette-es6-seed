@@ -8,7 +8,7 @@
             "browserify-shim", ["babelify", {
                 "ignore": ["jquery", "foundation", "modernizr"]
             }],
-            "hbsfy"
+            ["hbsfy", {"extensions": ["hbs"]}]
         ]
     },
     "browser": {
