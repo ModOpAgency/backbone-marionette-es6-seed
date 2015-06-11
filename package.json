@@ -78,7 +78,6 @@
     "gulp-useref": "^1.0.2",
     "hbsfy": "^2.2.1",
     "jshint-stylish": "^1.0.0",
-    "main-bower-files": "^2.5.0",
     "opn": "^1.0.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
