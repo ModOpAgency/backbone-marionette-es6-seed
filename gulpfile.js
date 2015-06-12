@@ -5,51 +5,18 @@ var gulp = require('gulp'),
     $ = require('gulp-load-plugins')(),
     notify = require('gulp-notify'),
     sprite = require('css-sprite').stream,
-    watchify = require('watchify'),
-    browserify = require('browserify'),
+    webpack = require('webpack-stream'),
+
     source = require('vinyl-source-stream'),
     browserSync = require('browser-sync'),
     buffer = require('vinyl-buffer'),
     _ = require('lodash'),
     reload = browserSync.reload;
 
-gulp.task('browserify', function() {
-    var b = browserify('./app/scripts/main.js', {
-        'debug' : true,
-        'fullPaths' : true,
-        'noparse' : [
-            'backbone',
-            'backbone.marionette',
-            'lodash',
-            'newrelic',
-            'slick-carousel'
-        ]
-    });
-    var w = watchify(b, {
-        poll: true
-    });
-
-    function rebundle() {
-        var start = Date.now();
-        return w.bundle()
-            .pipe(source('main.js'))
-            .pipe(buffer())
-            .on('error', function(err) {
-                return notify().write(err);
-
-            })
-            .pipe(gulp.dest('.tmp/scripts'))
-            .pipe(reload({
-                stream: true
-            }))
-            .pipe(notify(function() {
-                console.log('Application was reloaded in ' + (Date.now() - start)/1000 + ' s');
-            }));
-    }
-    w.on('update', function() {
-        rebundle();
-    });
-    return rebundle();
+gulp.task('bundle', function() {
+    gulp.src('app/scripts/main.js')
+        .pipe(webpack(require('./webpack.config.js')))
+        .pipe(gulp.dest('.tmp/scripts'));
 });
 
 
@@ -131,7 +98,7 @@ gulp.task('extras', function() {
 gulp.task('clean', require('del').bind(null, ['.tmp', 'dist']));
 gulp.task('clean:js', require('del').bind(null, ['.tmp/scripts']));
 
-gulp.task('serve', ['styles', 'browserify', 'sprites'], function() {
+gulp.task('serve', ['styles', 'sprites', 'bundle'], function() {
     browserSync({
         notify: false,
         port: 9000,
