@@ -14,26 +14,36 @@ var gulp = require('gulp'),
     reload = browserSync.reload;
 
 gulp.task('browserify', function() {
-    var b = browserify('./app/scripts/main.js');
+    var b = browserify('./app/scripts/main.js', {
+        'debug' : true,
+        'fullPaths' : true,
+        'noparse' : [
+            'backbone',
+            'backbone.marionette',
+            'lodash',
+            'newrelic',
+            'slick-carousel'
+        ]
+    });
     var w = watchify(b, {
         poll: true
     });
 
     function rebundle() {
+        var start = Date.now();
         return w.bundle()
             .pipe(source('main.js'))
             .pipe(buffer())
-            .pipe($.sourcemaps.init({
-                loadMaps: true
-            }))
             .on('error', function(err) {
                 return notify().write(err);
 
             })
-            .pipe($.sourcemaps.write('./'))
             .pipe(gulp.dest('.tmp/scripts'))
             .pipe(reload({
                 stream: true
+            }))
+            .pipe(notify(function() {
+                console.log('Application was reloaded in ' + (Date.now() - start)/1000 + ' s');
             }));
     }
     w.on('update', function() {
