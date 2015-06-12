@@ -6,22 +6,23 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     sprite = require('css-sprite').stream,
     webpack = require('webpack-stream'),
-
     source = require('vinyl-source-stream'),
     browserSync = require('browser-sync'),
     buffer = require('vinyl-buffer'),
     _ = require('lodash'),
     reload = browserSync.reload;
 
-gulp.task('bundle', function() {
-    gulp.src('app/scripts/main.js')
+gulp.task('scripts', function() {
+    return gulp.src('app/scripts/main.js')
         .pipe(webpack(require('./webpack.config.js')))
-        .pipe(gulp.dest('.tmp/scripts'));
+        .pipe(gulp.dest('.tmp/scripts'))
+        .pipe(reload({
+            stream: true
+        }));
 });
 
-
 gulp.task('styles', function() {
-    gulp.src(['app/styles/main.scss', 'app/styles/vendor.scss'])
+    return gulp.src(['app/styles/main.scss', 'app/styles/vendor.scss'])
         .pipe($.sourcemaps.init())
         .pipe($.sass({
             outputStyle: 'nested', // libsass doesn't support expanded yet
@@ -43,7 +44,6 @@ gulp.task('styles', function() {
         }));
 });
 
-
 gulp.task('sprites', function() {
     return gulp.src('app/images/*.png')
         .pipe(sprite({
@@ -53,23 +53,6 @@ gulp.task('sprites', function() {
             processor: 'scss'
         }))
         .pipe($.if('*.png', gulp.dest('app/images/sprite'), gulp.dest('app/styles/scss/helper')));
-});
-
-gulp.task('html', ['styles'], function() {
-    var assets = $.useref.assets({
-        searchPath: ['app', '.']
-    });
-
-    return gulp.src('app/*.html')
-        .pipe(assets)
-        .pipe($.if('*.css', $.csso()))
-        .pipe(assets.restore())
-        .pipe($.useref())
-        .pipe($.if('*.html', $.minifyHtml({
-            conditionals: true,
-            loose: true
-        })))
-        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('images', function() {
@@ -96,9 +79,8 @@ gulp.task('extras', function() {
 });
 
 gulp.task('clean', require('del').bind(null, ['.tmp', 'dist']));
-gulp.task('clean:js', require('del').bind(null, ['.tmp/scripts']));
 
-gulp.task('serve', ['styles', 'sprites', 'bundle'], function() {
+gulp.task('serve', ['styles', 'sprites', 'scripts'], function() {
     browserSync({
         notify: false,
         port: 9000,
@@ -115,6 +97,7 @@ gulp.task('serve', ['styles', 'sprites', 'bundle'], function() {
     ]).on('change', reload);
 
     gulp.watch('app/styles/**/*.scss', ['styles']);
+    gulp.watch('app/scripts/**/*.js', ['scripts']);
 });
 
 gulp.task('serve:dist', ['build'], function() {
@@ -128,55 +111,45 @@ gulp.task('serve:dist', ['build'], function() {
     });
 });
 
-gulp.task('build', ['sprites', 'html', 'styles:build', 'images', 'extras', 'sprite:build', 'browserify:build'], function() {
+gulp.task('build', ['html:build', 'images', 'extras', 'sprite:build'], function() {
     return gulp.src('dist/**/*').pipe($.size({
         title: 'build',
         gzip: true
     }));
 });
 
-gulp.task('browserify:build', ['clean:js'], function() {
-    return browserify('./app/scripts/main.js')
-        .bundle()
-        //Pass desired output filename to vinyl-source-stream
-        .pipe(source('main.js'))
-        // Start piping stream to tasks!
-        .pipe(gulp.dest('dist/scripts'));
+gulp.task('html:build', ['styles:build', 'scripts:build'], function() {
+    var assets = $.useref.assets({
+        searchPath: ['app', '.', 'dist']
+    });
+
+    return gulp.src('app/*.html')
+        .pipe(assets)
+        .pipe($.if('*.css', $.csso()))
+        .pipe(assets.restore())
+        .pipe($.useref())
+        .pipe($.if('*.html', $.minifyHtml({
+            conditionals: true,
+            loose: true
+        })))
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('styles:build', ['styles'], function() {
-    return gulp.src(['app/styles/vendor.scss', 'app/styles/main.scss'])
-        .pipe($.sass({
-            outputStyle: 'nested', // libsass doesn't support expanded yet
-            precision: 10,
-            includePaths: ['.'],
-        }).on('error', function(err) {
-            return notify().write(err);
-            this.emit('end');
-        }))
-        .pipe($.postcss([
-            require('autoprefixer-core')({
-                browsers: ['last 1 version']
-            })
-        ]))
-        .pipe(gulp.dest('dist/styles'))
+    return gulp.src('.tmp/styles/*')
+        .pipe(gulp.dest('dist/styles'));
 });
 
+gulp.task('scripts:build', ['scripts'], function() {
+    return gulp.src('.tmp/scripts/*')
+        .pipe(gulp.dest('dist/scripts'));
+});
 
-gulp.task('sprite:build', function() {
+gulp.task('sprite:build', ['sprites'], function() {
     return gulp.src('app/images/sprite/*')
         .pipe(gulp.dest('dist/images/sprite'));
 });
 
-gulp.task('styles:vendor', function() {
-    return gulp.src('dist/styles/vendor.css')
-
-    .pipe($.uncss({
-            html: ['dist/index.html']
-        }))
-        .pipe($.csso())
-        .pipe(gulp.dest('dist/styles'));
-})
 gulp.task('default', ['clean'], function() {
     gulp.start('build');
 });

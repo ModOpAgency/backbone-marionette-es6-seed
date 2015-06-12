@@ -1,6 +1,5 @@
 'use strict';
 
-import Marionette from 'backbone.marionette';
 import template from '../templates/applicationLayoutView.hbs';
 
 export default Marionette.LayoutView.extend({

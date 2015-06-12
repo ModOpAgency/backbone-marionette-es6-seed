@@ -1,6 +1,5 @@
 'use strict';
 
-import Marionette from 'backbone.marionette';
 import IndexView from './views/IndexView.js';
 
 export default Marionette.Controller.extend({

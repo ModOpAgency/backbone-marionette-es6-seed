@@ -1,12 +1,8 @@
 'use strict';
 
-import MarionetteShim from '../../common/vendor/marionette.shim';
-import Backbone from 'backbone';
-import Marionette from 'backbone.marionette';
-import $ from 'jquery';
-import foundation from 'foundation';
+import foundation from 'foundation-sites';
 import ApplicationLayoutView from './views/ApplicationLayoutView';
-import HandlebarsHelpers from '../../common/utility/utilityHandlebarsHelpers';
+import HandlebarsHelpers from 'common/utility/utilityHandlebarsHelpers';
 
 // app bootstrap
 export default Marionette.Application.extend({

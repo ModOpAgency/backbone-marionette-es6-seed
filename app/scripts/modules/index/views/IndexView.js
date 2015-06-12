@@ -1,11 +1,6 @@
 'use strict';
 
-import $ from 'jquery';
-import _ from 'lodash';
-import Backbone from 'backbone';
-import Marionette from 'backbone.marionette';
-import Radio from 'backbone.radio';
-import template from '../templates/IndexView.hbs';
+import template from 'modules/index/templates/IndexView.hbs';
 import slick from 'slick-carousel';
 
 export default Marionette.ItemView.extend({

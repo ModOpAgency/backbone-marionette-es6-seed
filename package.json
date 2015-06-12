@@ -3,46 +3,6 @@
   "engines": {
     "node": ">=0.12.4"
   },
-  "browserify": {
-    "transform": [
-      [
-        "browserify-shim"
-      ],
-      [
-        "babelify",
-        {
-          "ignore": [
-            "jquery",
-            "foundation",
-            "modernizr"
-          ]
-        }
-      ],
-      [
-        "hbsfy",
-        {
-          "extensions": [
-            "hbs"
-          ]
-        }
-      ]
-    ]
-  },
-  "browser": {
-    "jquery": "./node_modules/jquery/dist/jquery.js",
-    "modernizr": "./node_modules/foundation-sites/js/vendor/modernizr.js",
-    "foundation": "./node_modules/foundation-sites/js/foundation.js"
-  },
-  "browserify-shim": {
-    "jquery": "$",
-    "modernizr": "Modernizr",
-    "foundation": {
-      "exports": "foundation",
-      "depends": [
-        "modernizr"
-      ]
-    }
-  },
   "dependencies": {
     "backbone": "1.1.2",
     "backbone.marionette": "2.4.1",
@@ -82,6 +42,7 @@
     "gulp-useref": "1.0.2",
     "handlebars-loader": "^1.0.2",
     "hbsfy": "2.2.1",
+    "imports-loader": "^0.6.4",
     "jshint-stylish": "1.0.0",
     "node-libs-browser": "^0.5.2",
     "opn": "1.0.0",
