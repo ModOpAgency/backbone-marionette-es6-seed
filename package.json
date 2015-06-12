@@ -60,7 +60,7 @@
     "browserify-shim": "3.8.6",
     "css-sprite": "0.9.9",
     "del": "1.1.1",
-    "gulp": "3.6.0",
+    "gulp": "3.9.0",
     "gulp-cache": "0.2.2",
     "gulp-csso": "0.2.6",
     "gulp-if": "1.2.1",

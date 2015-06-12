@@ -14,7 +14,7 @@ export NVM_DIR="/home/vagrant/.nvm"
 nvm install v0.12.4
 nvm alias default 0.12.4
 
-npm install -g gulp
+npm install -g gulp@3.9.0
 
 # Setup a special configuration for Windows to move the node modules outside of
 # project folder to prevent long path issues (http://blog.rudylee.com/2014/10/27/symbolic-links-with-vagrant-windows/)
