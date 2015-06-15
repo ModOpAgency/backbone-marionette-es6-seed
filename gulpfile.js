@@ -97,7 +97,7 @@ gulp.task('serve', ['styles', 'sprites', 'scripts'], function() {
     ]).on('change', reload);
 
     gulp.watch('app/styles/**/*.scss', ['styles']);
-    gulp.watch('app/scripts/**/*.js', ['scripts']);
+    gulp.watch('app/scripts/**/*.{js,hbs}', ['scripts']);
 });
 
 gulp.task('serve:dist', ['build'], function() {
