@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     $ = require('gulp-load-plugins')(),
     notify = require('gulp-notify'),
     sprite = require('css-sprite').stream,
-    webpack = require('webpack-stream'),
+    webpack = require('webpack'),
     source = require('vinyl-source-stream'),
     browserSync = require('browser-sync'),
     buffer = require('vinyl-buffer'),
@@ -13,12 +13,15 @@ var gulp = require('gulp'),
     reload = browserSync.reload;
 
 gulp.task('scripts', function() {
-    return gulp.src('app/scripts/main.js')
-        .pipe(webpack(require('./webpack.config.js')))
-        .pipe(gulp.dest('.tmp/scripts'))
-        .pipe(reload({
-            stream: true
-        }));
+    var compiler = webpack(require('./webpack.config.js'));
+    return compiler.watch({
+        aggregateTimeout: 300,
+        poll: 300
+    }, function(err, stats) {
+        reload({
+            stream: false
+        })
+    });
 });
 
 gulp.task('styles', function() {
@@ -97,7 +100,7 @@ gulp.task('serve', ['styles', 'sprites', 'scripts'], function() {
     ]).on('change', reload);
 
     gulp.watch('app/styles/**/*.scss', ['styles']);
-    gulp.watch('app/scripts/**/*.js', ['scripts']);
+    // gulp.watch('app/scripts/**/*.{js,hbs}', ['scripts']);
 });
 
 gulp.task('serve:dist', ['build'], function() {

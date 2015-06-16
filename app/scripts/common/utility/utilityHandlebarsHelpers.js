@@ -1,4 +1,4 @@
-import Handlebars from 'hbsfy/runtime';
+import Handlebars from 'handlebars';
 Handlebars.registerHelper('compare', function (lvalue, operator, rvalue, options) {
 
     var operators, result;
