@@ -19,11 +19,19 @@ gulp.task('scripts', function() {
         poll: 300
     }, function(err, stats) {
         notify().write(stats.toString({
-            colors: true
+            hash: false,
+            assets: false,
+            chunks: false,
+            chunkModules: false,
+            modules: false,
+            cached: false,
+            reasons: false,
+            source: false,
+            chunkOrigins: false
         }));
         reload({
             stream: false
-        })
+        });
     });
 });
 
@@ -51,28 +59,14 @@ gulp.task('styles', function() {
 });
 
 gulp.task('sprites', function() {
-    return gulp.src('app/images/*.png')
+    return gulp.src('app/assets/images/*.png')
         .pipe(sprite({
             name: 'sprite',
             style: '_sprite.scss',
-            cssPath: '../images/sprite/',
+            cssPath: '../assets/images/sprite/',
             processor: 'scss'
         }))
-        .pipe($.if('*.png', gulp.dest('app/images/sprite'), gulp.dest('app/styles/scss/helper')));
-});
-
-gulp.task('images', function() {
-    return gulp.src('app/images/**/*')
-        .pipe($.cache($.imagemin({
-            progressive: true,
-            interlaced: true,
-            // don't remove IDs from SVGs, they are often used
-            // as hooks for embedding and styling
-            svgoPlugins: [{
-                cleanupIDs: false
-            }]
-        })))
-        .pipe(gulp.dest('dist/images'));
+        .pipe($.if('*.png', gulp.dest('app/assets/images/sprite'), gulp.dest('app/styles/scss/helper')));
 });
 
 gulp.task('extras', function() {
@@ -99,7 +93,7 @@ gulp.task('serve', ['styles', 'sprites', 'scripts'], function() {
     // watch for changes
     gulp.watch([
         'app/*.html',
-        'app/images/**/*'
+        'app/assets/**/*'
     ]).on('change', reload);
 
     gulp.watch('app/styles/**/*.scss', ['styles']);
@@ -116,7 +110,7 @@ gulp.task('serve:dist', ['build'], function() {
     });
 });
 
-gulp.task('build', ['html:build', 'images', 'extras', 'sprite:build'], function() {
+gulp.task('build', ['html:build', 'assets:build', 'images:build', 'extras', 'sprite:build'], function() {
     return gulp.src('dist/**/*').pipe($.size({
         title: 'build',
         gzip: true
@@ -140,6 +134,25 @@ gulp.task('html:build', ['styles:build', 'scripts:build'], function() {
         .pipe(gulp.dest('dist'));
 });
 
+gulp.task('assets:build', function() {
+    return gulp.src(['app/assets/**/*', "!app/assets/images/**/*"])
+        .pipe(gulp.dest('dist/assets'));
+});
+
+gulp.task('images:build', function() {
+    return gulp.src('app/assets/images/**/*')
+        .pipe($.cache($.imagemin({
+            progressive: true,
+            interlaced: true,
+            // don't remove IDs from SVGs, they are often used
+            // as hooks for embedding and styling
+            svgoPlugins: [{
+                cleanupIDs: false
+            }]
+        })))
+        .pipe(gulp.dest('dist/assets/images'));
+});
+
 gulp.task('styles:build', ['styles'], function() {
     return gulp.src('.tmp/styles/*')
         .pipe(gulp.dest('dist/styles'));
@@ -159,7 +172,15 @@ gulp.task('scripts:build', ['scripts'], function() {
             notify().write(err);
         } else {
             return notify().write(stats.toString({
-                colors: true
+                hash: false,
+                assets: false,
+                chunks: false,
+                chunkModules: false,
+                modules: false,
+                cached: false,
+                reasons: false,
+                source: false,
+                chunkOrigins: false
             }));
         }
     });
@@ -168,8 +189,8 @@ gulp.task('scripts:build', ['scripts'], function() {
 });
 
 gulp.task('sprite:build', ['sprites'], function() {
-    return gulp.src('app/images/sprite/*')
-        .pipe(gulp.dest('dist/images/sprite'));
+    return gulp.src('app/assets/images/sprite/*')
+        .pipe(gulp.dest('dist/assets/images/sprite'));
 });
 
 gulp.task('default', ['clean'], function() {

@@ -2,7 +2,7 @@
 
 // Default Variables
 
-$slick-font-path: "./fonts/" !default;
+$slick-font-path: "../assets/fonts/" !default;
 $slick-font-family: "slick" !default;
 $slick-loader-path: "" !default;
 $slick-arrow-color: $alert-color  !default;
@@ -36,7 +36,7 @@ $slick-opacity-not-active: 0.5 !default;
 
 .slick-list {
     .slick-loading & {
-        background: transparent slick-image-url("./images/ajax-loader.gif") center center no-repeat;
+        background: transparent slick-image-url("../assets/images/ajax-loader.gif") center center no-repeat;
     }
 }
 
@@ -44,8 +44,8 @@ $slick-opacity-not-active: 0.5 !default;
 @if $slick-font-family == "slick" {
     @font-face {
         font-family: "slick";
-        src: slick-font-url("slick.eot");
-        src: slick-font-url("slick.eot?#iefix") format("embedded-opentype"), slick-font-url("slick.woff") format("woff"), slick-font-url("slick.ttf") format("truetype"), slick-font-url("slick.svg#slick") format("svg");
+        src: slick-font-url("../assets/fonts/slick.eot");
+        src: slick-font-url("../assets/fonts/slick.eot?#iefix") format("embedded-opentype"), slick-font-url("../assets/fonts/slick.woff") format("woff"), slick-font-url("../assets/fonts/slick.ttf") format("truetype"), slick-font-url("../assets/fonts/slick.svg#slick") format("svg");
         font-weight: normal;
         font-style: normal;
     }
