@@ -3,10 +3,7 @@ var path = require('path');
 module.exports = {
     devtool: "#source-map",
     watch: true,
-    entry : {
-        path: __dirname + '/app/scripts/',
-        filename: 'main.js'
-    },
+    entry : './app/scripts/main.js',
     output: {
         path: __dirname + '/.tmp/scripts/',
         filename: 'main.js'
@@ -31,7 +28,10 @@ module.exports = {
             loader: 'babel'
         }, {
             test: /\.hbs$/,
-            loader: 'handlebars-loader'
+            loader: 'handlebars-loader',
+            query:{
+                helperDirs : [__dirname + '/app/scripts/common/helpers']
+            }
         }, {
             test: /\.json$/,
             loader: 'json-loader'

@@ -18,6 +18,9 @@ gulp.task('scripts', function() {
         aggregateTimeout: 300,
         poll: 300
     }, function(err, stats) {
+        notify().write(stats.toString({
+            colors: true
+        }));
         reload({
             stream: false
         })
@@ -143,8 +146,25 @@ gulp.task('styles:build', ['styles'], function() {
 });
 
 gulp.task('scripts:build', ['scripts'], function() {
-    return gulp.src('.tmp/scripts/*')
-        .pipe(gulp.dest('dist/scripts'));
+    // modify some webpack config options
+    var myConfig = Object.create(require('./webpack.config.js'));
+
+    // custom config for production
+    myConfig.output.path = __dirname + '/dist/scripts/';
+    myConfig.devTool = 'cheap-source-map';
+
+    // run webpack
+    webpack(myConfig, function(err, stats) {
+        if (err) {
+            notify().write(err);
+        } else {
+            return notify().write(stats.toString({
+                colors: true
+            }));
+        }
+    });
+
+    return true;
 });
 
 gulp.task('sprite:build', ['sprites'], function() {

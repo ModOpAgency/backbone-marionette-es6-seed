@@ -1,6 +1,5 @@
-import Handlebars from 'handlebars';
-Handlebars.registerHelper('compare', function (lvalue, operator, rvalue, options) {
-
+module.exports = function(lvalue, operator, rvalue, options) {
+    'use strict';
     var operators, result;
 
     if (arguments.length < 3) {
@@ -54,13 +53,4 @@ Handlebars.registerHelper('compare', function (lvalue, operator, rvalue, options
     } else {
         return options.inverse(this);
     }
-
-});
-
-Handlebars.registerHelper('debug', function (context, block) {
-    console.log(context);
-});
-
-Handlebars.registerHelper('first', function (context, block) {
-    return block(context[0]);
-});
+};
