@@ -14,16 +14,13 @@ export NVM_DIR="/home/vagrant/.nvm"
 nvm install v0.12.4
 nvm alias default 0.12.4
 
-npm install -g bower gulp
+npm install -g gulp@3.9.0
 
 # Setup a special configuration for Windows to move the node modules outside of
 # project folder to prevent long path issues (http://blog.rudylee.com/2014/10/27/symbolic-links-with-vagrant-windows/)
 mkdir /home/vagrant/node_modules
-mkdir /home/vagrant/bower_components
 rm -rf /vagrant/node_modules
-rm -rf /vagrant/bower_components
 ln -sf /home/vagrant/node_modules /vagrant
-ln -sf /home/vagrant/bower_components /vagrant
 
 echo "################################################################################"
 echo "                     INSTALLING PROJECT SCRIPTS                                 "
@@ -32,4 +29,3 @@ echo "##########################################################################
 # install base requirements
 cd /vagrant
 npm install
-bower install

@@ -1,11 +1,4 @@
 'use strict';
-
-import $ from 'jquery';
-import _ from 'lodash';
-import Backbone from 'backbone';
-import Radio from 'backbone.radio';
-import Marionette from 'backbone.marionette';
-
 import IndexRouter from './IndexRouter.js';
 import IndexController from './IndexController.js';
 
