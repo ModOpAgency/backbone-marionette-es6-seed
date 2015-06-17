@@ -5,34 +5,35 @@ Main scss
 @description - this file is where all custom or project specific styling will live.
 Ensure that you're using the overall style guide from http://www.sitepoint.com/architecture-sass-project/
 */
-@import "scss/helper/variable";
-@import "scss/helper/settings";
+@import "helper/variable";
+@import "helper/settings";
 @import "node_modules/foundation-sites/scss/foundation/components/global";
-@import "scss/helper/class";
-@import "scss/helper/function";
-@import "scss/helper/mixin";
+@import "helper/class";
+@import "helper/function";
+@import "helper/mixin";
 /**
 ----------------------------------------------------------------------------------------
 Base level styling
 ----------------------------------------------------------------------------------------
 */
-// @import "scss/base/fonts";
+@import "base/fonts";
+
 /**
 ----------------------------------------------------------------------------------------
 Component level styling
 ----------------------------------------------------------------------------------------
 */
-@import "scss/helper/slick-theme";
+// @import "helper/slick-theme";
 /**
 ----------------------------------------------------------------------------------------
 layout styling
 ----------------------------------------------------------------------------------------
 */
-//@import "scss/layout/header";
-//@import "scss/layout/footer";
+//@import "layout/header";
+//@import "layout/footer";
 /**
 ----------------------------------------------------------------------------------------
 Page level styling
 ----------------------------------------------------------------------------------------
 */
-@import "scss/views/index";
+@import "views/index";

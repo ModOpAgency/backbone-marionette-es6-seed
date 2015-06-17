@@ -66,7 +66,7 @@ gulp.task('sprites', function() {
             cssPath: '../assets/images/sprite/',
             processor: 'scss'
         }))
-        .pipe($.if('*.png', gulp.dest('app/assets/images/sprite'), gulp.dest('app/styles/scss/helper')));
+        .pipe($.if('*.png', gulp.dest('app/assets/images/sprite'), gulp.dest('app/styles/helper')));
 });
 
 gulp.task('extras', function() {
