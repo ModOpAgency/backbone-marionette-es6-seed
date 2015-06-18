@@ -66,7 +66,7 @@ gulp.task('sprites', function() {
             cssPath: '../assets/images/sprite/',
             processor: 'scss'
         }))
-        .pipe($.if('*.png', gulp.dest('app/assets/images/sprite'), gulp.dest('app/styles/scss/helper')));
+        .pipe($.if('*.png', gulp.dest('app/assets/images/sprite'), gulp.dest('app/styles/helper')));
 });
 
 gulp.task('extras', function() {
@@ -159,7 +159,7 @@ gulp.task('styles:build', ['styles'], function() {
         .pipe(gulp.dest('dist/styles'));
 });
 
-gulp.task('scripts:build', ['scripts'], function() {
+gulp.task('scripts:build', function() {
     // modify some webpack config options
     var myConfig = Object.create(require('./webpack.config.js'));
 
