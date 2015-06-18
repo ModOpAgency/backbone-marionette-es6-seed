@@ -134,21 +134,22 @@ gulp.task('html:build', ['styles:build', 'scripts:build'], function() {
         .pipe(gulp.dest('dist'));
 });
 
+
 gulp.task('assets:build', function() {
-    return gulp.src(['app/assets/**/*', "!app/assets/images/**/*"])
+    return gulp.src(['app/assets/**/*', "!app/assets/images/**/*.{png,jpg,gif}"])
         .pipe(gulp.dest('dist/assets'));
 });
 
 gulp.task('images:build', function() {
-    return gulp.src('app/assets/images/**/*')
+    return gulp.src(['app/assets/images/**/*.{png,jpg,gif}'])
         .pipe($.cache($.imagemin({
             progressive: true,
             interlaced: true,
             // don't remove IDs from SVGs, they are often used
             // as hooks for embedding and styling
-            svgoPlugins: [{
-                cleanupIDs: false
-            }]
+            //svgoPlugins: [{
+            //    cleanupIDs: false
+            //}]
         })))
         .pipe(gulp.dest('dist/assets/images'));
 });
