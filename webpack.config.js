@@ -1,7 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
 module.exports = {
-    devtool: "#source-map",
+    devtool: '#eval-source-map',
     watch: true,
     entry : './app/scripts/main.js',
     output: {
@@ -47,7 +47,8 @@ module.exports = {
             '_': 'lodash',
             'Backbone': 'backbone',
             'Marionette': 'backbone.marionette',
-            'Radio': 'backbone.radio'
+            'Radio': 'backbone.radio',
+            'foundation' : 'foundation-sites/js/foundation'
         })
     ]
 };
