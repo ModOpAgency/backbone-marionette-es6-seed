@@ -19,7 +19,7 @@ export default Marionette.LayoutView.extend({
             exampleFooter: '.js-example-footer'
         };
     },
-    onRender() {
+    onShow() {
         $('.slider').slick({
             lazyLoad: 'ondemand',
             autoplay: true,
