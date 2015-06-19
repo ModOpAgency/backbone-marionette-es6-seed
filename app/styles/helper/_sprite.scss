@@ -1,43 +1,35 @@
-$facebook: -4px -4px 32px 32px;
-$instagram: -4px -44px 32px 32px;
-$pinterest: -4px -84px 32px 32px;
-$tumblr: -4px -124px 32px 32px;
-$twitter: -4px -164px 32px 32px;
-$vimeo: -4px -204px 32px 32px;
-$youtube: -4px -244px 32px 32px;
-
+$facebook: -0px -0px 40px 40px;
+$instagram: -0px -40px 40px 40px;
+$pinterest: -0px -80px 40px 40px;
+$tumblr: -0px -120px 40px 40px;
+$twitter: -0px -160px 40px 40px;
+$vimeo: -0px -200px 40px 40px;
+$youtube: -0px -240px 40px 40px;
 @mixin sprite-width($sprite) {
   width: nth($sprite, 3);
 }
-
 @mixin sprite-height($sprite) {
   height: nth($sprite, 4);
 }
-
 @function sprite-width($sprite) {
   @return nth($sprite, 3);
 }
-
 @function sprite-height($sprite) {
   @return nth($sprite, 4);
 }
-
 @mixin sprite-position($sprite) {
   $sprite-offset-x: nth($sprite, 1);
   $sprite-offset-y: nth($sprite, 2);
-  background-position: $sprite-offset-x  $sprite-offset-y;
+  background-position: $sprite-offset-x $sprite-offset-y;
 }
-
-@mixin sprite($sprite) {
+@mixin sprite($sprite, $display: block) {
   @include sprite-position($sprite);
   background-repeat: no-repeat;
   overflow: hidden;
-  display: block;
+  display: $display;
   @include sprite-width($sprite);
   @include sprite-height($sprite);
 }
-
 .icon {
-  background-image: url('../assets/images/sprite/sprite.png');
+  background-image: url("../assets/images/sprite/sprite.png");
 }
-

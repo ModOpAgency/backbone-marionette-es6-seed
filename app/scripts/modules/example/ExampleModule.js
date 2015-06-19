@@ -1,13 +1,7 @@
 'use strict';
 
-import $ from 'jquery';
-import _ from 'lodash';
-import Backbone from 'backbone';
-import Radio from 'backbone.radio';
-import Marionette from 'backbone.marionette';
-
-import ExampleRouter from './ExampleRouter.js';
-import ExampleController from './ExampleController.js';
+import ExampleRouter from './ExampleRouter';
+import ExampleController from './ExampleController';
 
 export default Marionette.Application.extend({
     initialize(options) {
@@ -15,7 +9,7 @@ export default Marionette.Application.extend({
         this.start(options);
     },
     start(options) {
-        var exampleChannel = Backbone.Radio.channel('example');
+        var exampleChannel = Radio.channel('example');
         var exampleController = new ExampleController({
             container: options.container
         });
