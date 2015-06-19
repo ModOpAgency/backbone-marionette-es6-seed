@@ -2,6 +2,7 @@
 'use strict';
 // generated on 2015-05-11 using generator-gulp-webapp 0.3.0
 var gulp = require('gulp'),
+    gutil = require('gulp-util'),
     $ = require('gulp-load-plugins')(),
     notify = require('gulp-notify'),
     sprite = require('css-sprite').stream,
@@ -12,9 +13,11 @@ var gulp = require('gulp'),
     _ = require('lodash'),
     reload = browserSync.reload;
 
-gulp.task('scripts', function() {
-    var compiler = webpack(require('./webpack.config.js'));
-    return compiler.watch({
+gulp.task('scripts', function(callback) {
+
+    var webpackCompiler = webpack(require('./webpack.config.js'));
+
+    webpackCompiler.watch({
         aggregateTimeout: 300,
         poll: 300
     }, function(err, stats) {
@@ -33,6 +36,7 @@ gulp.task('scripts', function() {
             stream: false
         });
     });
+    callback();
 });
 
 gulp.task('styles', function() {
@@ -134,22 +138,21 @@ gulp.task('html:build', ['styles:build', 'scripts:build'], function() {
         .pipe(gulp.dest('dist'));
 });
 
-
 gulp.task('assets:build', function() {
-    return gulp.src(['app/assets/**/*', "!app/assets/images/**/*.{png,jpg,gif}"])
+    return gulp.src(['app/assets/**/*', "!app/assets/images/**/*"])
         .pipe(gulp.dest('dist/assets'));
 });
 
 gulp.task('images:build', function() {
-    return gulp.src(['app/assets/images/**/*.{png,jpg,gif}'])
+    return gulp.src('app/assets/images/**/*')
         .pipe($.cache($.imagemin({
             progressive: true,
             interlaced: true,
             // don't remove IDs from SVGs, they are often used
             // as hooks for embedding and styling
-            //svgoPlugins: [{
-            //    cleanupIDs: false
-            //}]
+            svgoPlugins: [{
+                cleanupIDs: false
+            }]
         })))
         .pipe(gulp.dest('dist/assets/images'));
 });
@@ -159,34 +162,24 @@ gulp.task('styles:build', ['styles'], function() {
         .pipe(gulp.dest('dist/styles'));
 });
 
-gulp.task('scripts:build', function() {
+gulp.task('scripts:build', function(callback) {
     // modify some webpack config options
-    var myConfig = Object.create(require('./webpack.config.js'));
+    var webpackConfig = Object.create(require('./webpack.config.js'));
 
     // custom config for production
-    myConfig.output.path = __dirname + '/dist/scripts/';
-    myConfig.devTool = 'cheap-source-map';
+    webpackConfig.output.path = __dirname + '/dist/scripts/';
+    webpackConfig.devTool = 'cheap-source-map';
+
+    // create a single instance of the compiler to allow caching
+    var webpackCompiler = webpack(webpackConfig);
 
     // run webpack
-    webpack(myConfig, function(err, stats) {
+    webpackCompiler.run(function(err, stats) {
         if (err) {
-            notify().write(err);
-        } else {
-            return notify().write(stats.toString({
-                hash: false,
-                assets: false,
-                chunks: false,
-                chunkModules: false,
-                modules: false,
-                cached: false,
-                reasons: false,
-                source: false,
-                chunkOrigins: false
-            }));
+            throw new gutil.PluginError('scripts:build', err);
         }
+        callback();
     });
-
-    return true;
 });
 
 gulp.task('sprite:build', ['sprites'], function() {
