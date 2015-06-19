@@ -114,7 +114,7 @@ gulp.task('serve:dist', ['build'], function() {
     });
 });
 
-gulp.task('build', ['html:build', 'assets:build', 'images:build', 'extras', 'sprite:build'], function() {
+gulp.task('build', ['html:build', 'images:build', 'extras', 'sprite:build'], function() {
     return gulp.src('dist/**/*').pipe($.size({
         title: 'build',
         gzip: true
@@ -139,20 +139,20 @@ gulp.task('html:build', ['styles:build', 'scripts:build'], function() {
 });
 
 gulp.task('assets:build', function() {
-    return gulp.src(['app/assets/**/*', "!app/assets/images/**/*"])
+    return gulp.src(['app/assets/**/*', "!app/assets/images/**/*.{png,jpg,gif}"])
         .pipe(gulp.dest('dist/assets'));
 });
 
-gulp.task('images:build', function() {
-    return gulp.src('app/assets/images/**/*')
+gulp.task('images:build', ['assets:build'], function() {
+    return gulp.src(['app/assets/images/**/*.{png,jpg,gif}'])
         .pipe($.cache($.imagemin({
             progressive: true,
             interlaced: true,
             // don't remove IDs from SVGs, they are often used
             // as hooks for embedding and styling
-            svgoPlugins: [{
-                cleanupIDs: false
-            }]
+            //svgoPlugins: [{
+            //    cleanupIDs: false
+            //}]
         })))
         .pipe(gulp.dest('dist/assets/images'));
 });
