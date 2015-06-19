@@ -1,9 +1,8 @@
 'use strict';
 
-import Marionette from 'backbone.marionette';
-import ExampleHeaderView from './views/ExampleHeaderView.js';
-import ExampleFooterView from './views/ExampleFooterView.js';
-import ExampleLayoutView from './views/ExampleLayoutView.js';
+import ExampleHeaderView from './views/ExampleHeaderView';
+import ExampleFooterView from './views/ExampleFooterView';
+import ExampleLayoutView from './views/ExampleLayoutView';
 
 export default Marionette.Controller.extend({
     initialize(options) {

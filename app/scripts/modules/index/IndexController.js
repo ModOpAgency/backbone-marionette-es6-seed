@@ -1,6 +1,6 @@
 'use strict';
 
-import IndexView from './views/IndexView.js';
+import IndexView from './views/IndexView';
 
 export default Marionette.Controller.extend({
     initialize(options) {
