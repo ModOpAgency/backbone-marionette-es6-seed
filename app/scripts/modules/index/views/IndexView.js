@@ -14,6 +14,8 @@ export default Marionette.ItemView.extend({
     console.log('event triggered in peopleView and executed in indexView');
   },
   onRender() {
+    $('body').addClass('index');
+
     $('.slider').slick({
       lazyLoad: 'ondemand',
       autoplay: true,
