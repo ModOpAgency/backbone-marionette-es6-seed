@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     $ = require('gulp-load-plugins')(),
     notify = require('gulp-notify'),
-    sprite = require('css-sprite').stream,
+    sprity = require('sprity'),
     webpack = require('webpack'),
     source = require('vinyl-source-stream'),
     browserSync = require('browser-sync'),
@@ -63,15 +63,15 @@ gulp.task('styles', function() {
 });
 
 gulp.task('sprites', function() {
-    return gulp.src('app/assets/images/*.png')
-        .pipe(sprite({
-            name: 'sprite',
-            style: '_sprite.scss',
-            cssPath: '../assets/images/sprite/',
-            processor: 'scss'
-        }))
-        .pipe($.if('*.png', gulp.dest('app/assets/images/sprite'), gulp.dest('app/styles/helper')));
-});
+    return sprity.src({
+       src: 'app/assets/images/*.png',
+       name: 'sprite',
+       style: '_sprite.scss',
+       cssPath: '../assets/images/sprite/',
+       processor: 'sass', // make sure you have installed sprity-sass
+     })
+     .pipe($.if('*.png', gulp.dest('app/assets/images/sprite'), gulp.dest('app/styles/helper')))
+ });
 
 gulp.task('extras', function() {
     return gulp.src([
