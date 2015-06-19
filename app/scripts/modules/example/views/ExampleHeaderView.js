@@ -13,7 +13,5 @@ export default Marionette.ItemView.extend({
     initialize(options) {
         // console.log('header itemView init');
     },
-    onShow() {
 
-    }
 });

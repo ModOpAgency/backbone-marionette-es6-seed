@@ -1,7 +1,7 @@
 'use strict';
 
-import ExampleRouter from './ExampleRouter.js';
-import ExampleController from './ExampleController.js';
+import ExampleRouter from './ExampleRouter';
+import ExampleController from './ExampleController';
 
 export default Marionette.Application.extend({
     initialize(options) {
