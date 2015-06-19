@@ -10,6 +10,8 @@ export default Marionette.ItemView.extend({
     return 'view-content';
   },
   onRender() {
+    $('body').addClass('index');
+
     $('.slider').slick({
       lazyLoad: 'ondemand',
       autoplay: true,
