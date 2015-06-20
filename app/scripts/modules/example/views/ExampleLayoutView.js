@@ -15,8 +15,8 @@ export default Marionette.LayoutView.extend({
     },
     regions() {
         return {
-            exampleHeader: '.js-example-header',
-            exampleFooter: '.js-example-footer'
+            ExampleRegionOne: '.js-example-region-one',
+            ExampleRegionTwo: '.js-example-region-two'
         };
     },
     onShow() {
