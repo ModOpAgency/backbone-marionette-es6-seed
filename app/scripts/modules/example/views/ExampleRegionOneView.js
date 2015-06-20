@@ -1,6 +1,6 @@
 'use strict';
 
-import template from '../templates/ExampleHeaderView.hbs';
+import template from '../templates/ExampleRegionOneView.hbs';
 import slick from 'slick-carousel';
 
 export default Marionette.ItemView.extend({
@@ -13,7 +13,7 @@ export default Marionette.ItemView.extend({
     initialize(options) {
         // console.log('footer itemView init');
     },
-    onRender() {
+    onShow() {
         $('.slider').slick({
             lazyLoad: 'ondemand',
             autoplay: true,
