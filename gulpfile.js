@@ -91,7 +91,8 @@ gulp.task('serve', ['styles', 'sprites', 'scripts'], function() {
         server: {
             baseDir: ['.tmp', 'app'],
             routes: {}
-        }
+        },
+        injectChanges: true
     });
 
     // watch for changes
