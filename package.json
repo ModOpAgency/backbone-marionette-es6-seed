@@ -38,6 +38,7 @@
     "gulp-useref": "1.0.2",
     "gulp-util": "^3.0.5",
     "handlebars-loader": "^1.0.2",
+    "httpster": "^1.0.1",
     "imports-loader": "^0.6.4",
     "jshint-stylish": "1.0.0",
     "json-loader": "^0.5.2",
