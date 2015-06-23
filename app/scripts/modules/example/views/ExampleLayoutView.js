@@ -20,18 +20,6 @@ export default Marionette.LayoutView.extend({
         };
     },
     onShow() {
-        $('.slider').slick({
-            lazyLoad: 'ondemand',
-            autoplay: true,
-            initialSlide: 0,
-            dots: true,
-            slidesToShow: 1,
-            infinite: true,
-            useCSS: true,
-            speed: 3000,
-            fade: true,
-            cssEase: 'ease',
-            adaptiveHeight: false
-        });
+        $(document).foundation();
     }
 });
