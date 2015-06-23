@@ -12,6 +12,5 @@ export default Marionette.Application.extend({
     if (Backbone.history) {
       Backbone.history.start();
     }
-    $(document).foundation();
   }
 });
