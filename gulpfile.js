@@ -5,6 +5,8 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     $ = require('gulp-load-plugins')(),
     notify = require('gulp-notify'),
+    gutil = require('gulp-util'),
+    through = require('through'),
     sprity = require('sprity'),
     webpack = require('webpack'),
     source = require('vinyl-source-stream'),
@@ -41,14 +43,27 @@ gulp.task('scripts', function(callback) {
 
 gulp.task('styles', function() {
     return gulp.src(['app/styles/main.scss', 'app/styles/vendor.scss'])
+
+        .pipe($.plumber({
+            errorHandler: function(err) {
+                console.log(err)
+                gutil.log(gutil.colors.red('################################################################################'))
+                gutil.log(gutil.colors.red('Error Message: ', err.message))
+                gutil.log(gutil.colors.red('Error in file: ', err.fileName))
+                gutil.log(gutil.colors.red('Error at line: ', err.lineNumber))
+                gutil.log(gutil.colors.red('################################################################################'))
+
+
+                notify().write('Error Message: ' + err.message);
+                // this.emit("error", new Error("Something happend: Error message!"))
+                this.emit('end');
+            }
+        }))
         .pipe($.sourcemaps.init())
         .pipe($.sass({
             outputStyle: 'nested', // libsass doesn't support expanded yet
             precision: 10,
             includePaths: ['.'],
-        }).on('error', function(err) {
-            return notify().write(err);
-            this.emit('end');
         }))
         .pipe($.postcss([
             require('autoprefixer-core')({
@@ -64,14 +79,14 @@ gulp.task('styles', function() {
 
 gulp.task('sprites', function() {
     return sprity.src({
-       src: 'app/assets/images/*.png',
-       name: 'sprite',
-       style: '_sprite.scss',
-       cssPath: '../assets/images/sprite/',
-       processor: 'sass', // make sure you have installed sprity-sass
-     })
-     .pipe($.if('*.png', gulp.dest('app/assets/images/sprite'), gulp.dest('app/styles/helper')))
- });
+            src: 'app/assets/images/*.png',
+            name: 'sprite',
+            style: '_sprite.scss',
+            cssPath: '../assets/images/sprite/',
+            processor: 'sass', // make sure you have installed sprity-sass
+        })
+        .pipe($.if('*.png', gulp.dest('app/assets/images/sprite'), gulp.dest('app/styles/helper')))
+});
 
 gulp.task('extras', function() {
     return gulp.src([
