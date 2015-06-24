@@ -1,13 +1,19 @@
 'use strict';
 
-import template from 'modules/index/templates/IndexView.hbs';
+import template from 'modules/index/templates/IndexLayoutView.hbs';
 
-export default Marionette.ItemView.extend({
+export default Marionette.LayoutView.extend({
   get template() {
     return template;
   },
   get className() {
     return 'view-content';
+  },
+  regions(){
+      return {
+          IndexRegionOne: '.js-index-region-one',
+          IndexRegionTwo: '.js-index-region-two'
+      };
   },
   onRender() {
     $('body').addClass('index');

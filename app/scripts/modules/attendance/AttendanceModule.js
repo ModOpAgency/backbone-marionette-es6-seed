@@ -1,7 +1,7 @@
 'use strict';
 
-import ExampleRouter from './ExampleRouter';
-import ExampleController from './ExampleController';
+import AttendanceRouter from './AttendanceRouter';
+import AttendanceController from './AttendanceController';
 
 export default Marionette.Application.extend({
     initialize(options) {
@@ -9,12 +9,12 @@ export default Marionette.Application.extend({
         this.start(options);
     },
     start(options) {
-        var exampleChannel = Radio.channel('example');
-        var exampleController = new ExampleController({
+        var attendanceChannel = Backbone.Radio.channel('Attendance');
+        var attendanceController = new AttendanceController({
             container: options.container
         });
-        var exampleRouter = new ExampleRouter({
-            controller: exampleController
+        var attendanceRouter = new AttendanceRouter({
+            controller: attendanceController
         });
     },
     stop() {

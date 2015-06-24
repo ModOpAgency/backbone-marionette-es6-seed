@@ -1,0 +1,27 @@
+{
+  "local": {
+    "currentHost": "localhost:9000",
+    "facebookId": "1579687658975525",
+    "redirectUrl": "http://localhost:9000/"
+  },
+  "dev": {
+    "currentHost": "dev.modopdev.com",
+    "facebookId": "1579687988975492",
+    "redirectUrl": ""
+  },
+  "stage": {
+    "currentHost": "stage.modopdev.com",
+    "facebookId": "1579688092308815",
+    "redirectUrl": ""
+  },
+  "clientStage": {
+    "currentHost": "previewsites.ubi.com",
+    "facebookId": "1579688182308806",
+    "redirectUrl": ""
+  },
+  "prod": {
+    "currentHost": "",
+    "facebookId": "",
+    "redirectUrl": ""
+  }
+}

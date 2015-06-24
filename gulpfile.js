@@ -5,7 +5,9 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     $ = require('gulp-load-plugins')(),
     notify = require('gulp-notify'),
-    sprite = require('css-sprite').stream,
+    gutil = require('gulp-util'),
+    through = require('through'),
+    sprity = require('sprity'),
     webpack = require('webpack'),
     source = require('vinyl-source-stream'),
     browserSync = require('browser-sync'),
@@ -41,14 +43,29 @@ gulp.task('scripts', function(callback) {
 
 gulp.task('styles', function() {
     return gulp.src(['app/styles/main.scss', 'app/styles/vendor.scss'])
+
+        .pipe($.plumber({
+            errorHandler: function(err) {
+                console.log(err)
+                gutil.log(gutil.colors.red('################################################################################'))
+                gutil.log(gutil.colors.red('Error Message: ', err.message))
+                gutil.log(gutil.colors.red('Error in file: ', err.fileName))
+                gutil.log(gutil.colors.red('Error at line: ', err.lineNumber))
+                gutil.log(gutil.colors.red('################################################################################'))
+                gutil.beep()
+
+
+
+                notify().write('Error Message: ' + err.message);
+                // this.emit("error", new Error("Something happend: Error message!"))
+                this.emit('end');
+            }
+        }))
         .pipe($.sourcemaps.init())
         .pipe($.sass({
             outputStyle: 'nested', // libsass doesn't support expanded yet
             precision: 10,
             includePaths: ['.'],
-        }).on('error', function(err) {
-            return notify().write(err);
-            this.emit('end');
         }))
         .pipe($.postcss([
             require('autoprefixer-core')({
@@ -63,14 +80,14 @@ gulp.task('styles', function() {
 });
 
 gulp.task('sprites', function() {
-    return gulp.src('app/assets/images/*.png')
-        .pipe(sprite({
+    return sprity.src({
+            src: 'app/assets/images/*.png',
             name: 'sprite',
             style: '_sprite.scss',
             cssPath: '../assets/images/sprite/',
-            processor: 'scss'
-        }))
-        .pipe($.if('*.png', gulp.dest('app/assets/images/sprite'), gulp.dest('app/styles/helper')));
+            processor: 'sass', // make sure you have installed sprity-sass
+        })
+        .pipe($.if('*.png', gulp.dest('app/assets/images/sprite'), gulp.dest('app/styles/helper')))
 });
 
 gulp.task('extras', function() {
@@ -91,7 +108,8 @@ gulp.task('serve', ['styles', 'sprites', 'scripts'], function() {
         server: {
             baseDir: ['.tmp', 'app'],
             routes: {}
-        }
+        },
+        injectChanges: true
     });
 
     // watch for changes
@@ -114,7 +132,7 @@ gulp.task('serve:dist', ['build'], function() {
     });
 });
 
-gulp.task('build', ['html:build', 'assets:build', 'images:build', 'extras', 'sprite:build'], function() {
+gulp.task('build', ['html:build', 'images:build', 'extras', 'sprite:build'], function() {
     return gulp.src('dist/**/*').pipe($.size({
         title: 'build',
         gzip: true
@@ -139,20 +157,20 @@ gulp.task('html:build', ['styles:build', 'scripts:build'], function() {
 });
 
 gulp.task('assets:build', function() {
-    return gulp.src(['app/assets/**/*', "!app/assets/images/**/*"])
+    return gulp.src(['app/assets/**/*', "!app/assets/images/**/*.{png,jpg,gif}"])
         .pipe(gulp.dest('dist/assets'));
 });
 
-gulp.task('images:build', function() {
-    return gulp.src('app/assets/images/**/*')
+gulp.task('images:build', ['assets:build'], function() {
+    return gulp.src(['app/assets/images/**/*.{png,jpg,gif}'])
         .pipe($.cache($.imagemin({
             progressive: true,
             interlaced: true,
             // don't remove IDs from SVGs, they are often used
             // as hooks for embedding and styling
-            svgoPlugins: [{
-                cleanupIDs: false
-            }]
+            //svgoPlugins: [{
+            //    cleanupIDs: false
+            //}]
         })))
         .pipe(gulp.dest('dist/assets/images'));
 });

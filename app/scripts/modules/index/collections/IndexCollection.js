@@ -1,8 +1,9 @@
 'use strict';
 
 export default Backbone.Collection.extend({
-  url: 'google.com',
+  url: './assets/data/application.json',
   parse(response) {
+
     return response;
   }
 });
