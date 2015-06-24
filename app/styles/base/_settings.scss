@@ -78,7 +78,7 @@ $include-html-global-classes: $include-html-classes;
 
 // $include-html-grid-classes: $include-html-classes;
  // $include-xl-html-grid-classes: false;
- $row-width: rem-calc(1170);
+ $row-width: rem-calc(1000);
  $total-columns: 12;
  $column-gutter: rem-calc(30);
 
@@ -259,8 +259,8 @@ $small-font-color: scale-color($header-font-color, $lightness: 35%);
  $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
 
 // We use these to style the <hr> element
- $hr-border-width: 3px;
- $hr-border-style: dotted;
+ $hr-border-width: 1px;
+ $hr-border-style: solid;
  $hr-border-color: $white;
  $hr-margin: rem-calc(20);
 
