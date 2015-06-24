@@ -52,6 +52,7 @@ gulp.task('styles', function() {
                 gutil.log(gutil.colors.red('Error in file: ', err.fileName))
                 gutil.log(gutil.colors.red('Error at line: ', err.lineNumber))
                 gutil.log(gutil.colors.red('################################################################################'))
+                gutil.beep()
 
 
                 notify().write('Error Message: ' + err.message);
