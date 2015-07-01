@@ -3,9 +3,8 @@
 import AttendanceGraphView from './AttendanceGraphView';
 
 export default  Marionette.CollectionView.extend({
-    get className() {
-        'view-content';
-    },
+    tagName: 'ul',
+    className: 'small-block-grid-4',
     childView: AttendanceGraphView,
     initialize(options) {
     }
