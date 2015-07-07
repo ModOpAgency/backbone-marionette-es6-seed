@@ -71,3 +71,8 @@ When adding dependencies to a project with npm
     --save [ save as a runtime dependency | jquery, d3]
 
     --save-dev [ save as development dependency | mocha, gulp[tasks] ]
+
+##Good Reads
+Synchronous tasks/dependencies
+  *[Gulp and Syncing One](https://cameronspear.com/blog/handling-sync-tasks-with-gulp-js/)
+  *[Gulp and Syncing Two](http://schickling.me/synchronous-tasks-gulp/)
