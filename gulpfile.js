@@ -17,7 +17,10 @@ var gulp = require('gulp'),
 
 gulp.task('scripts', function(callback) {
 
-    var webpackCompiler = webpack(require('./webpack.config.js'));
+    var webpackConfig = require('./webpack.config');
+    webpackConfig.devtool = '#source-map';
+    webpackConfig.watch = true;
+    var webpackCompiler = webpack(webpackConfig);
 
     webpackCompiler.watch({
         aggregateTimeout: 300,
@@ -44,7 +47,7 @@ gulp.task('scripts', function(callback) {
 gulp.task('styles', function() {
     return gulp.src(['app/styles/main.scss', 'app/styles/vendor.scss'])
 
-        .pipe($.plumber({
+    .pipe($.plumber({
             errorHandler: function(err) {
                 console.log(err)
                 gutil.log(gutil.colors.red('################################################################################'))
@@ -182,11 +185,15 @@ gulp.task('styles:build', ['styles'], function() {
 
 gulp.task('scripts:build', function(callback) {
     // modify some webpack config options
-    var webpackConfig = Object.create(require('./webpack.config.js'));
+    var webpackConfig = require('./webpack.config');
 
     // custom config for production
     webpackConfig.output.path = __dirname + '/dist/scripts/';
-    webpackConfig.devTool = 'cheap-source-map';
+    webpackConfig.plugins = webpackConfig.plugins.concat([new webpack.optimize.UglifyJsPlugin({
+        compress: {
+            warnings: false
+        }
+    })]);
 
     // create a single instance of the compiler to allow caching
     var webpackCompiler = webpack(webpackConfig);
