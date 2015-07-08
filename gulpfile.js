@@ -2,6 +2,7 @@
 'use strict';
 // generated on 2015-05-11 using generator-gulp-webapp 0.3.0
 var gulp = require('gulp'),
+    gulpsync = require('gulp-sync')(gulp),
     gutil = require('gulp-util'),
     $ = require('gulp-load-plugins')(),
     notify = require('gulp-notify'),
@@ -49,14 +50,13 @@ gulp.task('styles', function() {
 
     .pipe($.plumber({
             errorHandler: function(err) {
-                console.log(err)
-                gutil.log(gutil.colors.red('################################################################################'))
-                gutil.log(gutil.colors.red('Error Message: ', err.message))
-                gutil.log(gutil.colors.red('Error in file: ', err.fileName))
-                gutil.log(gutil.colors.red('Error at line: ', err.lineNumber))
-                gutil.log(gutil.colors.red('################################################################################'))
-                gutil.beep()
-
+                console.log(err);
+                gutil.log(gutil.colors.red('################################################################################'));
+                gutil.log(gutil.colors.red('Error Message: ', err.message));
+                gutil.log(gutil.colors.red('Error in file: ', err.fileName));
+                gutil.log(gutil.colors.red('Error at line: ', err.lineNumber));
+                gutil.log(gutil.colors.red('################################################################################'));
+                gutil.beep();
 
 
                 notify().write('Error Message: ' + err.message);
@@ -84,13 +84,13 @@ gulp.task('styles', function() {
 
 gulp.task('sprites', function() {
     return sprity.src({
-            src: 'app/assets/images/*.png',
+            src: 'app/assets/images/*.{png,jpg}',
             name: 'sprite',
             style: '_sprite.scss',
             cssPath: '../assets/images/sprite/',
             processor: 'sass', // make sure you have installed sprity-sass
         })
-        .pipe($.if('*.png', gulp.dest('app/assets/images/sprite'), gulp.dest('app/styles/helper')))
+        .pipe($.if('*.png', gulp.dest('app/assets/images/sprite'), gulp.dest('app/styles/helper')));
 });
 
 gulp.task('extras', function() {
@@ -112,7 +112,13 @@ gulp.task('serve', ['styles', 'sprites', 'scripts'], function() {
             baseDir: ['.tmp', 'app'],
             routes: {}
         },
+        ghostMode: {
+            clicks: false,
+            forms: false,
+            scroll: false
+        },
         injectChanges: true
+
     });
 
     // watch for changes
@@ -135,11 +141,12 @@ gulp.task('serve:dist', ['build'], function() {
     });
 });
 
-gulp.task('build', ['html:build', 'images:build', 'extras', 'sprite:build'], function() {
-    return gulp.src('dist/**/*').pipe($.size({
+gulp.task('build', gulpsync.sync(['html:build', 'extras', 'copy:assets', 'images:build']), function() {
+    var result = gulp.src('dist/**/*').pipe($.size({
         title: 'build',
         gzip: true
     }));
+    return result;
 });
 
 gulp.task('html:build', ['styles:build', 'scripts:build'], function() {
@@ -159,25 +166,10 @@ gulp.task('html:build', ['styles:build', 'scripts:build'], function() {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('assets:build', function() {
-    return gulp.src(['app/assets/**/*', "!app/assets/images/**/*.{png,jpg,gif}"])
-        .pipe(gulp.dest('dist/assets'));
+gulp.task('copy:assets', function() {
+    return gulp.src('app/assets/**/*')
+        .pipe(gulp.dest('dist/assets/'));
 });
-
-gulp.task('images:build', ['assets:build'], function() {
-    return gulp.src(['app/assets/images/**/*.{png,jpg,gif}'])
-        .pipe($.cache($.imagemin({
-            progressive: true,
-            interlaced: true,
-            // don't remove IDs from SVGs, they are often used
-            // as hooks for embedding and styling
-            //svgoPlugins: [{
-            //    cleanupIDs: false
-            //}]
-        })))
-        .pipe(gulp.dest('dist/assets/images'));
-});
-
 gulp.task('styles:build', ['styles'], function() {
     return gulp.src('.tmp/styles/*')
         .pipe(gulp.dest('dist/styles'));
@@ -207,11 +199,19 @@ gulp.task('scripts:build', function(callback) {
     });
 });
 
-gulp.task('sprite:build', ['sprites'], function() {
+gulp.task('sprite:build', ['sprites:build'], function() {
     return gulp.src('app/assets/images/sprite/*')
         .pipe(gulp.dest('dist/assets/images/sprite'));
 });
 
+gulp.task('images:build', function() {
+    return gulp.src(['app/assets/images/**/*.{png,jpg,gif}'])
+        .pipe($.cache($.imagemin({
+            progressive: true,
+            interlaced: true
+        })))
+        .pipe(gulp.dest('dist/assets/images'));
+});
 gulp.task('default', ['clean'], function() {
     gulp.start('build');
 });
