@@ -1,3 +1,5 @@
+'use strict';
+
 export default function(options) {
 
     var EnvConfig = null,

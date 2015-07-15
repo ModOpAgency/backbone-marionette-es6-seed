@@ -3,7 +3,7 @@
 import AttendanceModel from './models/AttendanceModel';
 import AttendanceCollection from './collections/AttendanceCollection';
 import AttendanceGraphCollectionView from './views/AttendanceGraphCollectionView';
-import AttendanceLayoutView from './views/AttendanceLayoutView.js';
+import AttendanceLayoutView from './views/AttendanceLayoutView';
 
 export default Marionette.Controller.extend({
     initialize(options) {
