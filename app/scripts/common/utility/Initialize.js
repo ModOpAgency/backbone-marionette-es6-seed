@@ -1,5 +1,5 @@
 export default function(options) {
- 
+
     var EnvConfig = null,
 
         LocConfig = {
@@ -44,10 +44,11 @@ export default function(options) {
         EnvConfig = ProdConfig;
     }
 
-    FB.init({   
-        appId   : EnvConfig.facebookId,
-        xfbml   : true,
-        version  : 'v2.3'  
-    });
-
+    window.fbAsyncInit = function() {
+       FB.init({
+           appId   : EnvConfig.facebookId,
+           xfbml   : true,
+           version  : 'v2.3'  
+       });
+     };
 }
