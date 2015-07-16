@@ -75,4 +75,9 @@ When adding dependencies to a project with npm
 ##Good Reads
 Synchronous tasks/dependencies
   *[Gulp and Syncing One](https://cameronspear.com/blog/handling-sync-tasks-with-gulp-js/)
+
   *[Gulp and Syncing Two](http://schickling.me/synchronous-tasks-gulp/)
+
+## ATOM Package List
+
+[installed packages](https://discuss.atom.io/t/installed-packages-list-into-single-file/12227)
