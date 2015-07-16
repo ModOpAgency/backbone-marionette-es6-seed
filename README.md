@@ -74,6 +74,7 @@ When adding dependencies to a project with npm
 
 ##Good Reads
 Synchronous tasks/dependencies
+
   *[Gulp and Syncing One](https://cameronspear.com/blog/handling-sync-tasks-with-gulp-js/)
 
   *[Gulp and Syncing Two](http://schickling.me/synchronous-tasks-gulp/)
