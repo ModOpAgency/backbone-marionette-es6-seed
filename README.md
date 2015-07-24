@@ -6,6 +6,7 @@ the following are required to install when using the Vagrant environment:
 
 * [Vagrant](https://www.vagrantup.com/) | development environment
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads) | development vm
+* [GIT](https://msysgit.github.io/) | Windows Git and Bash Profile
 
 The following are overall project requirements that are automatically installed with Vagrant.
 
