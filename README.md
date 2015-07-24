@@ -3,10 +3,12 @@ Backbone Marionette project seed application with ES6 modules powered by Gulp.
 
 ##Requirements
 the following are required to install when using the Vagrant environment: 
+
 * [Vagrant](https://www.vagrantup.com/) | development environment
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads) | development vm
 
 The following are overall project requirements that are automatically installed with Vagrant.
+
 * [node.js](https://nodejs.org/) | server | npm dep | use node rather then iojs due to [sprity](https://www.npmjs.com/package/sprity)
 * [gulp.js](http://gulpjs.com/) | build tool
 * [foundation 5.5.1](http://foundation.zurb.com/) | front-end framework
