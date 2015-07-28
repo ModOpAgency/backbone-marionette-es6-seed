@@ -3,7 +3,7 @@
 import AttendanceModel from './models/AttendanceModel';
 import AttendanceCollection from './collections/AttendanceCollection';
 import AttendanceGraphCollectionView from './views/AttendanceGraphCollectionView';
-import AttendanceLayoutView from './views/AttendanceLayoutView.js';
+import AttendanceLayoutView from './views/AttendanceLayoutView';
 
 export default Marionette.Controller.extend({
     initialize(options) {
@@ -18,9 +18,9 @@ export default Marionette.Controller.extend({
                 this.attendanceGraphCollectionView = new AttendanceGraphCollectionView({
                     collection: this.collection
                 });
-
                 this.options.container.show(this.attendanceLayoutView);
                 this.attendanceLayoutView.getRegion('AttendanceGraph').show(this.attendanceGraphCollectionView);
+                this.attendanceChannel.trigger('radioExample');
             }.bind(this));
         },
 });
