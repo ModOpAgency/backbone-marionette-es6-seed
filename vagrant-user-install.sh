@@ -5,8 +5,7 @@ cd ~/
 
 # Installing nvm
 echo "Installing NVM"
-cp -R /vagrant/.nvm /home/vagrant/.nvm
-echo ". ~/.nvm/nvm.sh" >> .bashrc
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | bash
 
 # This enables NVM without a logout/login
 echo "Configuring NVM"
