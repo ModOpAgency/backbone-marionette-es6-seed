@@ -31,4 +31,4 @@ echo "##########################################################################
 
 # install base requirements
 cd /vagrant
-npm install --loglevel info
+npm install
