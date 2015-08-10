@@ -8,14 +8,13 @@ echo "Installing NVM"
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | bash
 
 # This enables NVM without a logout/login
-echo "Configuring NVM"
 export NVM_DIR="/home/vagrant/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Install a node and alias
-echo "Installing Node 0.12.4"
-nvm install v0.12.4
-nvm alias default 0.12.4
+echo "Installing Node 0.12.7"
+nvm install v0.12.7
+nvm alias default 0.12.7
 
 echo "Installing Node Gulp"
 npm install -g gulp@3.9.0
@@ -32,4 +31,4 @@ echo "##########################################################################
 
 # install base requirements
 cd /vagrant
-npm install
+npm install --loglevel info

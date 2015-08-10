@@ -48,14 +48,23 @@ Vagrant.configure(2) do |config|
   #
   config.vm.provider "virtualbox" do |vb|
       vb.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
-  #   # Display the VirtualBox GUI when booting the machine
-  #   vb.gui = true
-  #
-  #   # Customize the amount of memory on the VM:
-    vb.memory = "4096"
+      #   Display the VirtualBox GUI when booting the machine
+      #   vb.gui = true
 
-    # number of processors
-    vb.cpus = 8
+      # Give VM access to all cpu cores on the host
+      cpus = case RbConfig::CONFIG['host_os']
+          when /darwin/ then `sysctl -n hw.ncpu`.to_i
+          when /linux/ then `nproc`.to_i
+          else 2
+      end
+
+      # Customize memory in MB
+      vb.customize ['modifyvm', :id, '--memory', 4096]
+      vb.customize ['modifyvm', :id, '--cpus', cpus]
+
+      # Fix for slow external network connections
+      vb.customize ['modifyvm', :id, '--natdnshostresolver1', 'on']
+      vb.customize ['modifyvm', :id, '--natdnsproxy1', 'on']
   end
   #
   # View the documentation for the provider you are using for more
