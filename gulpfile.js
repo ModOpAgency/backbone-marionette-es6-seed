@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     gulpsync = require('gulp-sync')(gulp),
     gutil = require('gulp-util'),
     $ = require('gulp-load-plugins')(),
-    notify = require('gulp-notify'),
+    // notify = require('gulp-notify'),
     gutil = require('gulp-util'),
     through = require('through'),
     sprity = require('sprity'),
@@ -27,17 +27,17 @@ gulp.task('scripts', function(callback) {
         aggregateTimeout: 300,
         poll: 300
     }, function(err, stats) {
-        notify().write(stats.toString({
-            hash: false,
-            assets: false,
-            chunks: false,
-            chunkModules: false,
-            modules: false,
-            cached: false,
-            reasons: false,
-            source: false,
-            chunkOrigins: false
-        }));
+        // notify().write(stats.toString({
+        //     hash: false,
+        //     assets: false,
+        //     chunks: false,
+        //     chunkModules: false,
+        //     modules: false,
+        //     cached: false,
+        //     reasons: false,
+        //     source: false,
+        //     chunkOrigins: false
+        // }));
         reload({
             stream: false
         });
@@ -59,7 +59,7 @@ gulp.task('styles', function() {
                 gutil.beep();
 
 
-                notify().write('Error Message: ' + err.message);
+                // notify().write('Error Message: ' + err.message);
                 // this.emit("error", new Error("Something happend: Error message!"))
                 this.emit('end');
             }

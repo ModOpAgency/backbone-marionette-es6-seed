@@ -19,10 +19,12 @@ app.attendance = new AttendanceModule({
     container: app.layout.mainContent
 });
 
-var envModel = new EvnModel({url: './assets/data/application.json'});
+var envModel = new EvnModel({
+    url: './assets/data/application.json'
+});
 
-    envModel.fetch().then(function(){
-        envModel = envModel;
-        Initialize(envModel.attributes);
-    });
+envModel.fetch().then(function() {
+    envModel = envModel;
+    Initialize(envModel.attributes);
+});
 app.start();
