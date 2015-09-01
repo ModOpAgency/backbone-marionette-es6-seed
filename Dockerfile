@@ -1,5 +1,7 @@
 FROM ubuntu:14.04
 MAINTAINER Roy Martin 'roy@roy-martin.com'
+LABEL description='Node.JS 0.12.7 base image built on Ubuntu. \
+Includes NVM, Gulp and setup with a node user for security.'
 ENV REFRESHED_AT 2015-09-01
 RUN apt-get update
 RUN apt-get install -y \
