@@ -33,21 +33,22 @@ EXPOSE 9000
 
 # NVM confiration data from https://github.com/iliyan-trifonov/docker-node-nvm
 #add user node and use it to install node/npm and run the app
-RUN useradd --home /home/node -m -U -s /bin/bash node
-
 #allow some limited sudo commands for user `node`
-RUN echo 'Defaults !requiretty' >> /etc/sudoers; \
+RUN useradd --home /home/node -m -U -s /bin/bash node \
+    && ln -s /home/node/.nvm/versions/node/v0.12.7/bin/node /usr/bin/node \
+    && ln -s /home/node/.nvm/versions/node/v0.12.7/bin/npm /usr/bin/npm \
+    && echo 'Defaults !requiretty' >> /etc/sudoers; \
     echo 'node ALL= NOPASSWD: /usr/sbin/dpkg-reconfigure -f noninteractive tzdata, /usr/bin/tee /etc/timezone, /bin/chown -R node\:node /myapp' >> /etc/sudoers;
 
 #run all of the following commands as user node from now on
 USER node
 
-RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | bash
-
 #install the specified node version and set it as the default one, install the global npm packages
-RUN . ~/.nvm/nvm.sh \
+RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | bash \
+    && . ~/.nvm/nvm.sh \
     && nvm install $NODE_VERSION \
     && nvm alias default $NODE_VERSION \
-    && npm install -g gulp --user "node"
+    && npm install -g gulp --user 'node'
 
-CMD ['/bin/bash']
+# Set the default run option to npm install and gulp serve
+CMD /bin/bash -c "npm install --loglevel=info && ./node_modules/gulp/bin/gulp.js serve"
