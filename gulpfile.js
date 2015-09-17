@@ -8,7 +8,6 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     gutil = require('gulp-util'),
     through = require('through'),
-    sprity = require('sprity'),
     webpack = require('webpack'),
     source = require('vinyl-source-stream'),
     browserSync = require('browser-sync'),
@@ -71,7 +70,7 @@ gulp.task('styles', function() {
             includePaths: ['.'],
         }))
         .pipe($.postcss([
-            require('autoprefixer-core')({
+            require('autoprefixer')({
                 browsers: ['last 1 version']
             })
         ]))
@@ -80,17 +79,6 @@ gulp.task('styles', function() {
         .pipe(reload({
             stream: true
         }));
-});
-
-gulp.task('sprites', function() {
-    return sprity.src({
-            src: 'app/assets/images/*.{png,jpg}',
-            name: 'sprite',
-            style: '_sprite.scss',
-            cssPath: '../assets/images/sprite/',
-            processor: 'sass', // make sure you have installed sprity-sass
-        })
-        .pipe($.if('*.png', gulp.dest('app/assets/images/sprite'), gulp.dest('app/styles/helper')));
 });
 
 gulp.task('extras', function() {
@@ -104,7 +92,7 @@ gulp.task('extras', function() {
 
 gulp.task('clean', require('del').bind(null, ['.tmp', 'dist']));
 
-gulp.task('serve', ['styles', 'sprites', 'scripts'], function() {
+gulp.task('serve', ['styles','scripts'], function() {
     browserSync({
         notify: false,
         port: 9000,
@@ -199,10 +187,6 @@ gulp.task('scripts:build', function(callback) {
     });
 });
 
-gulp.task('sprite:build', ['sprites:build'], function() {
-    return gulp.src('app/assets/images/sprite/*')
-        .pipe(gulp.dest('dist/assets/images/sprite'));
-});
 
 gulp.task('images:build', function() {
     return gulp.src(['app/assets/images/**/*.{png,jpg,gif}'])

@@ -11,9 +11,9 @@ export NVM_DIR="/home/vagrant/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Install a node and alias
-echo "Installing Node 0.12.7"
-nvm install v0.12.7
-nvm alias default 0.12.7
+echo "Installing Node 4.0.0"
+nvm install v4.0.0
+nvm alias default 4.0.0
 
 echo "Installing Node Gulp"
 npm install -g gulp@3.9.0
