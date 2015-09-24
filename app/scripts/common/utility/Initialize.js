@@ -1,7 +1,16 @@
 'use strict';
 
-export default function(options) {
-
+export default function (options) {
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
     var EnvConfig = null,
 
         LocConfig = {
@@ -45,12 +54,12 @@ export default function(options) {
     } else {
         EnvConfig = ProdConfig;
     }
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId   : EnvConfig.facebookId,
+            xfbml: true,
+            version: 'v2.4'
+        });
+    };
 
-    window.fbAsyncInit = function() {
-       FB.init({
-           appId   : EnvConfig.facebookId,
-           xfbml   : true,
-           version  : 'v2.3'  
-       });
-     };
 }

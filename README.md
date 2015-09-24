@@ -71,3 +71,15 @@ When adding dependencies to a project with npm
     --save [ save as a runtime dependency | jquery, d3]
 
     --save-dev [ save as development dependency | mocha, gulp[tasks] ]
+
+##NPM SHRINKWRAP
+
+Boilerplate now comes with an npm-shrinkwrap.json file instead of setting a hard dependency in the package.json by removing the charet'^'.  Please read more about it here [https://docs.npmjs.com/cli/shrinkwrap](npm shrinkwrap).  When adding a new npm dependency you will need to do the following:
+
+    cd /vagrant
+
+    rm npm-shrinkwrap.json
+
+    npm install <dependency> --save | -dev
+
+    npm shrinkwrap
