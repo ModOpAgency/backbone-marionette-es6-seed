@@ -2,7 +2,7 @@
 Backbone Marionette project seed application with ES6 modules powered by Gulp.
 
 ##Requirements
-the following are required to install when using the Vagrant environment: 
+the following are required to install when using the Vagrant environment:
 
 * [Vagrant](https://www.vagrantup.com/) | development environment
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads) | development vm
@@ -78,13 +78,14 @@ When adding dependencies to a project with npm
 
     --save-dev [ save as development dependency | mocha, gulp[tasks] ]
 
-##Good Reads
-Synchronous tasks/dependencies
+##NPM SHRINKWRAP
 
-  * [Gulp and Syncing One](https://cameronspear.com/blog/handling-sync-tasks-with-gulp-js/)
+Boilerplate now comes with an npm-shrinkwrap.json file instead of setting a hard dependency in the package.json by removing the charet'^'.  Please read more about it here [https://docs.npmjs.com/cli/shrinkwrap](npm shrinkwrap).  When adding a new npm dependency you will need to do the following:
 
-  * [Gulp and Syncing Two](http://schickling.me/synchronous-tasks-gulp/)
+    cd /vagrant
 
-## ATOM Package List
+    rm npm-shrinkwrap.json
 
-[installed packages](https://discuss.atom.io/t/installed-packages-list-into-single-file/12227)
+    npm install <dependency> --save | -dev
+
+    npm shrinkwrap

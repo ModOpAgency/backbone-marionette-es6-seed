@@ -10,6 +10,7 @@
     "backbone.radio": "0.9.0",
     "backbone.touch": "^0.4.2",
     "foundation-sites": "5.5.2",
+    "i18next-client": "^1.10.2",
     "jquery": "2.1.3",
     "jquery-hammerjs": "^2.0.0",
     "jquery-touchswipe": "^1.6.7",
