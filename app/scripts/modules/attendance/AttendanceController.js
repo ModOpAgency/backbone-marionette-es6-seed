@@ -1,9 +1,9 @@
 'use strict';
 
-import AttendanceModel from './models/AttendanceModel';
-import AttendanceCollection from './collections/AttendanceCollection';
-import AttendanceGraphCollectionView from './views/AttendanceGraphCollectionView';
-import AttendanceLayoutView from './views/AttendanceLayoutView';
+import AttendanceModel from 'modules/attendance/models/AttendanceModel';
+import AttendanceCollection from 'modules/attendance/collections/AttendanceCollection';
+import AttendanceGraphCollectionView from 'modules/attendance/views/AttendanceGraphCollectionView';
+import AttendanceLayoutView from 'modules/attendance/views/AttendanceLayoutView';
 
 export default Marionette.Controller.extend({
     initialize(options) {

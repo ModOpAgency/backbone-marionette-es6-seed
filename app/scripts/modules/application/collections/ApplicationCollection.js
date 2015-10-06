@@ -1,7 +1,7 @@
 'use strict';
 
 export default Backbone.Collection.extend({
-  url: 'google.com',
+  url: '/',
   parse(response) {
     return response;
   }

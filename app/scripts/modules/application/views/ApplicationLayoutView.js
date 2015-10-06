@@ -1,6 +1,6 @@
 'use strict';
 
-import template from '../templates/applicationLayoutView.hbs';
+import template from 'modules/application/templates/applicationLayoutView.hbs';
 
 export default Marionette.LayoutView.extend({
   get el() {

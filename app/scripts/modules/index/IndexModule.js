@@ -1,7 +1,7 @@
 'use strict';
 
-import IndexRouter from './IndexRouter';
-import IndexController from './IndexController';
+import IndexRouter from 'modules/index/IndexRouter';
+import IndexController from 'modules/index/IndexController';
 
 export default Marionette.Application.extend({
     initialize(options) {

@@ -1,7 +1,7 @@
 'use strict';
 
-import AttendanceRouter from './AttendanceRouter';
-import AttendanceController from './AttendanceController';
+import AttendanceRouter from 'modules/attendance/AttendanceRouter';
+import AttendanceController from 'modules/attendance/AttendanceController';
 
 export default Marionette.Application.extend({
     initialize(options) {

@@ -1,6 +1,6 @@
 'use strict';
 
-import AttendanceGraphView from './AttendanceGraphView';
+import AttendanceGraphView from 'modules/attendance/views/AttendanceGraphView';
 
 export default  Marionette.CollectionView.extend({
     tagName: 'ul',

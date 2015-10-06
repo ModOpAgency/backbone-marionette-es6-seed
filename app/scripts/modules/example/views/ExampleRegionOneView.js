@@ -1,6 +1,6 @@
 'use strict';
 
-import template from '../templates/ExampleRegionOneView.hbs';
+import template from 'modules/example/templates/ExampleRegionOneView.hbs';
 import slick from 'slick-carousel';
 
 export default Marionette.ItemView.extend({
