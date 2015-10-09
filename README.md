@@ -63,11 +63,6 @@ build and test - Builds and serves the build from the dist folder
 run
 
     gulp serve:dist
-
-strip out unused css from the vendor folder
-run
-
-    gulp styles:vendor
 -------------------------------
 ##IMPORTANT
 
@@ -78,7 +73,7 @@ When adding dependencies to a project with npm
 
     --save-dev [ save as development dependency | mocha, gulp[tasks] ]
 
-##NPM SHRINKWRAP
+##NPM SHRINKWRAP | WIP
 
 Boilerplate now comes with an npm-shrinkwrap.json file instead of setting a hard dependency in the package.json by removing the charet'^'.  Please read more about it here [https://docs.npmjs.com/cli/shrinkwrap](npm shrinkwrap).  When adding a new npm dependency you will need to do the following:
 
@@ -89,3 +84,5 @@ Boilerplate now comes with an npm-shrinkwrap.json file instead of setting a hard
     npm install <dependency> --save | -dev
 
     npm shrinkwrap
+
+The above code has yet to be finalized so if you run into issues please drop a message hipchat => ModOp Tech
