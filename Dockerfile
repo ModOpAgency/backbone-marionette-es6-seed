@@ -4,7 +4,7 @@ LABEL description='Node.JS 0.12.7 base image built on Ubuntu. \
 Includes NVM, Gulp and setup with a node user for security. \
 Also sets up a symbolic link to node_modules and includes default packages \
 for backbone-marionette-es6.'
-ENV REFRESHED_AT 2015-09-06
+ENV REFRESHED_AT 2015-10-06
 
 # Install update Ubuntu package manager, install required packages and clean up
 RUN apt-get update \
@@ -27,7 +27,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Setup Node version and NVM directory
-ENV NODE_VERSION 0.12.7
+ENV NODE_VERSION 4.0.0
 ENV NVM_DIR /home/node/.nvm
 
 # NVM confiration data from https://github.com/iliyan-trifonov/docker-node-nvm
@@ -35,8 +35,8 @@ ENV NVM_DIR /home/node/.nvm
 # allow some limited sudo commands for user `node`
 RUN mkdir -p /data \
     && useradd --home /home/node -m -U -s /bin/bash node \
-    && ln -s /home/node/.nvm/versions/node/v0.12.7/bin/node /usr/bin/node \
-    && ln -s /home/node/.nvm/versions/node/v0.12.7/bin/npm /usr/bin/npm \
+    && ln -s /home/node/.nvm/versions/node/v4.0.0/bin/node /usr/bin/node \
+    && ln -s /home/node/.nvm/versions/node/v4.0.0/bin/npm /usr/bin/npm \
     && chown -R node:staff /data \
     && echo 'Defaults !requiretty' >> /etc/sudoers; \
     echo 'node ALL= NOPASSWD: /usr/sbin/dpkg-reconfigure -f noninteractive tzdata, \
@@ -59,18 +59,16 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | b
 # 1. Build package includes all the default packages needed to run boilerplate code without compile on fly
 # 2. Support for Windows machines to ensure long filename are supported with NPM 2
 # 3. Speed up overall NPM commands by ensuring the data is saved directly to container to speed up file read/write.
-RUN mkdir -p /home/node/node_modules \
-    && ln -s /home/node/node_modules /data/node_modules \
-    && cd ~ \
-    && curl -O https://bitbucket.org/modusoperandi/backbone-marionette-es6-seed/raw/HEAD/package.json \
-    && npm install --loglevel=info \
-    && rm package.json
+# RUN mkdir -p /home/node/node_modules \
+#     && ln -s /home/node/node_modules /data/node_modules \
+#     && cd ~ \
+#     && curl -O https://bitbucket.org/modusoperandi/backbone-marionette-es6-seed/raw/HEAD/package.json \
+#     && npm install --loglevel=info \
+#     && rm package.json
 
 # Setup default port for Node process
 EXPOSE 9000
 
 # Set the default run option to npm install and gulp serve
-CMD /bin/bash -c "rm -rf node_modules \
-    && ln -s /home/node/node_modules /data/node_modules  \
-    && npm install --loglevel=info \
+CMD /bin/bash -c "npm install --loglevel=info \
     && ./node_modules/gulp/bin/gulp.js serve"

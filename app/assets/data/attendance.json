@@ -1,1 +1,56 @@
-{"locations":[{"country":"Greater China","countrySVG":"http://placehold.it/350x150","attendees":232},{"country":"Asia Pacific (APAC)","countrySVG":"http://placehold.it/350x150","attendees":625},{"country":"Central & Eastern Europe (CEE)","countrySVG":"http://placehold.it/350x150","attendees":494},{"country":"Western Europe (WE)","countrySVG":"http://placehold.it/350x150","attendees":1436},{"country":"United Kingdom","countrySVG":"http://placehold.it/350x150","attendees":497},{"country":"United States","countrySVG":"http://placehold.it/350x150","attendees":2963},{"country":"Japan","countrySVG":"http://placehold.it/350x150","attendees":341},{"country":"Middle East & Africa (MEA)","countrySVG":"http://placehold.it/350x150","attendees":376},{"country":"Germany","countrySVG":"http://placehold.it/350x150","attendees":376},{"country":"Canada","countrySVG":"http://placehold.it/350x150","attendees":332},{"country":"Latin America (LATAM)","countrySVG":"http://placehold.it/350x150","attendees":616},{"country":"France","countrySVG":"http://placehold.it/350x150","attendees":181},{"country":"India","countrySVG":"http://placehold.it/350x150","attendees":107}],"totalAttendees":8576}
+{
+    "locations": [{
+        "country": "Greater China",
+        "countrySVG": "http://placehold.it/350x150",
+        "attendees": 232
+    }, {
+        "country": "Asia Pacific (APAC)",
+        "countrySVG": "http://placehold.it/350x150",
+        "attendees": 625
+    }, {
+        "country": "Central & Eastern Europe (CEE)",
+        "countrySVG": "http://placehold.it/350x150",
+        "attendees": 494
+    }, {
+        "country": "Western Europe (WE)",
+        "countrySVG": "http://placehold.it/350x150",
+        "attendees": 1436
+    }, {
+        "country": "United Kingdom",
+        "countrySVG": "http://placehold.it/350x150",
+        "attendees": 497
+    }, {
+        "country": "United States",
+        "countrySVG": "http://placehold.it/350x150",
+        "attendees": 2963
+    }, {
+        "country": "Japan",
+        "countrySVG": "http://placehold.it/350x150",
+        "attendees": 341
+    }, {
+        "country": "Middle East & Africa (MEA)",
+        "countrySVG": "http://placehold.it/350x150",
+        "attendees": 376
+    }, {
+        "country": "Germany",
+        "countrySVG": "http://placehold.it/350x150",
+        "attendees": 376
+    }, {
+        "country": "Canada",
+        "countrySVG": "http://placehold.it/350x150",
+        "attendees": 332
+    }, {
+        "country": "Latin America (LATAM)",
+        "countrySVG": "http://placehold.it/350x150",
+        "attendees": 616
+    }, {
+        "country": "France",
+        "countrySVG": "http://placehold.it/350x150",
+        "attendees": 181
+    }, {
+        "country": "India",
+        "countrySVG": "http://placehold.it/350x150",
+        "attendees": 107
+    }],
+    "totalAttendees": 8576
+}
