@@ -4,6 +4,7 @@
 var gulp = require('gulp'),
     gulpsync = require('gulp-sync')(gulp),
     gutil = require('gulp-util'),
+    spritesmith = require('gulp.spritesmith'),
     $ = require('gulp-load-plugins')(),
     notify = require('gulp-notify'),
     gutil = require('gulp-util'),
@@ -128,7 +129,7 @@ gulp.task('serve:dist', ['build'], function() {
     });
 });
 
-gulp.task('build', gulpsync.sync(['html:build', 'extras', 'copy:assets', 'images:build']), function() {
+gulp.task('build', gulpsync.sync(['html:build', 'extras','copy:assets', 'images:build']), function() {
     var result = gulp.src('dist/**/*').pipe($.size({
         title: 'build',
         gzip: true
@@ -157,6 +158,7 @@ gulp.task('copy:assets', function() {
     return gulp.src('app/assets/**/*')
         .pipe(gulp.dest('dist/assets/'));
 });
+
 gulp.task('styles:build', ['styles'], function() {
     return gulp.src('.tmp/styles/*')
         .pipe(gulp.dest('dist/styles'));
@@ -186,7 +188,6 @@ gulp.task('scripts:build', function(callback) {
     });
 });
 
-
 gulp.task('images:build', function() {
     return gulp.src(['app/assets/images/**/*.{png,jpg,gif}'])
         .pipe($.cache($.imagemin({
@@ -195,6 +196,18 @@ gulp.task('images:build', function() {
         })))
         .pipe(gulp.dest('dist/assets/images'));
 });
+
 gulp.task('default', ['clean'], function() {
     gulp.start('build');
+});
+
+/* dev only task */
+gulp.task('sprite:dev', function () {
+  return gulp.src('app/assets/images/source/*.{png,jpg}').pipe(spritesmith({
+    imgName: 'sprite.png',
+    cssName: '_sprite.scss',
+    imgPath: '../assets/images/sprite/sprite.png',
+    padding: 10
+  }))
+   .pipe($.if('*.png', gulp.dest('app/assets/images/sprite'), gulp.dest('app/styles/helper')));
 });

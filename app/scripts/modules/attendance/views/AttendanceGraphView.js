@@ -1,6 +1,6 @@
 'use strict';
 
-import template from '../templates/AttendanceGraphView.hbs';
+import template from 'modules/attendance/templates/AttendanceGraphView.hbs';
 
 export default Marionette.ItemView.extend({
     tagName: 'li',

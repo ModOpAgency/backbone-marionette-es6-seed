@@ -1,7 +1,7 @@
 'use strict';
 
 import foundation from 'foundation-sites/js/foundation';
-import ApplicationLayoutView from './views/ApplicationLayoutView';
+import ApplicationLayoutView from 'modules/application/views/ApplicationLayoutView';
 // app bootstrap
 export default Marionette.Application.extend({
   initialize() {

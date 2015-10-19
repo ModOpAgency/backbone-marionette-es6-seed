@@ -1,6 +1,6 @@
 'use strict';
 
-import template from '../templates/ExampleLayoutView.hbs';
+import template from 'modules/example/templates/ExampleLayoutView.hbs';
 import slick from 'slick-carousel';
 
 export default Marionette.LayoutView.extend({

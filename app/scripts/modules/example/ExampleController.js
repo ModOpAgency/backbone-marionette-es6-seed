@@ -1,9 +1,9 @@
 'use strict';
 
-import ExampleCollection from './collections/ExampleCollection.js';
-import ExampleRegionOneView from './views/ExampleRegionOneView';
-import ExampleRegionTwoView from './views/ExampleRegionTwoView';
-import ExampleLayoutView from './views/ExampleLayoutView';
+import ExampleCollection from 'modules/example/collections/ExampleCollection.js';
+import ExampleRegionOneView from 'modules/example/views/ExampleRegionOneView';
+import ExampleRegionTwoView from 'modules/example/views/ExampleRegionTwoView';
+import ExampleLayoutView from 'modules/example/views/ExampleLayoutView';
 
 export default Marionette.Controller.extend({
     initialize(options) {
