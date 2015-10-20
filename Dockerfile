@@ -1,10 +1,10 @@
 FROM ubuntu:15.04
 MAINTAINER Roy Martin 'roy@roy-martin.com'
-LABEL description='Node.JS 0.12.7 base image built on Ubuntu. \
+LABEL description='Node.JS 4.0.0 base image built on Ubuntu. \
 Includes NVM, Gulp and setup with a node user for security. \
 Also sets up a symbolic link to node_modules and includes default packages \
 for backbone-marionette-es6.'
-ENV REFRESHED_AT 2015-10-06
+ENV REFRESHED_AT 2015-10-20
 
 # Install update Ubuntu package manager, install required packages and clean up
 RUN apt-get update \
@@ -52,7 +52,7 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | b
     && . ~/.nvm/nvm.sh \
     && nvm install $NODE_VERSION \
     && nvm alias default $NODE_VERSION \
-    && npm install -g gulp --user 'node'
+    && npm install -g gulp webpack-dev-server --user 'node'
 
 # Setup a symbolic link for the node_modules folder and install backbone-marionette-es6 default modules.
 # This ensures the following:
@@ -70,5 +70,4 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | b
 EXPOSE 9000
 
 # Set the default run option to npm install and gulp serve
-CMD /bin/bash -c "npm install --loglevel=info \
-    && ./node_modules/gulp/bin/gulp.js serve"
+# CMD /bin/bash -c "npm install --loglevel=info && npm start"
