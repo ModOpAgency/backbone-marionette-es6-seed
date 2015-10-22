@@ -1,0 +1,937 @@
+[{
+    "id": 1,
+    "title": "Zone 1",
+    "areas": [{
+        "id": 10,
+        "title": "Area 1 (zone 1)",
+        "coordinate": {
+            "mapOrigin": {
+                "x": 0,
+                "y": 0
+            },
+            "zone": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "navPoints": [{
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "areaId": 10
+        }, {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "areaId": 10
+        }],
+        "hotspots": [{
+            "id": 100,
+            "icon": "./assets/images/zone1/hotspots/icon1.png",
+            "title": "Hotspot - One",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "type": {
+                "gallery": [{
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    }, {
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    }
+
+                ],
+                "video": "youtube",
+                "audio:": "soundcloud",
+                "feature": "hello feature"
+            }
+        }, {
+            "id": 101,
+            "icon": "./assets/images/zone1/hotspots/icon2.png",
+            "title": "Hotspot - Two",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "type": {
+                "gallery": [{
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    }, {
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    }
+
+                ],
+                "video": "youtube",
+                "audio:": "soundcloud",
+                "feature": "hello feature"
+            }
+        }, {
+            "id": 102,
+            "icon": "./assets/images/zone1/hotspots/icon3.png",
+            "title": "Hotspot - Three",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "type": {
+                "gallery": [{
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    }, {
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    }
+
+                ],
+                "video": "youtube",
+                "audio:": "soundcloud",
+                "feature": "hello feature"
+            }
+        }, {
+            "id": 103,
+            "icon": "./assets/images/zone1/hotspots/icon4.png",
+            "title": "Hotspot - Four",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "type": {
+                "gallery": [{
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    }, {
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    }
+
+                ],
+                "video": "youtube",
+                "audio:": "soundcloud",
+                "feature": "hello feature"
+            }
+        }, {
+            "id": 104,
+            "icon": "./assets/images/zone1/hotspots/icon5.png",
+            "title": "Hotspot - Five",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "type": {
+                "gallery": [{
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    }, {
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    }
+
+                ],
+                "video": "youtube",
+                "audio:": "soundcloud",
+                "feature": "hello feature"
+            }
+        }]
+    }, {
+        "id": 20,
+        "title": "Area 2",
+        "coordinate": {
+            "mapOrigin": {
+                "x": 0,
+                "y": 0
+            },
+            "zone": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "navPoints": [{
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "areaId": 20
+        }, {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "areaId": 20
+        }],
+        "hotspots": [{
+            "id": 200,
+            "icon": "./assets/images/zone1/hotspots/icon1.png",
+            "title": "Hotspot - One",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "type": {
+                "gallery": [
+                    {
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    },
+                    {
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    }
+
+                ],
+                "video": "youtube",
+                "audio:": "soundcloud" ,
+                "feature": "hello feature"
+            }
+        }, {
+            "id": 201,
+            "icon": "./assets/images/zone1/hotspots/icon1.png",
+            "title": "Hotspot - One",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "type": {
+                "gallery": [
+                    {
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    },
+                    {
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    }
+
+                ],
+                "video": "youtube",
+                "audio:": "soundcloud" ,
+                "feature": "hello feature"
+            }
+        }, {
+            "id": 203,
+            "icon": "./assets/images/zone1/hotspots/icon1.png",
+            "title": "Hotspot - One",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "type": {
+                "gallery": [
+                    {
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    },
+                    {
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    }
+
+                ],
+                "video": "youtube",
+                "audio:": "soundcloud" ,
+                "feature": "hello feature"
+            }
+        }, {
+            "id": 204,
+            "icon": "./assets/images/zone1/hotspots/icon1.png",
+            "title": "Hotspot - One",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "type": {
+                "gallery": [
+                    {
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    },
+                    {
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    }
+
+                ],
+                "video": "youtube",
+                "audio:": "soundcloud" ,
+                "feature": "hello feature"
+            }
+        }]
+    }, {
+        "id": 30,
+        "title": "Area 3",
+        "coordinate": {
+            "mapOrigin": {
+                "x": 0,
+                "y": 0
+            },
+            "zone": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "navPoints": [{
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "areaId": 30
+        }, {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "areaId": 30
+        }],
+        "hotspots": [{
+            "id": 300,
+            "icon": "./assets/images/zone1/hotspots/icon1.png",
+            "title": "Hotspot - One",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "type": {
+                "gallery": [
+                    {
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    },
+                    {
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    }
+
+                ],
+                "video": "youtube",
+                "audio:": "soundcloud" ,
+                "feature": "hello feature"
+            }
+        }, {
+            "id": 301,
+            "icon": "./assets/images/zone1/hotspots/icon1.png",
+            "title": "Hotspot - One",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "type": {
+                "gallery": [
+                    {
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    },
+                    {
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    }
+
+                ],
+                "video": "youtube",
+                "audio:": "soundcloud" ,
+                "feature": "hello feature"
+            }
+        }, {
+            "id": 303,
+            "icon": "./assets/images/zone1/hotspots/icon1.png",
+            "title": "Hotspot - One",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "type": {
+                "gallery": [
+                    {
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    },
+                    {
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    }
+
+                ],
+                "video": "youtube",
+                "audio:": "soundcloud" ,
+                "feature": "hello feature"
+            }
+        }, {
+            "id": 304,
+            "icon": "./assets/images/zone1/hotspots/icon1.png",
+            "title": "Hotspot - One",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "type": {
+                "gallery": [
+                    {
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    },
+                    {
+                        "url": "./assets/images/zone1/hs1.jpg"
+                    }
+
+                ],
+                "video": "youtube",
+                "audio:": "soundcloud" ,
+                "feature": "hello feature"
+            }
+        }]
+    }, {
+        "id": 40,
+        "title": "Area 4",
+        "coordinate": {
+            "mapOrigin": {
+                "x": 0,
+                "y": 0
+            },
+            "zone": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "navPoints": [{
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "areaId": 40
+        }, {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "areaId": 40
+        }],
+        "hotspots": [{
+            "id": 400,
+            "icon": "./assets/images/zone1/hotspots/icon1.png",
+            "title": "Hotspot - One",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "images": [{
+                "url": "./assets/images/zone1/hs1.jpg"
+            }]
+        }, {
+            "id": 401,
+            "icon": "./assets/images/zone1/hotspots/icon1.png",
+            "title": "Hotspot - One",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "images": [{
+                "url": "./assets/images/zone1/hs1.jpg"
+            }]
+        }, {
+            "id": 403,
+            "icon": "./assets/images/zone1/hotspots/icon1.png",
+            "title": "Hotspot - One",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "images": [{
+                "url": "./assets/images/zone1/hs1.jpg"
+            }]
+        }, {
+            "id": 404,
+            "icon": "./assets/images/zone1/hotspots/icon1.png",
+            "title": "Hotspot - One",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "images": [{
+                "url": "./assets/images/zone1/hs1.jpg"
+            }]
+        }]
+    }, {
+        "id": 50,
+        "title": "Area 5",
+        "coordinate": {
+            "mapOrigin": {
+                "x": 0,
+                "y": 0
+            },
+            "zone": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "navPoints": [{
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "areaId": 50
+        }, {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "areaId": 50
+        }],
+        "hotspots": [{
+            "id": 500,
+            "icon": "./assets/images/zone1/hotspots/icon1.png",
+            "title": "Hotspot - One",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "images": [{
+                "url": "./assets/images/zone1/hs1.jpg"
+            }]
+        }, {
+            "id": 501,
+            "icon": "./assets/images/zone1/hotspots/icon1.png",
+            "title": "Hotspot - One",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "images": [{
+                "url": "./assets/images/zone1/hs1.jpg"
+            }]
+        }, {
+            "id": 503,
+            "icon": "./assets/images/zone1/hotspots/icon1.png",
+            "title": "Hotspot - One",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "images": [{
+                "url": "./assets/images/zone1/hs1.jpg"
+            }]
+        }, {
+            "id": 504,
+            "icon": "./assets/images/zone1/hotspots/icon1.png",
+            "title": "Hotspot - One",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "images": [{
+                "url": "./assets/images/zone1/hs1.jpg"
+            }]
+        }]
+    }]
+}, {
+    "id": 2,
+    "title": "Zone 2",
+    "areas": [{
+        "id": 20,
+        "title": "Area 1 (zone 2)",
+        "coordinate": {
+            "mapOrigin": {
+                "x": 0,
+                "y": 0
+            },
+            "zone": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "navPoints": [{
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "areaId": 20
+        }, {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "areaId": 20
+        }],
+        "hotspots": [{
+            "id": 200,
+            "icon": "./assets/images/zone1/hotspots/icon8.png",
+            "title": "Hotspot - Eight",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "images": [{
+                "url": "./assets/images/zone1/hs8.jpg"
+            }]
+        }, {
+            "id": 201,
+            "icon": "./assets/images/zone1/hotspots/icon9.png",
+            "title": "Hotspot - Nine",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "images": [{
+                "url": "./assets/images/zone1/hs5.jpg"
+            }]
+        }, {
+            "id": 202,
+            "icon": "./assets/images/zone1/hotspots/icon10.png",
+            "title": "Hotspot - Ten",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "images": [{
+                "url": "./assets/images/zone1/hs10.jpg"
+            }]
+        }, {
+            "id": 203,
+            "icon": "./assets/images/zone1/hotspots/icon11.png",
+            "title": "Hotspot - Eleven",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "images": [{
+                "url": "./assets/images/zone1/hs11.jpg"
+            }]
+        }, {
+            "id": 204,
+            "icon": "./assets/images/zone1/hotspots/icon12.png",
+            "title": "Hotspot - Twelve",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "images": [{
+                "url": "./assets/images/zone1/hs12.jpg"
+            }]
+        }]
+    }, {
+        "id": 30,
+        "title": "Area 1 (zone 2)",
+        "coordinate": {
+            "mapOrigin": {
+                "x": 0,
+                "y": 0
+            },
+            "zone": {
+                "x": 0,
+                "y": 0
+            }
+        },
+        "navPoints": [{
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "areaId": 30
+        }, {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "areaId": 30
+        }],
+        "hotspots": [{
+            "id": 300,
+            "icon": "./assets/images/zone1/hotspots/icon8.png",
+            "title": "Hotspot - Eight",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "images": [{
+                "url": "./assets/images/zone1/hs8.jpg"
+            }]
+        }, {
+            "id": 301,
+            "icon": "./assets/images/zone1/hotspots/icon9.png",
+            "title": "Hotspot - Nine",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "images": [{
+                "url": "./assets/images/zone1/hs5.jpg"
+            }]
+        }, {
+            "id": 302,
+            "icon": "./assets/images/zone1/hotspots/icon10.png",
+            "title": "Hotspot - Ten",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "images": [{
+                "url": "./assets/images/zone1/hs10.jpg"
+            }]
+        }, {
+            "id": 303,
+            "icon": "./assets/images/zone1/hotspots/icon11.png",
+            "title": "Hotspot - Eleven",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "images": [{
+                "url": "./assets/images/zone1/hs11.jpg"
+            }]
+        }, {
+            "id": 304,
+            "icon": "./assets/images/zone1/hotspots/icon12.png",
+            "title": "Hotspot - Twelve",
+            "coordinate": {
+                "geo": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                "mapOrigin": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "shortCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis.",
+            "longCopy": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultrices, leo eget fermentum lobortis, odio mauris ultricies ipsum, a mattis ex ante vel odio. Mauris eleifend, arcu at gravida lacinia, diam ante varius est, ut dignissim magna lacus a lorem. Donec dictum ligula augue, in feugiat tortor dignissim eget.",
+            "images": [{
+                "url": "./assets/images/zone1/hs12.jpg"
+            }]
+        }]
+    }]
+}]

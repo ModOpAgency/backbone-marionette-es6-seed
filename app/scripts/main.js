@@ -1,30 +1,31 @@
 'use strict';
 
-import Initialize from './common/utility/Initialize';
-import EvnModel from './modules/application/models/EnvModel';
-import Application from './modules/application/ApplicationModule';
-import IndexModule from './modules/index/IndexModule';
-import ExampleModule from './modules/example/ExampleModule';
-import AttendanceModule from './modules/attendance/AttendanceModule';
+// load styles
+import vendorStyle from '../styles/vendor.scss';
+import mainStyle from '../styles/main.scss';
 
-let app = new Application();
+import foundation from 'foundation-sites/js/foundation';
+import slick from 'slick-carousel/slick/slick.min';
+import Initialize from 'common/utility/Initialize';
+import i18n, {
+    detectLanguage
+}
+from 'i18next-client';
+import EnvModel from 'modules/application/models/EnvModel';
+import Application from 'modules/application/ApplicationModule';
+import IndexModule from 'modules/index/IndexModule';
 
-app.index = new IndexModule({
-    container: app.layout.mainContent
-});
-app.example = new ExampleModule({
-    container: app.layout.mainContent
-});
-app.attendance = new AttendanceModule({
-    container: app.layout.mainContent
-});
-
-var envModel = new EvnModel({
-    url: './assets/data/application.json'
+var envModel = new EnvModel({
+    url: './assets/data/environment.json'
 });
 
 envModel.fetch().then(function() {
     envModel = envModel;
     Initialize(envModel.attributes);
+
+    let app = new Application();
+    app.index = new IndexModule({
+        container: app.layout.mainContent
+    });
+    app.start();
 });
-app.start();

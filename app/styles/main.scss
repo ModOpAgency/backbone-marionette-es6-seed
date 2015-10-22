@@ -14,7 +14,7 @@
 @import "base/variable";
 @import "base/settings";
 @import "node_modules/foundation-sites/scss/foundation/components/global";
-@import "helper/class";
+
 @import "helper/function";
 @import "helper/mixin";
 
@@ -36,3 +36,7 @@
 /// ----------------------------------------------------------------------------------------
 ////
 @import "views/index";
+
+.row {
+    background: $white;
+}

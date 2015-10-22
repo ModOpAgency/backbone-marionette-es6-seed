@@ -1,14 +1,30 @@
-var webpack = require('webpack');
-var path = require('path');
+'use strict';
+var webpack = require('webpack'),
+    path = require('path'),
+    ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
-    entry : './app/scripts/main.js',
+    context: path.resolve('app/scripts'),
+    entry: ['webpack/hot/dev-server', './main.js'],
     output: {
-        path: __dirname + '/.tmp/scripts/',
-        filename: 'main.js'
+        path: path.resolve('dist/assets/'),
+        publicPath: '/assets/',
+        filename: 'scripts/main.js'
     },
     resolve: {
         root: path.resolve('./app/scripts'),
         extensions: ['', '.js']
+    },
+    devtool: '#eval',
+    devServer: {
+        contentBase: 'app',
+        host: '0.0.0.0',
+        port: '9000',
+        hot: true,
+        inline: true
+    },
+    watchOptions: {
+        aggregateTimeout: 300,
+        poll: 1000
     },
     externals: {
         'modernizr': 'Modernizr'
@@ -27,12 +43,17 @@ module.exports = {
         }, {
             test: /\.hbs$/,
             loader: 'handlebars-loader',
-            query:{
-                helperDirs : [__dirname + '/app/scripts/common/helpers']
+            query: {
+                helperDirs: [__dirname + '/app/scripts/common/helpers']
             }
         }, {
             test: /\.json$/,
             loader: 'json-loader'
+        },
+        {
+            test: /\.scss$/,
+            exclude: /node_modules/,
+            loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
         }],
         noParse: [
             /[\/\\]node_modules[\/\\]d3[\/\\]d3\.js$/
@@ -46,7 +67,11 @@ module.exports = {
             'Backbone': 'backbone',
             'Marionette': 'backbone.marionette',
             'Radio': 'backbone.radio',
-            'foundation' : 'foundation-sites/js/foundation'
-        })
+            'foundation': 'foundation-sites/js/foundation',
+            'THREE': 'three',
+            'gsap': 'gsap'
+        }),
+        new webpack.HotModuleReplacementPlugin(),
+        new ExtractTextPlugin('styles/main.css')
     ]
 };

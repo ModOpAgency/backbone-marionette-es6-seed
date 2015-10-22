@@ -1,7 +1,7 @@
 'use strict';
 
-import IndexCollection from './collections/IndexCollection';
-import IndexLayoutView from './views/IndexLayoutView';
+import IndexCollection from 'modules/index/collections/IndexCollection';
+import IndexLayoutView from 'modules/index/views/IndexLayoutView';
 
 export default Marionette.Controller.extend({
     initialize(options) {
