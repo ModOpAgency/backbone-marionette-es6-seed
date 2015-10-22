@@ -9,6 +9,6 @@ export default Marionette.LayoutView.extend({
 
   onShow() {
     $('body').addClass('index');
-
+    $(document).foundation();
   }
 });
