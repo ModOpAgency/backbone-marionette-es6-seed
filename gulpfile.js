@@ -4,6 +4,7 @@
 var gulp = require('gulp'),
     gulpsync = require('gulp-sync')(gulp),
     gutil = require('gulp-util'),
+     spritesmith = require('gulp.spritesmith'),
     $ = require('gulp-load-plugins')(),
     gutil = require('gulp-util'),
     through = require('through'),
@@ -61,4 +62,15 @@ gulp.task('images:build', function() {
 });
 gulp.task('default', ['clean'], function() {
     gulp.start('build');
+});
+
+/* dev only task */
+gulp.task('sprite', function () {
+  return gulp.src('app/assets/images/source/*.{png,jpg}').pipe(spritesmith({
+    imgName: 'sprite.png',
+    cssName: '_sprite.scss',
+    imgPath: '../assets/images/sprite/sprite.png',
+    padding: 10
+  }))
+   .pipe($.if('*.png', gulp.dest('app/assets/images/sprite'), gulp.dest('app/styles/helper')));
 });

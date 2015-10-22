@@ -4,3 +4,39 @@
     ----------------------------------------------------------------------------------------
     @description - modular re-usable classes for the win.
 */
+@import "sprite";
+
+.row {
+    background-color: $white;
+}
+
+.icon-facebook {
+  @include sprite($facebook);
+}
+
+.icon-instagram {
+  @include sprite($instagram);
+}
+
+.icon-pinterest {
+  @include sprite($pinterest);
+}
+
+.icon-tumblr {
+  @include sprite($tumblr);
+}
+
+.icon-twitter {
+  @include sprite($twitter);
+}
+
+.icon-vimeo{
+  @include sprite($vimeo);
+}
+.icon-youtube {
+  @include sprite($youtube);
+}
+
+body {
+    background: url('assets/images/twitter.png');
+}
