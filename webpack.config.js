@@ -54,6 +54,10 @@ module.exports = {
             test: /\.scss$/,
             exclude: /node_modules/,
             loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
+        },{
+            test: /\.(png|jpg)$/,
+            exclude: /node_modules/,
+            loader: 'url-loader?limit=1000'
         }],
         noParse: [
             /[\/\\]node_modules[\/\\]d3[\/\\]d3\.js$/
