@@ -70,4 +70,5 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | b
 EXPOSE 9000
 
 # Set the default run option to npm install and gulp serve
-# CMD /bin/bash -c "npm install --loglevel=info && npm start"
+CMD /bin/bash -c "npm install --loglevel=info \
+    && npm start"
