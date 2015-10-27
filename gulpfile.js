@@ -4,7 +4,6 @@
 var gulp = require('gulp'),
     gulpsync = require('gulp-sync')(gulp),
     gutil = require('gulp-util'),
-     spritesmith = require('gulp.spritesmith'),
     $ = require('gulp-load-plugins')(),
     gutil = require('gulp-util'),
     through = require('through'),

@@ -14,7 +14,7 @@ module.exports = {
         root: path.resolve('./app/scripts'),
         extensions: ['', '.js']
     },
-    devtool: '#eval',
+    devtool: 'source-map',
     devServer: {
         contentBase: 'app',
         host: '0.0.0.0',
@@ -53,7 +53,7 @@ module.exports = {
         {
             test: /\.scss$/,
             exclude: /node_modules/,
-            loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
+            loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap!!autoprefixer-loader!sass-loader?outputStyle=expanded&sourceMap=true&sourceMapContents=true')
         },{
             test: /\.(png|jpg)$/,
             exclude: /node_modules/,
