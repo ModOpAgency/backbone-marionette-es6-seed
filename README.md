@@ -11,14 +11,16 @@
 
 ##Getting started
 --------------------------------------------------------------------------------
-###Step 1: Install the latest version of [Vagrant](https://www.vagrantup.com/) and [Docker Toolbox](https://www.docker.com/docker-toolbox). Windows users will also need to install [Git](https://git-scm.com/download/win).
+###Step 1: Install the latest version of [Docker Toolbox](https://www.docker.com/docker-toolbox). 
 
 ###Step 2: In your CLI/terminal go to the root of your project to start the web pack server by executing this command  
 
     ./dockerRun.sh
 
+
+
 ##Shutting Down the VM:
-    
+--------------------------------------------------------------------------------
 ###Step 1: Open Kitematic make sure the home tab is selected, if so you should see your currently running container on the left side of the window. Hover over your container then click (X) Remove button and that's it. 
 
 
