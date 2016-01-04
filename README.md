@@ -20,7 +20,7 @@ The following are overall project requirements that are automatically installed 
 Check out the boilerplate's "develop" branch, and install the latest version of [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/wiki/Downloads). Windows users will also need to install [Git](https://git-scm.com/download/win).
 
 ### Step 2:
-Run Vagrant up within terminal (Mac) or Gitbash(Windows - **Note this must be started using Administrator privileges**). To do this cd into your project directory and run the vagrant up command. This will take a while for your first install as it will download Ubuntu, provision the server and install the project dependencies.
+Run Vagrant up within terminal (Mac) or Gitbash(Windows - **Note this must be started using Administrator privileges**). To do this cd into your project directory and run the vagrant up command.  This will source machine info using the Vagrantfile included in the directory.  This will take a while for your first install as it will download Ubuntu, provision the server and install the project dependencies.
 
     cd /your-vagrant-project
     vagrant up
