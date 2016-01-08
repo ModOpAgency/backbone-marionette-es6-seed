@@ -31,18 +31,18 @@ gulp.task('build', gulpsync.sync(['html:build', 'extras', 'copy:assets', 'images
 });
 
 gulp.task('html:build', function() {
-    var assets = $.useref.assets({
-        searchPath: ['app', '.', 'dist']
-    });
+    // var assets = $.useref.assets({
+    //     searchPath: ['app', '.', 'dist']
+    // });
 
     return gulp.src('app/*.html')
-        .pipe(assets)
-        .pipe(assets.restore())
-        .pipe($.useref())
-        .pipe($.if('*.html', $.minifyHtml({
-            conditionals: true,
-            loose: true
-        })))
+        // .pipe(assets)
+        // .pipe(assets.restore())
+        // .pipe($.useref())
+        // .pipe($.if('*.html', $.minifyHtml({
+        //     conditionals: true,
+        //     loose: true
+        // })))
         .pipe(gulp.dest('dist'));
 });
 

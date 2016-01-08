@@ -53,11 +53,11 @@ module.exports = {
         {
             test: /\.scss$/,
             exclude: /node_modules/,
-            loader: 'style-loader!css-loader?sourceMap!!autoprefixer-loader!sass-loader?outputStyle=expanded&sourceMap=true&sourceMapContents=true'
+            loader: 'style-loader!css-loader?sourceMap!autoprefixer-loader!sass-loader?outputStyle=expanded&sourceMap=true&sourceMapContents=true'
         },{
-            test: /\.(png|jpg)$/,
+            test: /\.(png|jpg|svg|jpeg)$/,
             exclude: /node_modules/,
-            loader: 'url-loader?limit=1000'
+            loader: 'file-loader?name=[path][name].[ext]'
         }],
         noParse: [
             /[\/\\]node_modules[\/\\]d3[\/\\]d3\.js$/
@@ -71,10 +71,8 @@ module.exports = {
             'Backbone': 'backbone',
             'Marionette': 'backbone.marionette',
             'Radio': 'backbone.radio',
-            'foundation': 'foundation-sites/js/foundation',
-            'THREE': 'three',
-            'gsap': 'gsap'
+            'foundation': 'foundation-sites/js/foundation'
         }),
-        new webpack.HotModuleReplacementPlugin(),
+        new webpack.HotModuleReplacementPlugin()
     ]
 };

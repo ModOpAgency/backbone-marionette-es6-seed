@@ -26,7 +26,7 @@ module.exports = {
     module: {
         loaders: [{
             test: /\.js$/,
-            exclude: /(node_modules, common)/,
+            exclude: /(node_modules|vendor)/,
             loader: 'babel'
         }, {
             test: /\.hbs$/,
@@ -41,11 +41,11 @@ module.exports = {
         {
             test: /\.scss$/,
             exclude: /node_modules/,
-            loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap!!autoprefixer-loader!sass-loader?outputStyle=expanded&sourceMap=true&sourceMapContents=true')
+            loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap!autoprefixer-loader!sass-loader?outputStyle=expanded&sourceMap=true&sourceMapContents=true')
         },{
-            test: /\.(png|jpg|svg)$/,
+            test: /\.(png|jpg|svg|jpeg)$/,
             exclude: /node_modules/,
-            loader: 'url-loader?limit=1000'
+            loader: 'file-loader?name=[path][name].[ext]'
         }],
         noParse: [
             /[\/\\]node_modules[\/\\]d3[\/\\]d3\.js$/
