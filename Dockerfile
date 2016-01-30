@@ -1,6 +1,6 @@
 FROM ubuntu:15.04
 MAINTAINER Roy Martin 'roy@roy-martin.com'
-LABEL description='Node.JS 4.0.0 base image built on Ubuntu. \
+LABEL description='Node.JS 5.4.1 base image built on Ubuntu. \
 Includes NVM, Gulp and setup with a node user for security. \
 Also sets up a symbolic link to node_modules and includes default packages \
 for backbone-marionette-es6.'
@@ -27,7 +27,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Setup Node version and NVM directory
-ENV NODE_VERSION 4.0.0
+ENV NODE_VERSION 5.4.1
 ENV NVM_DIR /home/node/.nvm
 
 # NVM confiration data from https://github.com/iliyan-trifonov/docker-node-nvm
@@ -35,8 +35,8 @@ ENV NVM_DIR /home/node/.nvm
 # allow some limited sudo commands for user `node`
 RUN mkdir -p /data \
     && useradd --home /home/node -m -U -s /bin/bash node \
-    && ln -s /home/node/.nvm/versions/node/v4.0.0/bin/node /usr/bin/node \
-    && ln -s /home/node/.nvm/versions/node/v4.0.0/bin/npm /usr/bin/npm \
+    && ln -s /home/node/.nvm/versions/node/v5.4.1/bin/node /usr/bin/node \
+    && ln -s /home/node/.nvm/versions/node/v5.4.1/bin/npm /usr/bin/npm \
     && chown -R node:staff /data \
     && echo 'Defaults !requiretty' >> /etc/sudoers; \
     echo 'node ALL= NOPASSWD: /usr/sbin/dpkg-reconfigure -f noninteractive tzdata, \
@@ -52,7 +52,7 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.25.4/install.sh | b
     && . ~/.nvm/nvm.sh \
     && nvm install $NODE_VERSION \
     && nvm alias default $NODE_VERSION \
-    && npm install -g gulp webpack-dev-server --user 'node'
+    && npm install -g gulp webpack webpack-dev-server httpster --user 'node'
 
 # Setup a symbolic link for the node_modules folder and install backbone-marionette-es6 default modules.
 # This ensures the following:
