@@ -10,7 +10,7 @@ linter-javac
 linter-jshint
 linter-jsonlint
 linter-php
-linter-scss-lint
+linter-sass-lint
 merge-conflicts
 node-debugger
 project-manager
