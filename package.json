@@ -53,6 +53,7 @@
     "gulp.spritesmith": "^6.0.0",
     "handlebars": "^4.0.2",
     "handlebars-loader": "^1.1.4",
+    "httpster": "^1.0.3",
     "imports-loader": "^0.6.4",
     "json-loader": "^0.5.3",
     "layout": "^2.2.0",
