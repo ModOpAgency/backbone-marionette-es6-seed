@@ -53,10 +53,10 @@ gulp.task('copy:assets', function() {
 
 gulp.task('images:build', function() {
     return gulp.src(['app/assets/images/**/*.{png,jpg,gif}'])
-        .pipe($.cache($.imagemin({
+        .pipe($.imagemin({
             progressive: true,
             interlaced: true
-        })))
+        }))
         .pipe(gulp.dest('dist/assets/images'));
 });
 gulp.task('default', ['clean'], function() {

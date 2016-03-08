@@ -24,6 +24,7 @@
     "jquery-touchswipe": "^1.6.7",
     "lodash": "3.10.1",
     "newrelic": "1.24.1",
+    "prettydiff": "^1.16.28",
     "slick-carousel": "1.5.9"
   },
   "devDependencies": {

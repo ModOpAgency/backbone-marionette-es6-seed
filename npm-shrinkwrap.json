@@ -542,9 +542,9 @@
       }
     },
     "caniuse-db": {
-      "version": "1.0.30000420",
+      "version": "1.0.30000421",
       "from": "caniuse-db@>=1.0.30000409 <2.0.0",
-      "resolved": "https://registry.npmjs.org/caniuse-db/-/caniuse-db-1.0.30000420.tgz"
+      "resolved": "https://registry.npmjs.org/caniuse-db/-/caniuse-db-1.0.30000421.tgz"
     },
     "capture-stack-trace": {
       "version": "1.0.0",
@@ -974,9 +974,9 @@
       }
     },
     "csso": {
-      "version": "1.4.4",
-      "from": "csso@>=1.4.2 <1.5.0",
-      "resolved": "https://registry.npmjs.org/csso/-/csso-1.4.4.tgz"
+      "version": "1.6.4",
+      "from": "csso@>=1.6.4 <1.7.0",
+      "resolved": "https://registry.npmjs.org/csso/-/csso-1.6.4.tgz"
     },
     "ctype": {
       "version": "0.5.3",
@@ -3049,11 +3049,6 @@
       "from": "inflight@>=1.0.4 <2.0.0",
       "resolved": "https://registry.npmjs.org/inflight/-/inflight-1.0.4.tgz"
     },
-    "inherit": {
-      "version": "2.2.3",
-      "from": "inherit@>=2.2.2 <3.0.0",
-      "resolved": "https://registry.npmjs.org/inherit/-/inherit-2.2.3.tgz"
-    },
     "inherits": {
       "version": "2.0.1",
       "from": "inherits@>=2.0.0 <3.0.0",
@@ -3397,9 +3392,9 @@
       "resolved": "https://registry.npmjs.org/js-tokens/-/js-tokens-1.0.1.tgz"
     },
     "js-yaml": {
-      "version": "3.4.6",
-      "from": "js-yaml@>=3.4.3 <3.5.0",
-      "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-3.4.6.tgz",
+      "version": "3.5.3",
+      "from": "js-yaml@>=3.5.3 <3.6.0",
+      "resolved": "https://registry.npmjs.org/js-yaml/-/js-yaml-3.5.3.tgz",
       "dependencies": {
         "esprima": {
           "version": "2.7.2",
@@ -4969,6 +4964,11 @@
       "from": "pretty-hrtime@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/pretty-hrtime/-/pretty-hrtime-1.0.2.tgz"
     },
+    "prettydiff": {
+      "version": "1.16.28",
+      "from": "prettydiff@>=1.16.28 <2.0.0",
+      "resolved": "https://registry.npmjs.org/prettydiff/-/prettydiff-1.16.28.tgz"
+    },
     "private": {
       "version": "0.1.6",
       "from": "private@>=0.1.6 <0.2.0",
@@ -5405,7 +5405,7 @@
     },
     "sax": {
       "version": "1.1.6",
-      "from": "sax@>=1.1.4 <1.2.0",
+      "from": "sax@>=1.1.6 <1.2.0",
       "resolved": "https://registry.npmjs.org/sax/-/sax-1.1.6.tgz"
     },
     "seek-bzip": {
@@ -5896,9 +5896,9 @@
       "resolved": "https://registry.npmjs.org/supports-color/-/supports-color-3.1.2.tgz"
     },
     "svgo": {
-      "version": "0.6.1",
+      "version": "0.6.2",
       "from": "svgo@>=0.6.1 <0.7.0",
-      "resolved": "https://registry.npmjs.org/svgo/-/svgo-0.6.1.tgz"
+      "resolved": "https://registry.npmjs.org/svgo/-/svgo-0.6.2.tgz"
     },
     "tapable": {
       "version": "0.1.10",
