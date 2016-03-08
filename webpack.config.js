@@ -36,11 +36,6 @@ module.exports = {
         tls: 'empty'
     },
     module: {
-        preLoaders: [{
-            test: /\.scss$/,
-            exclude: /node_modules/,
-            loader: 'sasslint'
-        }],
         loaders: [{
             test: /\.js$/,
             exclude: /node_modules/,
@@ -66,10 +61,6 @@ module.exports = {
         noParse: [
             /[\/\\]node_modules[\/\\]d3[\/\\]d3\.js$/
         ]
-    },
-    sasslint: {
-        configFile: '.sass-lint.yml',
-         emitError: true
     },
     plugins: [
         new webpack.ProvidePlugin({
