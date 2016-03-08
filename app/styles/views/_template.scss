@@ -1,12 +1,13 @@
 ////
 /// ----------------------------------------------------------------------------------------
-/// SASS Template with foundation's media queries
+/// A SCSS Template with foundation's media queries
 /// ----------------------------------------------------------------------------------------
 /// @TODO - update template name and description
 /// @author - Modop Developer Bad Ass #1
-/// @description - what this be?
-/// @example - a code example for the documented item
-/// @see - http://sassdoc.com for documentation structure and best practices
+/// @description - What is the purpose of this file? This purpose of this file is to keep
+/// consistent format for all SASS/SCSS files used through out our stack
+/// @convention - Please follow these SASS/SCSS coding conventions > https://goo.gl/mUa746
+/// @documentation - Please follow these documentation guidelines > http://sassdoc.com
 ////
 
 
@@ -16,7 +17,6 @@
 /// ----------------------------------------------------------------------------------------
 ////
 @media #{$small-up} {
-
     .foo {
 
     }
@@ -30,7 +30,6 @@
 /// ----------------------------------------------------------------------------------------
 ////
 @media #{$small-only} {
-
     .foo {
 
     }
@@ -44,7 +43,6 @@
 /// ----------------------------------------------------------------------------------------
 ////
 @media #{$medium-up} {
-
     .foo {
 
     }
@@ -58,7 +56,6 @@
 /// ----------------------------------------------------------------------------------------
 ////
 @media #{$medium-only} {
-
     .foo {
 
     }
@@ -72,7 +69,6 @@
 /// ----------------------------------------------------------------------------------------
 ////
 @media #{$large-up} {
-
     .foo {
 
     }

@@ -1,11 +1,14 @@
 'use strict';
 
-// load styles
+// load css styles
 import vendorStyle from '../styles/vendor.scss';
 import mainStyle from '../styles/main.scss';
 
+// load third party/vendor scripts
 import foundation from 'foundation-sites/js/foundation';
 import slick from 'slick-carousel/slick/slick.min';
+
+// load initialize scripts
 import Initialize from 'common/utility/Initialize';
 import i18n, {
     detectLanguage

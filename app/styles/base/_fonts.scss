@@ -1,0 +1,21 @@
+////
+/// ----------------------------------------------------------------------------------------
+/// Web font declaration and references
+/// ----------------------------------------------------------------------------------------
+/// @author - Modop Developer Bad Ass #1
+/// @description - Fonts are declared here and the files must live here ./assets/fonts
+////
+
+
+////
+/// ----------------------------------------------------------------------------------------
+/// Slick fonts
+/// ----------------------------------------------------------------------------------------
+////
+@font-face {
+    font-family: 'slick';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../assets/fonts/slick.eot');
+    src: url('../assets/fonts/slick.eot?#iefix') format('embedded-opentype'), url('../assets/fonts/slick.woff') format('woff'), url('../assets/fonts/slick.ttf') format('truetype'), url('../assets/fonts/slick.svg#slick') format('svg');
+}

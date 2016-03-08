@@ -11,6 +11,7 @@ $icon-home: x y offset_x offset_y width height total_width total_height image_pa
 At the bottom of this section, we provide information about the spritesheet itself
 $spritesheet: width height image $spritesheet-sprites;
 */
+
 $facebook-name: 'facebook';
 $facebook-x: 0px;
 $facebook-y: 0px;
@@ -21,7 +22,7 @@ $facebook-height: 32px;
 $facebook-total-width: 116px;
 $facebook-total-height: 116px;
 $facebook-image: '../assets/images/sprite/sprite.png';
-$facebook: (0px, 0px, 0px, 0px, 32px, 32px, 116px, 116px, '../assets/images/sprite/sprite.png', 'facebook', );
+$facebook: (0px, 0px, 0px, 0px, 32px, 32px, 116px, 116px, '../assets/images/sprite/sprite.png', 'facebook',);
 $instagram-name: 'instagram';
 $instagram-x: 42px;
 $instagram-y: 0px;
@@ -32,7 +33,7 @@ $instagram-height: 32px;
 $instagram-total-width: 116px;
 $instagram-total-height: 116px;
 $instagram-image: '../assets/images/sprite/sprite.png';
-$instagram: (42px, 0px, -42px, 0px, 32px, 32px, 116px, 116px, '../assets/images/sprite/sprite.png', 'instagram', );
+$instagram: (42px, 0px, -42px, 0px, 32px, 32px, 116px, 116px, '../assets/images/sprite/sprite.png', 'instagram',);
 $pinterest-name: 'pinterest';
 $pinterest-x: 0px;
 $pinterest-y: 42px;
@@ -43,7 +44,7 @@ $pinterest-height: 32px;
 $pinterest-total-width: 116px;
 $pinterest-total-height: 116px;
 $pinterest-image: '../assets/images/sprite/sprite.png';
-$pinterest: (0px, 42px, 0px, -42px, 32px, 32px, 116px, 116px, '../assets/images/sprite/sprite.png', 'pinterest', );
+$pinterest: (0px, 42px, 0px, -42px, 32px, 32px, 116px, 116px, '../assets/images/sprite/sprite.png', 'pinterest',);
 $tumblr-name: 'tumblr';
 $tumblr-x: 42px;
 $tumblr-y: 42px;
@@ -54,7 +55,7 @@ $tumblr-height: 32px;
 $tumblr-total-width: 116px;
 $tumblr-total-height: 116px;
 $tumblr-image: '../assets/images/sprite/sprite.png';
-$tumblr: (42px, 42px, -42px, -42px, 32px, 32px, 116px, 116px, '../assets/images/sprite/sprite.png', 'tumblr', );
+$tumblr: (42px, 42px, -42px, -42px, 32px, 32px, 116px, 116px, '../assets/images/sprite/sprite.png', 'tumblr',);
 $twitter-name: 'twitter';
 $twitter-x: 84px;
 $twitter-y: 0px;
@@ -65,7 +66,7 @@ $twitter-height: 32px;
 $twitter-total-width: 116px;
 $twitter-total-height: 116px;
 $twitter-image: '../assets/images/sprite/sprite.png';
-$twitter: (84px, 0px, -84px, 0px, 32px, 32px, 116px, 116px, '../assets/images/sprite/sprite.png', 'twitter', );
+$twitter: (84px, 0px, -84px, 0px, 32px, 32px, 116px, 116px, '../assets/images/sprite/sprite.png', 'twitter',);
 $vimeo-name: 'vimeo';
 $vimeo-x: 84px;
 $vimeo-y: 42px;
@@ -76,7 +77,7 @@ $vimeo-height: 32px;
 $vimeo-total-width: 116px;
 $vimeo-total-height: 116px;
 $vimeo-image: '../assets/images/sprite/sprite.png';
-$vimeo: (84px, 42px, -84px, -42px, 32px, 32px, 116px, 116px, '../assets/images/sprite/sprite.png', 'vimeo', );
+$vimeo: (84px, 42px, -84px, -42px, 32px, 32px, 116px, 116px, '../assets/images/sprite/sprite.png', 'vimeo',);
 $youtube-name: 'youtube';
 $youtube-x: 0px;
 $youtube-y: 84px;
@@ -87,12 +88,12 @@ $youtube-height: 32px;
 $youtube-total-width: 116px;
 $youtube-total-height: 116px;
 $youtube-image: '../assets/images/sprite/sprite.png';
-$youtube: (0px, 84px, 0px, -84px, 32px, 32px, 116px, 116px, '../assets/images/sprite/sprite.png', 'youtube', );
+$youtube: (0px, 84px, 0px, -84px, 32px, 32px, 116px, 116px, '../assets/images/sprite/sprite.png', 'youtube',);
 $spritesheet-width: 116px;
 $spritesheet-height: 116px;
 $spritesheet-image: '../assets/images/sprite/sprite.png';
-$spritesheet-sprites: ($facebook, $instagram, $pinterest, $tumblr, $twitter, $vimeo, $youtube, );
-$spritesheet: (116px, 116px, '../assets/images/sprite/sprite.png', $spritesheet-sprites, );
+$spritesheet-sprites: ($facebook, $instagram, $pinterest, $tumblr, $twitter, $vimeo, $youtube,);
+$spritesheet: (116px, 116px, '../assets/images/sprite/sprite.png', $spritesheet-sprites,);
 
 /*
 The provided mixins are intended to be used with the array-like variables
@@ -106,29 +107,29 @@ The provided mixins are intended to be used with the array-like variables
 }
 */
 @mixin sprite-width($sprite) {
-  width: nth($sprite, 5);
+    width: nth($sprite, 5);
 }
 
 @mixin sprite-height($sprite) {
-  height: nth($sprite, 6);
+    height: nth($sprite, 6);
 }
 
 @mixin sprite-position($sprite) {
-  $sprite-offset-x: nth($sprite, 3);
-  $sprite-offset-y: nth($sprite, 4);
-  background-position: $sprite-offset-x  $sprite-offset-y;
+    $sprite-offset-x: nth($sprite, 3);
+    $sprite-offset-y: nth($sprite, 4);
+    background-position: $sprite-offset-x $sprite-offset-y;
 }
 
 @mixin sprite-image($sprite) {
-  $sprite-image: nth($sprite, 9);
-  background-image: url(#{$sprite-image});
+    $sprite-image: nth($sprite, 9);
+    background-image: url(#{$sprite-image});
 }
 
 @mixin sprite($sprite) {
-  @include sprite-image($sprite);
-  @include sprite-position($sprite);
-  @include sprite-width($sprite);
-  @include sprite-height($sprite);
+    @include sprite-image($sprite);
+    @include sprite-position($sprite);
+    @include sprite-width($sprite);
+    @include sprite-height($sprite);
 }
 
 /*
@@ -138,10 +139,10 @@ The `sprites` mixin generates identical output to the CSS template
 @include sprites($spritesheet-sprites);
 */
 @mixin sprites($sprites) {
-  @each $sprite in $sprites {
-    $sprite-name: nth($sprite, 10);
-    .#{$sprite-name} {
-      @include sprite($sprite);
+    @each $sprite in $sprites {
+        $sprite-name: nth($sprite, 10);
+        .#{$sprite-name} {
+            @include sprite($sprite);
+        }
     }
-  }
 }

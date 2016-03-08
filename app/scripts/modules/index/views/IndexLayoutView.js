@@ -11,13 +11,11 @@ export default Marionette.LayoutView.extend({
         behaviorClass: DestroyWarn,
         message: 'You did something wrong.'
     }],
-
-  get template() {
-    return template;
-  },
-
-  onShow() {
-    $('body').addClass('index');
-    $(document).foundation();
-  }
+    get template() {
+        return template;
+    },
+    onShow() {
+        $('body').addClass('index');
+        $(document).foundation();
+    }
 });

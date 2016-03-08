@@ -2,9 +2,11 @@
 /// ----------------------------------------------------------------------------------------
 /// Index view styles
 /// ----------------------------------------------------------------------------------------
-/// @author - Alden Brown
+/// @TODO - update template name and description
 /// @description - Index view layout and styling
 ////
+
+
 /////
 /// ----------------------------------------------------------------------------------------
 /// @description - Small/mobile viewport widths up to infinity
@@ -12,11 +14,14 @@
 ////
 @media #{$small-up} {
     .index {
-        
+        .row {
+            background-color: $white;
+        }
     }
 }
-
 /// End of Small Up
+
+
 /////
 /// ----------------------------------------------------------------------------------------
 /// @description - Small/mobile viewport widths only
@@ -24,11 +29,12 @@
 ////
 @media #{$small-only} {
     .index {
-        
+
     }
 }
-
 /// End of Small Only
+
+
 /////
 /// ----------------------------------------------------------------------------------------
 /// @description - Medium viewport widths up to infinity
@@ -36,11 +42,12 @@
 ////
 @media #{$medium-up} {
     .index {
-        
+
     }
 }
-
 /// End of Medium Up
+
+
 /////
 /// ----------------------------------------------------------------------------------------
 /// @description - Medium viewport widths only
@@ -48,11 +55,12 @@
 ////
 @media #{$medium-only} {
     .index {
-        
+
     }
 }
-
 /// End of Medium Only
+
+
 /////
 /// ----------------------------------------------------------------------------------------
 /// @description - Large viewport widths up to infinity
@@ -60,8 +68,7 @@
 ////
 @media #{$large-up} {
     .index {
-        
+
     }
 }
-
 /// End of Large Up

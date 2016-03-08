@@ -5,6 +5,8 @@
 /// @description - this file is where all custom or project specific styling will live.
 /// Ensure that you're using the overall style guide from http://www.sitepoint.com/architecture-sass-project/
 ////
+
+
 ////
 /// ----------------------------------------------------------------------------------------
 /// Base styling
@@ -14,33 +16,23 @@
 @import "base/variable";
 @import "base/settings";
 @import "node_modules/foundation-sites/scss/foundation/components/global";
-
 @import "helper/function";
 @import "helper/mixin";
 @import "helper/class";
 
-////
-/// ----------------------------------------------------------------------------------------
-/// Modules styling
-/// ----------------------------------------------------------------------------------------
-////
+
 ////
 /// ----------------------------------------------------------------------------------------
 /// Layout styling
 /// ----------------------------------------------------------------------------------------
 ////
-//@import "layout/header";
-//@import "layout/footer";
+@import "layout/header";
+@import "layout/footer";
+
+
 ////
 /// ----------------------------------------------------------------------------------------
 /// View styling
 /// ----------------------------------------------------------------------------------------
 ////
 @import "views/index";
-
-.row {
-    background: $white;
-}
-#goodName {
-    background: green;
-}
