@@ -1857,9 +1857,9 @@
       "resolved": "https://registry.npmjs.org/forwarded/-/forwarded-0.1.0.tgz"
     },
     "foundation-sites": {
-      "version": "5.5.2",
-      "from": "foundation-sites@5.5.2",
-      "resolved": "https://registry.npmjs.org/foundation-sites/-/foundation-sites-5.5.2.tgz"
+      "version": "5.5.3",
+      "from": "foundation-sites@5.5.3",
+      "resolved": "https://registry.npmjs.org/foundation-sites/-/foundation-sites-5.5.3.tgz"
     },
     "fresh": {
       "version": "0.1.0",
