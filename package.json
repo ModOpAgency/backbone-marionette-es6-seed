@@ -28,7 +28,6 @@
     "slick-carousel": "1.5.9"
   },
   "devDependencies": {
-    "autoprefixer-loader": "^3.1.0",
     "babel-core": "^5.8.24",
     "babel-loader": "^5.3.2",
     "bluebird": "^3.1.1",
@@ -64,6 +63,7 @@
     "node.extend": "^1.1.5",
     "opn": "^3.0.2",
     "parse-filepath": "^0.6.3",
+    "postcss-loader": "^0.8.1",
     "prettydiff": "^1.13.5",
     "sass-loader": "^3.0.0",
     "sasslint-loader": "0.0.1",
