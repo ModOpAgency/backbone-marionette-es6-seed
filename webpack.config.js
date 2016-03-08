@@ -52,7 +52,7 @@ module.exports = {
         }, {
             test: /\.scss$/,
             exclude: /node_modules/,
-            loader: 'style-loader!css-loader?sourceMap!autoprefixer-loader!sass-loader?outputStyle=expanded&sourceMap=true&sourceMapContents=true'
+            loader: 'style-loader!css-loader?sourceMap!postcss-loader!sass-loader?outputStyle=expanded&sourceMap=true&sourceMapContents=true'
         }, {
             test: /\.(png|jpg|svg|gif|eot|ttf|woff)$/,
             exclude: /node_modules/,
