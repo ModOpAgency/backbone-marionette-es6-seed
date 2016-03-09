@@ -65,7 +65,7 @@ gulp.task('default', ['clean'], function() {
 
 /* dev only task */
 gulp.task('sprite', function () {
-  return gulp.src('app/assets/images/source/*.{png,jpg}').pipe(spritesmith({
+  return gulp.src('app/assets/images/source/*.{png,jpg,jpeg}').pipe(spritesmith({
     imgName: 'sprite.png',
     cssName: '_sprite.scss',
     imgPath: '../assets/images/sprite/sprite.png',

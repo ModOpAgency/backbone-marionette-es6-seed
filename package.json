@@ -50,7 +50,7 @@
     "gulp-uncss": "^1.0.3",
     "gulp-useref": "^3.0.4",
     "gulp-util": "^3.0.6",
-    "gulp.spritesmith": "^6.0.0",
+    "gulp.spritesmith": "^6.2.0",
     "handlebars": "^4.0.2",
     "handlebars-loader": "^1.1.4",
     "httpster": "^1.0.3",
