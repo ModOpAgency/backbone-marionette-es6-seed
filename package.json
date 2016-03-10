@@ -8,7 +8,11 @@
     "build": "npm run build-gulp & npm run build-webpack",
     "build-gulp": "gulp",
     "build-webpack": "webpack -p --config webpack.production.config.js",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "copy": "npm run copy-static && npm run copy-assets",
+    "copy-static": "copyfiles ./app/index.html ./app/favicon.ico ./dist",
+    "copy-assets": "copyfiles -u 1 './app/assets/**' ./dist/",
+    "dist": "npm run copy && npm run build-webpack"
   },
   "dependencies": {
     "backbone": "1.2.3",
@@ -17,6 +21,7 @@
     "backbone.marionette": "^2.4.3",
     "backbone.radio": "1.0.2",
     "backbone.touch": "^0.4.2",
+    "copyfiles": "^0.2.1",
     "foundation-sites": "5.5.3",
     "i18next-client": "^1.10.2",
     "jquery": "2.1.4",
