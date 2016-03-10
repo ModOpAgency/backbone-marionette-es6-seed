@@ -42,4 +42,9 @@ When adding dependencies to a project with npm make sure you add these arguments
 ##  Additional Information
 --------------------------------------------------------------------------------
 #### Updating the sprite sheet:
-After adding new images, you'll want to update the sprite sheet using the npm script 
+
+After adding new images to the assets folder, you'll want to update the sprite sheet using the npm script <em>build-sprite</em>...
+
+        npm run build-sprite
+
+This will take all png, jpg and jpeg files located in the /assets/images/source folder and convert them into a spritesheet as well as create the scss classes corresponding with the spritesheet.

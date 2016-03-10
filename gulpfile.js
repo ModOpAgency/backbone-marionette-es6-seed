@@ -9,7 +9,7 @@ var gulp = require('gulp'),
     through = require('through'),
     source = require('vinyl-source-stream'),
     buffer = require('vinyl-buffer'),
-    spritesmith = require('spritesmith'),
+    spritesmith = require('gulp.spritesmith'),
     _ = require('lodash');
 
 gulp.task('extras', function() {
