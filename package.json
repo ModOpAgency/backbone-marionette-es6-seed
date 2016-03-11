@@ -10,7 +10,9 @@
     "copy": "npm run copy-static && npm run copy-assets",
     "copy-static": "copyfiles -f ./app/index.html ./app/favicon.ico ./dist",
     "copy-assets": "copyfiles -u 1 './app/assets/**' ./dist/",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "test": "mocha 'test/**/*.spec.js' --compilers js:babel-core/register"
+
   },
   "dependencies": {
     "backbone": "1.2.3",
@@ -37,6 +39,7 @@
     "copyfiles": "^0.2.1",
     "css-loader": "^0.23.1",
     "cssesc": "^0.1.0",
+    "expect": "^1.15.2",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.4",
     "handlebars": "^4.0.2",
@@ -44,6 +47,7 @@
     "httpster": "^1.0.3",
     "imports-loader": "^0.6.4",
     "json-loader": "^0.5.3",
+    "mocha": "^2.4.5",
     "node-libs-browser": "^0.5.3",
     "node-sass": "^3.3.3",
     "node.extend": "^1.1.5",
