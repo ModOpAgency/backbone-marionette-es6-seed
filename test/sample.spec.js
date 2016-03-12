@@ -1,6 +1,8 @@
+'use strict';
+
 import expect from 'expect';
 
-describe('empty', () => {
+describe('Sample test', () => {
     it('should work', () => {
         expect(true).toEqual(true);
     });
