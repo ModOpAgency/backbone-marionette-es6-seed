@@ -69,8 +69,8 @@ var webpack = require('webpack'),
               glob: '+(*.jpg|*.jpeg|*.png)'
           },
           target: {
-              image: path.resolve(__dirname, '../app/assets/images/sprite/sprite.png'),
-              css: path.resolve(__dirname, '../app/styles/helper/_sprite.scss')
+              image: path.resolve(__dirname, './app/assets/images/sprite/sprite.png'),
+              css: path.resolve(__dirname, './app/styles/helper/_sprite.scss')
           },
           spritesmithOptions: {
               padding: 10
