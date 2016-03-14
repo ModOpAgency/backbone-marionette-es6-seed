@@ -1,9 +1,9 @@
 'use strict';
 var webpack = require('webpack'),
     path = require('path'),
-    SpritesmithPlugin = require('webpack-spritesmith');
+    SpritesmithPlugin = require('webpack-spritesmith'),
     ExtractTextPlugin = require('extract-text-webpack-plugin');
-module.exports = {
+    module.exports = {
     context: path.resolve('app/scripts'),
     entry: ['webpack/hot/dev-server', './main.js'],
     output: {
@@ -85,15 +85,15 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new SpritesmithPlugin({
           src: {
-              cwd: path.resolve(__dirname, 'app/assets/images/source/'),
-              glob: '*.png'
+              cwd: path.resolve(__dirname, 'app/assets/images/source'),
+              glob: '+(*.jpg|*.jpeg|*.png)'
           },
           target: {
-              image: path.resolve(__dirname, 'app/assets/images/sprite.png'),
-              css: path.resolve(__dirname, '_sprite.scss')
+              image: path.resolve(__dirname, 'app/assets/images/sprite/sprite.png'),
+              css: path.resolve(__dirname, 'app/styles/helper/_sprite.scss')
           },
-          apiOptions: {
-              cssImageRef: "~sprite.png"
+          spritesmithOptions: {
+              padding: 10
           }
       })
     ]

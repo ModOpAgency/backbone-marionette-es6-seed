@@ -1,8 +1,9 @@
 'use strict';
 var webpack = require('webpack'),
     path = require('path'),
+    SpritesmithPlugin = require('webpack-spritesmith'),
     ExtractTextPlugin = require('extract-text-webpack-plugin');
-module.exports = {
+    module.exports = {
     context: path.resolve('app/scripts'),
     entry: ['./main.js'],
     output: {
@@ -46,7 +47,16 @@ module.exports = {
             test: /\.(png|jpg|svg|gif|eot|ttf|woff)$/,
             exclude: /node_modules/,
             loader: 'file-loader?name=[path][name].[ext]'
-        }],
+        },{
+            test: /\.styl$/,
+            loaders: [
+                'style',
+                'css',
+                'stylus']
+        }, {test: /\.png$/,
+            loaders: [
+                'file?name=i/[hash].[ext]']
+            }],
         noParse: [
             /[\/\\]node_modules[\/\\]d3[\/\\]d3\.js$/
         ]
@@ -61,6 +71,19 @@ module.exports = {
             'Radio': 'backbone.radio',
             'foundation': 'foundation-sites/js/foundation',
         }),
-        new ExtractTextPlugin('styles/main.css')
+        new ExtractTextPlugin('styles/main.css'),
+        new SpritesmithPlugin({
+          src: {
+              cwd: path.resolve(__dirname, 'app/assets/images/source'),
+              glob: '+(*.jpg|*.jpeg|*.png)'
+          },
+          target: {
+              image: path.resolve(__dirname, 'app/assets/images/sprite/sprite.png'),
+              css: path.resolve(__dirname, 'app/styles/helper/_sprite.scss')
+          },
+          spritesmithOptions: {
+              padding: 10
+          }
+      })
     ]
 };

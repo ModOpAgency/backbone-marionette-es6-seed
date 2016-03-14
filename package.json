@@ -6,6 +6,7 @@
   "scripts": {
     "build": "npm run copy && npm run build-webpack",
     "build-webpack": "webpack -p --config webpack.production.config.js",
+    "build-webpack-dev": "webpack -p --config webpack.config.js",
     "clean": "rm -rf dist",
     "copy": "npm run copy-static && npm run copy-assets",
     "copy-static": "copyfiles -f ./app/index.html ./app/favicon.ico ./dist",
