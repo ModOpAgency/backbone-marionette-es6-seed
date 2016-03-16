@@ -9,13 +9,17 @@
 
 @import "sprite";
 
-.sprite-proof [class*="block-grid-"] > li {
+.sprite-proof [class*="icon-"] {
     height: 32px;
+    width: 32px;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
 }
 
 .icon-facebook {
   @include sprite($facebook);
-}
+  }
 
 .icon-instagram {
   @include sprite($instagram);

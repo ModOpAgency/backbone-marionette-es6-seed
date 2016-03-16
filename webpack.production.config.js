@@ -46,7 +46,7 @@ var webpack = require('webpack'),
         },{
             test: /\.(png|jpg|svg|gif|eot|ttf|woff)$/,
             exclude: /node_modules/,
-            loader: 'file-loader?name=[path][name].[ext]'
+            loader: 'file-loader?name=[path][name].[ext]&context=' + path.resolve(__dirname, "app/assets/")
         }],
         noParse: [
             /[\/\\]node_modules[\/\\]d3[\/\\]d3\.js$/
@@ -62,19 +62,6 @@ var webpack = require('webpack'),
             'Radio': 'backbone.radio',
             'foundation': 'foundation-sites/js/foundation',
         }),
-        new ExtractTextPlugin('styles/main.css'),
-        new SpritesmithPlugin({
-          src: {
-              cwd: path.resolve(__dirname, 'app/assets/images/source'),
-              glob: '+(*.jpg|*.jpeg|*.png)'
-          },
-          target: {
-              image: path.resolve(__dirname, './app/assets/images/sprite/sprite.png'),
-              css: path.resolve(__dirname, './app/styles/helper/_sprite.scss')
-          },
-          spritesmithOptions: {
-              padding: 10
-          }
-      })
+        new ExtractTextPlugin('styles/main.css')
     ]
 };

@@ -57,17 +57,8 @@ var webpack = require('webpack'),
         }, {
             test: /\.(png|jpg|svg|gif|eot|ttf|woff)$/,
             exclude: /node_modules/,
-            loader: 'file-loader?name=[path][name].[ext]'
-        }, {
-            test: /\.styl$/,
-            loaders: [
-                'style',
-                'css',
-                'stylus']
-        }, {test: /\.png$/,
-            loaders: [
-                'file?name=i/[hash].[ext]']
-            }],
+             loader: 'url-loader'
+        }],
         noParse: [
             /[\/\\]node_modules[\/\\]d3[\/\\]d3\.js$/
         ]
@@ -85,15 +76,18 @@ var webpack = require('webpack'),
         new webpack.HotModuleReplacementPlugin(),
         new SpritesmithPlugin({
           src: {
-              cwd: path.resolve(__dirname, 'app/assets/images/source'),
+              cwd: (__dirname, './app/assets/images/source'),
               glob: '+(*.jpg|*.jpeg|*.png)'
           },
           target: {
-              image: path.resolve(__dirname, 'app/assets/images/sprite/sprite.png'),
-              css: path.resolve(__dirname, 'app/styles/helper/_sprite.scss')
+              image: path.resolve(__dirname, './app/assets/images/sprite.png'),
+              css: path.resolve(__dirname, './app/styles/helper/_sprite.scss')
+          },
+          apiOptions: {
+              cssImageRef: '../assets/images/sprite.png'
           },
           spritesmithOptions: {
-              padding: 10
+            padding: 4
           }
       })
     ]
