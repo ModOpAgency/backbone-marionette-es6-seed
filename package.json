@@ -10,7 +10,9 @@
     "copy": "npm run copy-static && npm run copy-assets",
     "copy-static": "copyfiles -f ./app/index.html ./app/favicon.ico ./dist",
     "copy-assets": "copyfiles -u 1 './app/assets/**' ./dist/",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "del-shrinkwrap": "rm -rf ./npm-shrinkwrap.json",
+    "start-del-shrinkwrap": "npm run del-shrinkwrap && npm run start"
   },
   "dependencies": {
     "backbone": "1.2.3",
