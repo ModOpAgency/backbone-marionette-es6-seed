@@ -12,7 +12,9 @@
     "copy-assets": "copyfiles -u 1 './app/assets/**' ./dist/",
     "start": "webpack-dev-server",
     "del-shrinkwrap": "rm -rf ./npm-shrinkwrap.json",
-    "start-del-shrinkwrap": "npm run del-shrinkwrap && npm run start"
+    "start-del-shrinkwrap": "npm run del-shrinkwrap && npm run start",
+    "preinstall": "rm -rf ./npm-shrinkwrap.json",
+    "postinstall": "npm shrinkwrap"
   },
   "dependencies": {
     "backbone": "1.2.3",
