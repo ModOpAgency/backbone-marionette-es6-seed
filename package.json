@@ -13,8 +13,7 @@
     "start": "webpack-dev-server",
     "del-shrinkwrap": "rm -rf ./npm-shrinkwrap.json",
     "start-del-shrinkwrap": "npm run del-shrinkwrap && npm run start",
-    "preinstall": "rm -rf ./npm-shrinkwrap.json",
-    "postinstall": "npm shrinkwrap"
+    "preinstall": "rm npm-shrinkwrap.json"
   },
   "dependencies": {
     "backbone": "1.2.3",
