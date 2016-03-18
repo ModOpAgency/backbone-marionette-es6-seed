@@ -11,7 +11,8 @@
     "copy-static": "copyfiles -f ./app/index.html ./app/favicon.ico ./dist",
     "copy-assets": "copyfiles -u 1 './app/assets/**' ./dist/",
     "start": "webpack-dev-server",
-    "test": "mocha 'test/**/*.spec.js' --compilers js:babel-core/register"
+    "test": "mocha 'test/**/*.spec.js' --compilers js:babel-core/register",
+    "preinstall": "rm npm-shrinkwrap.json -f"
 
   },
   "dependencies": {
