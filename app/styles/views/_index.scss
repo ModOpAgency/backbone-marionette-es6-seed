@@ -14,25 +14,11 @@
 ////
 @media #{$small-up} {
     .index {
+        background-color: $black;
+        
         .row {
             background-color: $white;
         }
-        .sprite-proof {}
-
-        .icon-fb {
-            background-image: url(../assets/images/t.png);
-            background-position: 0px 0px;
-            width: 32px;
-            height: 32px;
-            display: inline-block;
-            background-color: aqua;
-        }
-
-        .icon-i {
-            background-image: url(../assets/images/t.png);
-            background-position: 0px 32px;
-        }
-
     }
 }
 /// End of Small Up
