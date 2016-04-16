@@ -12,7 +12,7 @@ echo "$($COLOR_GREEN)###########################################################
 
 docker-machine start default
 eval "$(docker-machine env default)"
-docker pull roymartin/$DOCKER_IMAGE
+# docker pull modop/$DOCKER_IMAGE
 
 echo "$($COLOR_GREEN)################################################################################$($COLOR_CLEAR)"
 echo "$($COLOR_GREEN)Starting container $($COLOR_CLEAR)"
@@ -22,4 +22,4 @@ echo "$($COLOR_GREEN)To access the command-line run with ./dockerRun.sh /bin/bas
 echo "$($COLOR_GREEN)################################################################################$($COLOR_CLEAR)"
 
 docker rm -f $DOCKER_IMAGE &> /dev/null
-docker run -it --rm -p 9000:9000 --name $DOCKER_IMAGE -v $PWD:/data roymartin/$DOCKER_IMAGE $1
+docker run -it --rm -p 9000:9000 --name $DOCKER_IMAGE -v $PWD:/data modop/$DOCKER_IMAGE $1
