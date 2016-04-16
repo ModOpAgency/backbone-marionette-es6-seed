@@ -1,8 +1,10 @@
 version: '2'
 services:
   web:
-    container_name: backbone-marionette-es6-node-5
+    container_name: web
     image: modop/backbone-marionette-es6-node-5
+    tty: true
+    stdin_open: true
     ports:
      - "9000:9000"
     volumes:
