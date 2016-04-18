@@ -32,8 +32,6 @@ fi
 echo "$($COLOR_GREEN)Starting docker machine and updating image $($COLOR_CLEAR)"
 docker-machine start default
 eval "$(docker-machine env default)"
-docker pull modop/$DOCKER_IMAGE
-
 
 echo "$($COLOR_GREEN)################################################################################$($COLOR_CLEAR)"
 echo "$($COLOR_GREEN)Starting container $($COLOR_CLEAR)"
@@ -42,4 +40,5 @@ echo "$($COLOR_GREEN)Upon success open your browser to http://192.168.99.100:900
 echo "$($COLOR_GREEN)To access the command-line run with docker-compose run --service-ports web bash $($COLOR_CLEAR)"
 echo "$($COLOR_GREEN)################################################################################$($COLOR_CLEAR)"
 
-docker-compose up
+docker-compose pull
+COMPOSE_HTTP_TIMEOUT=200 docker-compose up
