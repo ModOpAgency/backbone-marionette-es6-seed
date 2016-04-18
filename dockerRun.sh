@@ -2,6 +2,7 @@
 # Default run arguments to start the docker build and mount the current directory into /data.
 # The default arguments will setup a symbolic link to node_modules, npm install, and gulp serve.
 # This can be overwritten by passing in an optional argument
+export COMPOSE_HTTP_TIMEOUT=1000000
 DOCKER_IMAGE=backbone-marionette-es6-node-5
 COLOR_GREEN='tput setaf 2'
 COLOR_CLEAR='tput sgr0'
@@ -29,9 +30,12 @@ else
     createDockerMachine
 fi
 
+echo "$($COLOR_GREEN)################################################################################$($COLOR_CLEAR)"
 echo "$($COLOR_GREEN)Starting docker machine and updating image $($COLOR_CLEAR)"
+echo "$($COLOR_GREEN)################################################################################$($COLOR_CLEAR)"
 docker-machine start default
 eval "$(docker-machine env default)"
+docker-compose pull
 
 echo "$($COLOR_GREEN)################################################################################$($COLOR_CLEAR)"
 echo "$($COLOR_GREEN)Starting container $($COLOR_CLEAR)"
@@ -40,5 +44,5 @@ echo "$($COLOR_GREEN)Upon success open your browser to http://192.168.99.100:900
 echo "$($COLOR_GREEN)To access the command-line run with docker-compose run --service-ports web bash $($COLOR_CLEAR)"
 echo "$($COLOR_GREEN)################################################################################$($COLOR_CLEAR)"
 
-docker-compose pull
-COMPOSE_HTTP_TIMEOUT=200 docker-compose up
+
+docker-compose up

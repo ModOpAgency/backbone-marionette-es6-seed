@@ -1,8 +1,7 @@
 # Ignore .git folder
 .git*
 
-# Ignore .gitignore exludes
-node_modules
+# Ignore .gitignore excludes
 dist
 .tmp
 .sass-cache
