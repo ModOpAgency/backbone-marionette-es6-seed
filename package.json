@@ -11,6 +11,7 @@
     "copy-static": "copyfiles -f ./app/index.html ./app/favicon.ico ./dist",
     "copy-assets": "copyfiles -u 1 './app/assets/**' ./dist/",
     "start": "webpack-dev-server",
+    "review": "httpster -p 9000 -d ./dist/",
     "test": "mocha 'test/**/*.spec.js' --compilers js:babel-core/register",
     "preinstall": "rm npm-shrinkwrap.json -f"
 
@@ -47,7 +48,7 @@
     "imports-loader": "^0.6.4",
     "json-loader": "^0.5.3",
     "mocha": "^2.4.5",
-    "node-sass": "^3.3.3",
+    "node-sass": "3.4.2",
     "node.extend": "^1.1.5",
     "parse-filepath": "^0.6.3",
     "postcss-loader": "^0.8.1",
@@ -57,8 +58,8 @@
     "scss-loader": "0.0.1",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.6",
-    "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.1",
-    "webpack-spritesmith": "^0.0.6"
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-spritesmith": "^0.2.0"
   }
 }

@@ -14,7 +14,7 @@ function removeDockerMachine {
 
 function createDockerMachine {
     echo "$($COLOR_GREEN)Creating docker Machine 'default' $($COLOR_CLEAR)"
-    docker-machine create --driver virtualbox default
+    docker-machine create --driver virtualbox --virtualbox-memory "2048" default
 }
 
 # Ensure that the docker machine exists
@@ -44,5 +44,5 @@ echo "$($COLOR_GREEN)Upon success open your browser to http://192.168.99.100:900
 echo "$($COLOR_GREEN)To access the command-line run with docker-compose run --service-ports web bash $($COLOR_CLEAR)"
 echo "$($COLOR_GREEN)################################################################################$($COLOR_CLEAR)"
 
-
-docker-compose up
+docker-compose run --name web --rm web --service-ports $1
+docker-compose down
