@@ -60,6 +60,6 @@ if [ $? -eq 1 ]
         fi
   else
     echo "Executing OSX Docker commands"
-    docker-compose run --name web --rm web --service-ports $1
+    docker-compose run --service-ports --name web --rm web  $1
     docker-compose down
 fi
