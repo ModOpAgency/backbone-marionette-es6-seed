@@ -23,6 +23,10 @@ var webpack = require('webpack'),
         hot: true,
         inline: true
     },
+    watchOptions: {
+        aggregateTimeout: 300,
+        poll: 1000
+    },
     externals: {
         'modernizr': 'Modernizr'
     },
@@ -35,7 +39,7 @@ var webpack = require('webpack'),
     module: {
         loaders: [{
             test: /\.js$/,
-            exclude: [/node_modules/, /app\/scripts\/vendor/],
+            exclude: /node_modules/,
             loader: 'babel-loader'
         }, {
             test: /\.hbs$/,
@@ -83,7 +87,7 @@ var webpack = require('webpack'),
               cssImageRef: '../assets/images/sprite.png'
           },
           spritesmithOptions: {
-            padding: 20
+            padding: 4
           }
       })
     ]
