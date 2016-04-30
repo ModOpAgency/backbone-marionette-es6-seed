@@ -11,99 +11,88 @@ $icon-home: x y offset_x offset_y width height total_width total_height image_pa
 At the bottom of this section, we provide information about the spritesheet itself
 $spritesheet: width height image $spritesheet-sprites;
 */
-$chrome-name: 'chrome';
-$chrome-x: 0px;
-$chrome-y: 0px;
-$chrome-offset-x: 0px;
-$chrome-offset-y: 0px;
-$chrome-width: 128px;
-$chrome-height: 128px;
-$chrome-total-width: 170px;
-$chrome-total-height: 170px;
-$chrome-image: '../assets/images/sprite/sprite.png';
-$chrome: (0px, 0px, 0px, 0px, 128px, 128px, 170px, 170px, '../assets/images/sprite/sprite.png', 'chrome', );
 $facebook-name: 'facebook';
-$facebook-x: 138px;
+$facebook-x: 0px;
 $facebook-y: 0px;
-$facebook-offset-x: -138px;
+$facebook-offset-x: 0px;
 $facebook-offset-y: 0px;
 $facebook-width: 32px;
 $facebook-height: 32px;
-$facebook-total-width: 170px;
-$facebook-total-height: 170px;
-$facebook-image: '../assets/images/sprite/sprite.png';
-$facebook: (138px, 0px, -138px, 0px, 32px, 32px, 170px, 170px, '../assets/images/sprite/sprite.png', 'facebook', );
+$facebook-total-width: 104px;
+$facebook-total-height: 104px;
+$facebook-image: '../assets/images/sprite.png';
+$facebook: (0px, 0px, 0px, 0px, 32px, 32px, 104px, 104px, '../assets/images/sprite.png', 'facebook', );
 $instagram-name: 'instagram';
-$instagram-x: 138px;
-$instagram-y: 42px;
-$instagram-offset-x: -138px;
-$instagram-offset-y: -42px;
+$instagram-x: 36px;
+$instagram-y: 0px;
+$instagram-offset-x: -36px;
+$instagram-offset-y: 0px;
 $instagram-width: 32px;
 $instagram-height: 32px;
-$instagram-total-width: 170px;
-$instagram-total-height: 170px;
-$instagram-image: '../assets/images/sprite/sprite.png';
-$instagram: (138px, 42px, -138px, -42px, 32px, 32px, 170px, 170px, '../assets/images/sprite/sprite.png', 'instagram', );
+$instagram-total-width: 104px;
+$instagram-total-height: 104px;
+$instagram-image: '../assets/images/sprite.png';
+$instagram: (36px, 0px, -36px, 0px, 32px, 32px, 104px, 104px, '../assets/images/sprite.png', 'instagram', );
 $pinterest-name: 'pinterest';
-$pinterest-x: 138px;
-$pinterest-y: 84px;
-$pinterest-offset-x: -138px;
-$pinterest-offset-y: -84px;
+$pinterest-x: 0px;
+$pinterest-y: 36px;
+$pinterest-offset-x: 0px;
+$pinterest-offset-y: -36px;
 $pinterest-width: 32px;
 $pinterest-height: 32px;
-$pinterest-total-width: 170px;
-$pinterest-total-height: 170px;
-$pinterest-image: '../assets/images/sprite/sprite.png';
-$pinterest: (138px, 84px, -138px, -84px, 32px, 32px, 170px, 170px, '../assets/images/sprite/sprite.png', 'pinterest', );
+$pinterest-total-width: 104px;
+$pinterest-total-height: 104px;
+$pinterest-image: '../assets/images/sprite.png';
+$pinterest: (0px, 36px, 0px, -36px, 32px, 32px, 104px, 104px, '../assets/images/sprite.png', 'pinterest', );
 $tumblr-name: 'tumblr';
-$tumblr-x: 0px;
-$tumblr-y: 138px;
-$tumblr-offset-x: 0px;
-$tumblr-offset-y: -138px;
+$tumblr-x: 36px;
+$tumblr-y: 36px;
+$tumblr-offset-x: -36px;
+$tumblr-offset-y: -36px;
 $tumblr-width: 32px;
 $tumblr-height: 32px;
-$tumblr-total-width: 170px;
-$tumblr-total-height: 170px;
-$tumblr-image: '../assets/images/sprite/sprite.png';
-$tumblr: (0px, 138px, 0px, -138px, 32px, 32px, 170px, 170px, '../assets/images/sprite/sprite.png', 'tumblr', );
+$tumblr-total-width: 104px;
+$tumblr-total-height: 104px;
+$tumblr-image: '../assets/images/sprite.png';
+$tumblr: (36px, 36px, -36px, -36px, 32px, 32px, 104px, 104px, '../assets/images/sprite.png', 'tumblr', );
 $twitter-name: 'twitter';
-$twitter-x: 42px;
-$twitter-y: 138px;
-$twitter-offset-x: -42px;
-$twitter-offset-y: -138px;
+$twitter-x: 72px;
+$twitter-y: 0px;
+$twitter-offset-x: -72px;
+$twitter-offset-y: 0px;
 $twitter-width: 32px;
 $twitter-height: 32px;
-$twitter-total-width: 170px;
-$twitter-total-height: 170px;
-$twitter-image: '../assets/images/sprite/sprite.png';
-$twitter: (42px, 138px, -42px, -138px, 32px, 32px, 170px, 170px, '../assets/images/sprite/sprite.png', 'twitter', );
+$twitter-total-width: 104px;
+$twitter-total-height: 104px;
+$twitter-image: '../assets/images/sprite.png';
+$twitter: (72px, 0px, -72px, 0px, 32px, 32px, 104px, 104px, '../assets/images/sprite.png', 'twitter', );
 $vimeo-name: 'vimeo';
-$vimeo-x: 84px;
-$vimeo-y: 138px;
-$vimeo-offset-x: -84px;
-$vimeo-offset-y: -138px;
+$vimeo-x: 72px;
+$vimeo-y: 36px;
+$vimeo-offset-x: -72px;
+$vimeo-offset-y: -36px;
 $vimeo-width: 32px;
 $vimeo-height: 32px;
-$vimeo-total-width: 170px;
-$vimeo-total-height: 170px;
-$vimeo-image: '../assets/images/sprite/sprite.png';
-$vimeo: (84px, 138px, -84px, -138px, 32px, 32px, 170px, 170px, '../assets/images/sprite/sprite.png', 'vimeo', );
+$vimeo-total-width: 104px;
+$vimeo-total-height: 104px;
+$vimeo-image: '../assets/images/sprite.png';
+$vimeo: (72px, 36px, -72px, -36px, 32px, 32px, 104px, 104px, '../assets/images/sprite.png', 'vimeo', );
 $youtube-name: 'youtube';
-$youtube-x: 126px;
-$youtube-y: 138px;
-$youtube-offset-x: -126px;
-$youtube-offset-y: -138px;
+$youtube-x: 0px;
+$youtube-y: 72px;
+$youtube-offset-x: 0px;
+$youtube-offset-y: -72px;
 $youtube-width: 32px;
 $youtube-height: 32px;
-$youtube-total-width: 170px;
-$youtube-total-height: 170px;
-$youtube-image: '../assets/images/sprite/sprite.png';
-$youtube: (126px, 138px, -126px, -138px, 32px, 32px, 170px, 170px, '../assets/images/sprite/sprite.png', 'youtube', );
-$spritesheet-width: 170px;
-$spritesheet-height: 170px;
-$spritesheet-image: '../assets/images/sprite/sprite.png';
-$spritesheet-sprites: ($chrome, $facebook, $instagram, $pinterest, $tumblr, $twitter, $vimeo, $youtube, );
-$spritesheet: (170px, 170px, '../assets/images/sprite/sprite.png', $spritesheet-sprites, );
+$youtube-total-width: 104px;
+$youtube-total-height: 104px;
+$youtube-image: '../assets/images/sprite.png';
+$youtube: (0px, 72px, 0px, -72px, 32px, 32px, 104px, 104px, '../assets/images/sprite.png', 'youtube', );
+$spritesheet-width: 104px;
+$spritesheet-height: 104px;
+$spritesheet-image: '../assets/images/sprite.png';
+$spritesheet-sprites: ($facebook, $instagram, $pinterest, $tumblr, $twitter, $vimeo, $youtube, );
+$spritesheet: (104px, 104px, '../assets/images/sprite.png', $spritesheet-sprites, );
 
 /*
 The provided mixins are intended to be used with the array-like variables
@@ -115,6 +104,14 @@ The provided mixins are intended to be used with the array-like variables
 .icon-email {
   @include sprite($icon-email);
 }
+
+Here are example usages in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+`display: inline-block` sprite:
+<img class="icon-home" />
 */
 @mixin sprite-width($sprite) {
   width: nth($sprite, 5);

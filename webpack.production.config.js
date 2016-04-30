@@ -5,7 +5,7 @@ var webpack = require('webpack'),
     ExtractTextPlugin = require('extract-text-webpack-plugin');
     module.exports = {
     context: path.resolve('app/scripts'),
-    entry: ['webpack/hot/dev-server', './main.js'],
+    entry: ['./main.js'],
     output: {
         path: path.resolve('dist/assets/'),
         publicPath: '/assets/',
@@ -14,18 +14,6 @@ var webpack = require('webpack'),
     resolve: {
         root: path.resolve('./app/scripts'),
         extensions: ['', '.js']
-    },
-    devtool: 'source-map',
-    devServer: {
-        contentBase: 'app',
-        host: '0.0.0.0',
-        port: '9000',
-        hot: true,
-        inline: true
-    },
-    watchOptions: {
-        aggregateTimeout: 300,
-        poll: 1000
     },
     externals: {
         'modernizr': 'Modernizr'
@@ -39,8 +27,8 @@ var webpack = require('webpack'),
     module: {
         loaders: [{
             test: /\.js$/,
-            exclude: /node_modules/,
-            loader: 'babel-loader'
+            exclude: /(node_modules|vendor)/,
+            loader: 'babel'
         }, {
             test: /\.hbs$/,
             loader: 'handlebars-loader',
@@ -50,14 +38,17 @@ var webpack = require('webpack'),
         }, {
             test: /\.json$/,
             loader: 'json-loader'
-        }, {
+        },
+        {
             test: /\.scss$/,
             exclude: /node_modules/,
-            loader: 'style-loader!css-loader?sourceMap!postcss-loader!sass-loader?outputStyle=expanded&sourceMap=true&sourceMapContents=true'
-        }, {
+            loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap!postcss-loader!sass-loader?outputStyle=expanded&sourceMap=true&sourceMapContents=true', {
+               publicPath: "../../assets/"
+           })
+        },{
             test: /\.(png|jpg|svg|gif|eot|ttf|woff)$/,
             exclude: /node_modules/,
-             loader: 'url-loader'
+            loader: 'file-loader?name=[path][name].[ext]&context=' + path.resolve(__dirname, "app/assets/")
         }],
         noParse: [
             /[\/\\]node_modules[\/\\]d3[\/\\]d3\.js$/
@@ -71,24 +62,8 @@ var webpack = require('webpack'),
             'Backbone': 'backbone',
             'Marionette': 'backbone.marionette',
             'Radio': 'backbone.radio',
-            'foundation': 'foundation-sites/js/foundation'
+            'foundation': 'foundation-sites/js/foundation',
         }),
-        new webpack.HotModuleReplacementPlugin(),
-        new SpritesmithPlugin({
-          src: {
-              cwd: (__dirname, './app/assets/images/source'),
-              glob: '+(*.jpg|*.jpeg|*.png)'
-          },
-          target: {
-              image: path.resolve(__dirname, './app/assets/images/sprite.png'),
-              css: path.resolve(__dirname, './app/styles/helper/_sprite.scss')
-          },
-          apiOptions: {
-              cssImageRef: '../assets/images/sprite.png'
-          },
-          spritesmithOptions: {
-            padding: 4
-          }
-      })
+        new ExtractTextPlugin('styles/main.css')
     ]
 };

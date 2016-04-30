@@ -1,18 +1,17 @@
-/**
-    ----------------------------------------------------------------------------------------
-    Global sass variables
-    ----------------------------------------------------------------------------------------
-    @description - the variables which will be used for whole experience and subsequent
-    components, color palettes, mix-ins and so on...
-*/
+////
+/// ----------------------------------------------------------------------------------------
+/// Global sass variables
+/// ----------------------------------------------------------------------------------------
+/// @description - the variables which will be used for whole experience and subsequent
+/// components, color palettes, mix-ins and so on...
+////
 
 
-/**
-    ----------------------------------------------------------------------------------------
-    Color palette
-    ----------------------------------------------------------------------------------------
-    @usage - colors will be pre fixed with rgba, then the color i.e. "gray" and the component.
-*/
+////
+/// ----------------------------------------------------------------------------------------
+/// Foundation's base gray scale color palette
+/// ----------------------------------------------------------------------------------------
+////
 $white       : #FFFFFF;
 $ghost       : #FAFAFA;
 $snow        : #F9F9F9;
@@ -33,11 +32,4 @@ $oil         : #333333;
 $jet         : #222222;
 $black       : #000000;
 
-$somthingElse: #333;
 
-/**
-    ----------------------------------------------------------------------------------------
-    Web fonts
-    ----------------------------------------------------------------------------------------
-    @description - web fonts used to override the base font declaration "Helvetica Neue"
-*/

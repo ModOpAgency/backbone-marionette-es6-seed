@@ -16,17 +16,9 @@
 @import "base/variable";
 @import "base/settings";
 @import "node_modules/foundation-sites/scss/foundation/components/global";
-@import "helper/class";
 @import "helper/function";
 @import "helper/mixin";
-
-
-////
-/// ----------------------------------------------------------------------------------------
-/// Modules styling
-/// ----------------------------------------------------------------------------------------
-////
-
+@import "helper/class";
 
 
 ////
@@ -34,9 +26,8 @@
 /// Layout styling
 /// ----------------------------------------------------------------------------------------
 ////
-//@import "layout/header";
-//@import "layout/footer";
-
+@import "layout/header";
+@import "layout/footer";
 
 
 ////

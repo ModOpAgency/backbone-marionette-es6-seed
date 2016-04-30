@@ -1,88 +1,56 @@
-## Overview
-Backbone Marionette project seed application with ES6 modules powered by Gulp.
+#  Backbone Marionette ES6 Project Seed
+Boilerplate project seed application with ES6 modules powered by Webpack.
 
-##Requirements
-the following are required to install when using the Vagrant environment:
+##  Requirements
+- [Docker Toolbox](https://www.docker.com/toolbox) | VM environment
+- [node.js](https://nodejs.org/) | server | npm dep | use node rather then iojs due to [sprity](https://www.npmjs.com/package/sprity)
+- [webpack](https://webpack.github.io/)
 
-* [Vagrant](https://www.vagrantup.com/) | development environment
-* [VirtualBox](https://www.virtualbox.org/wiki/Downloads) | development vm
-* [GIT](https://msysgit.github.io/) | Windows Git and Bash Profile
+##  Getting started
+### Step 1: Install the latest version of [Docker Toolbox](https://www.docker.com/docker-toolbox).
 
-The following are overall project requirements that are automatically installed with Vagrant.
+### Step 2: OSX
+In your CLI/terminal go to the root of your project. To copy over the default npm modules,
+install npm and start the webpack-dev-server, execute the following command:
 
-* [node.js](https://nodejs.org/) | server | npm dep | use node rather then iojs due to [sprity](https://www.npmjs.com/package/sprity)
-* [gulp.js](http://gulpjs.com/) | build tool
-* [foundation 5.5.1](http://foundation.zurb.com/) | front-end framework
+    ./dockerRun.sh
 
-## Getting started
+To enter the command-line to execute additional commands, run the following command:
 
-### Step 1:
-Check out the boilerplate's "develop" branch, and install the latest version of [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/wiki/Downloads). Windows users will also need to install [Git](https://git-scm.com/download/win).
+    ./dockerRun.sh bash
 
-### Step 2:
-Run Vagrant up within terminal (Mac) or Gitbash(Windows - **Note this must be started using Administrator privileges**). To do this cd into your project directory and run the vagrant up command.  This will source machine info using the Vagrantfile included in the directory.  This will take a while for your first install as it will download Ubuntu, provision the server and install the project dependencies.
+You can now open your browser (Chrome) and visit the address http://192.168.99.100:9000
+You can exit out of the experience by hitting command+c
 
-    cd /your-vagrant-project
-    vagrant up
+### Step 2: Windows
+Launch the Docker Quickstart Terminal as an Administrator. Navigate to your directory
+for the project. For example. cd Code/www/backbone-marionette-es6 . Run the Docker Run command
 
-### Step 3:
-Run vagrant ssh and start the server. You will use this to run your build commands as well. Note the the /vagrant mapping within the vm will be relative to your project directory.
+    ./dockerRun.sh
+    ./dockerRun.sh bash
 
-If you run into errors with the gulp serve, please run npm install again within the vagrant folder. This can happen if the install process runs out of memory or times out during the provision process.
+You can now open your browser (Chrome) and visit the address http://192.168.99.100:9000
+You can exit out of the experience by hitting control+c
 
-Due to a bug with Windows long path names the Node Modules will be a symbolic link. To remove the files within this directory navigate to /home/vagrant/node_modules.
+##  Additional Notes
 
-    vagrant ssh
-    cd /vagrant
-    gulp serve
+### Installing new Node packages
+When adding dependencies to a project with npm make sure you add these arguments to the npm install command. To do this you will need to execute the ./dockerRun.sh bash
 
-## Shutting Down the VM
+To save the package as a runtime dependency for example a super cool jquery plugin or d3 and so on:
 
-VirtualBox will continue to run your project in the background until you stop the execution. To stop the VM, simply run the following command on your host:
+    npm install (the new node package name ex. jquery-super-cool-plugin) --save
 
-    vagrant suspend
 
-## Switching Between Multiple Projects
+To save the package as development dependency for example mocha or gulp[tasks] and so on:
 
-To run multiple projects you will need to suspend your vagrant instance before starting up a new project. To do this, perform the following steps.
+    npm install (the new node package name ex. mocha, gulp[tasks]) --save-dev
 
-    cd /project_a
-    vagrant halt
-    cd ../project_b
-    vagrant up
 
-## Building
+#### Updating the sprite sheet:
 
-Always test by running the build before committing your files. It's easy just run the following:
+After adding new images to the assets folder, you'll want to update the sprite sheet using the npm script <em>build-sprite</em>...
 
-build - Just builds files to dist folder
-run
-    gulp
+        npm run build-sprite
 
-build and test - Builds and serves the build from the dist folder
-run
-
-    gulp serve:dist
-
-generate sprite sheet: task has been removed from gulp serve
-    due to the fact sprite sheet and the corrsponding scss only need to run when a new image is added
-
-    gulp sprite:dev
-
--------------------------------
-
-## NPM SHRINKWRAP
-
-Boilerplate now comes with an npm-shrinkwrap.json file instead of setting a hard dependency in the package.json by removing the charet'^'.  Please read more about it here [https://docs.npmjs.com/cli/shrinkwrap](npm shrinkwrap).  When adding a new npm dependency you will need to do the following:
-
-    cd /vagrant
-
-    rm npm-shrinkwrap.json
-
-    rm -rf node_modules
-
-    npm install <dependency> --save | --save-dev
-
-    npm shrinkwrap
-
-    npm install
+This will take all png, jpg and jpeg files located in the /assets/images/source folder and convert them into a spritesheet as well as create the scss classes corresponding with the spritesheet.

@@ -11,22 +11,11 @@ export default {
     },
 
     isMediumOnly() {
-        return Modernizr.mq('only screen and (min-width: 641px) and (max-width: 1180px)');
+        return Modernizr.mq('only screen and (min-width: 641px) and (max-width: 1023)');
     },
 
     isLargeUp() {
-        return Modernizr.mq('only screen and (min-width: 1180px)');
-    },
-
-    windowResizeListener() {
-        var initViewPortWidth = isSmallOnly();
-        $(window).resize(function () {
-            var newViewPortWidth = isSmallOnly();
-            if (initViewPortWidth !== newViewPortWidth) {
-                location.reload();
-            }
-        });
-        return this;
+        return Modernizr.mq('only screen and (min-width: 1024)');
     },
 
     setLangSource(lang) {

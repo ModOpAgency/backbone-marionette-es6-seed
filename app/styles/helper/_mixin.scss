@@ -1,36 +1,8 @@
 ////
 /// ----------------------------------------------------------------------------------------
-/// Sass mixins
+/// Mixin Directives
 /// ----------------------------------------------------------------------------------------
-/// @description - Mix it up!
+/// @description - Mixins an abstraction of a common patterns into a semantic
+/// and reusable chunks of SASS/SCSS
+/// @reference - Sass Basics > http://www.sitepoint.com/sass-basics-the-mixin-directive
 ////
-@import '../base/variable';
-
-////
-/// ----------------------------------------------------------------------------------------
-/// Mixin printing a linear-gradient
-/// ----------------------------------------------------------------------------------------
-/// as well as a plain color fallback
-/// @access public
-/// @param {Keyword | Angle} $direction - Linear gradient direction
-/// @param {Arglist} $color-stops - List of color-stops composing the gradient
-////
-@mixin linear-gradient($direction, $color-stops...) {
-
-    /// Test if `$value` is a valid direction
-    /// @param {*} $value - Value to test
-    /// @return {Bool}
-    @function is-direction($value) {
-        $is-keyword: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
-        $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
-        @return $is-keyword or $is-angle;
-    }
-
-    // Direction has been omitted and happens to be a color-stop
-    @if is-direction($direction) == false {
-        $color-stops: $direction, $color-stops;
-        $direction: 180deg;
-    }
-    background: nth(nth($color-stops, 1), 1);
-    background: linear-gradient($direction, $color-stops);
-}

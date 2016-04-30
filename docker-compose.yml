@@ -1,0 +1,11 @@
+version: '2'
+services:
+  web:
+    container_name: web
+    image: modop/backbone-marionette-es6-node-5:latest
+    stdin_open: true
+    ports:
+     - "9000:9000"
+    volumes:
+     - .:/data
+    command: bash -c "test -d /data/node_modules && echo 'node_modules already exist' || (echo 'Copying pre-compiled node_modules' && cp -R /tmp/node_modules /data/node_modules) && npm install && npm start"

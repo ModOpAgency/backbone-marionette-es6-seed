@@ -1,0 +1,9 @@
+# Ignore .git folder
+.git*
+
+# Ignore .gitignore excludes
+dist
+.tmp
+.sass-cache
+.DS_Store
+.vagrant

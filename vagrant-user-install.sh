@@ -13,8 +13,8 @@ export NVM_DIR="/home/vagrant/.nvm"
 
 # Install a node and alias
 echo "Installing Node 4.2.0"
-nvm install v4.2.0
-nvm alias default 4.2.0
+nvm install v5.7.1
+nvm alias default 5.7.1
 
 echo "Installing Node Gulp"
 npm install -g gulp@3.9.0
@@ -31,4 +31,9 @@ echo "##########################################################################
 
 # install base requirements
 cd /vagrant
-npm install
+npm install --loglevel info
+
+
+echo "################################################################################"
+echo "                  MODOP: VAGRANT USE IS BEING DEPRECATED                   "
+echo "################################################################################"
