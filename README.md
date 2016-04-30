@@ -6,19 +6,33 @@
 - [Docker Toolbox](https://www.docker.com/toolbox) | VM environment
 - [node.js](https://nodejs.org/) | server | npm dep | use node rather then iojs due to [sprity](https://www.npmjs.com/package/sprity)
 - [webpack](https://webpack.github.io/)
-- [gulp.js](http://gulpjs.com/) | build tool
-
-
 
 ##  Getting started
 --------------------------------------------------------------------------------
 ### Step 1: Install the latest version of [Docker Toolbox](https://www.docker.com/docker-toolbox).
 
-### Step 2: In your CLI/terminal go to the root of your project to start the web pack server by executing this command  
+### Step 2: OSX
+In your CLI/terminal go to the root of your project. To copy over the default npm modules,
+install npm and start the webpack-dev-server, execute the following command:
 
     ./dockerRun.sh
 
+To enter the command-line to execute additional commands, run the following command:
 
+    ./dockerRun.sh bash
+
+You can now open your browser (Chrome) and visit the address http://192.168.99.100:9000
+You can exit out of the experience by hitting command+c
+
+### Step 2: Windows
+Launch the Docker Quickstart Terminal as an Administrator. Navigate to your directory
+for the project. For example. cd Code/www/backbone-marionette-es6 . Run the Docker Run command
+
+    ./dockerRun.sh
+    ./dockerRun.sh bash
+
+You can now open your browser (Chrome) and visit the address http://192.168.99.100:9000
+You can exit out of the experience by hitting control+c
 
 ##  Shutting Down the VM:
 --------------------------------------------------------------------------------
@@ -28,7 +42,7 @@
 
 ##  IMPORTANT INFO TO REMEMBER WHEN INSTALLING NEW NODE PACKAGES
 --------------------------------------------------------------------------------
-When adding dependencies to a project with npm make sure you add these arguments to the npm install command
+When adding dependencies to a project with npm make sure you add these arguments to the npm install command. To do this you will need to execute the ./dockerRun.sh bash
 
 ### To save the package as a runtime dependency for example a super cool jquery plugin or d3 and so on...
 

@@ -3,7 +3,6 @@ services:
   web:
     container_name: web
     image: modop/backbone-marionette-es6-node-5:latest
-    tty: true
     stdin_open: true
     ports:
      - "9000:9000"

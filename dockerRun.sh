@@ -44,5 +44,22 @@ echo "$($COLOR_GREEN)Upon success open your browser to http://192.168.99.100:900
 echo "$($COLOR_GREEN)To access the command-line run with docker-compose run --service-ports web bash $($COLOR_CLEAR)"
 echo "$($COLOR_GREEN)################################################################################$($COLOR_CLEAR)"
 
-docker-compose run --name web --rm web --service-ports $1
-docker-compose down
+
+
+#
+envTest=$(uname -a | grep 'Darwin')
+if [ $? -eq 1 ]
+  then
+    echo "Executing Windows Docker commands"
+    docker rm -f $DOCKER_IMAGE &> /dev/null
+    if [ $# -eq 0 ]
+        then
+            docker run -it --rm -p 9000:9000 --name $DOCKER_IMAGE -v $(pwd):/data modop/$DOCKER_IMAGE bash -c "test -d /data/node_modules && echo 'node_modules already exist' || (echo 'Copying pre-compiled node_modules' && cp -R /tmp/node_modules /data/node_modules) && npm install && npm start"
+        else
+            docker run -it --rm -p 9000:9000 --name $DOCKER_IMAGE -v $(pwd):/data modop/$DOCKER_IMAGE $1
+        fi
+  else
+    echo "Executing OSX Docker commands"
+    docker-compose run --name web --rm web --service-ports $1
+    docker-compose down
+fi
